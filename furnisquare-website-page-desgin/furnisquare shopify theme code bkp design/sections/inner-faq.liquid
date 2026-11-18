@@ -7,7 +7,7 @@
 {%- liquid
   assign title_id = 'faq-list-title-' | append: section.id
 -%}
-<section class="sec faq" aria-labelledby="{{ title_id }}">
+<section class="sec faq" id="faq-{{ section.id }}" aria-labelledby="{{ title_id }}">
   <div class="wrap faq__grid">
     <aside class="faq__aside">
       <h2 class="faqnav__title" id="{{ title_id }}">{{ section.settings.aside_title }}</h2>
@@ -37,7 +37,7 @@
 </section>
 <script>
 (function() {
-  var root = document.currentScript.closest('.faq');
+  var root = document.getElementById('faq-{{ section.id }}');
   if (!root) return;
   var list = root.querySelector('.faq__list');
   var nav = root.querySelector('[data-faqnav]');
