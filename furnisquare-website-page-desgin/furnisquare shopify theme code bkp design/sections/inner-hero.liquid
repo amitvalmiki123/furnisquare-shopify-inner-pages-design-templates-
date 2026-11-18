@@ -39,7 +39,8 @@
       {%- if section.settings.button_1_label != blank or section.settings.button_2_label != blank -%}
         <div class="phead__acts">
           {%- if section.settings.button_1_label != blank -%}
-            <a class="btn btn--saffron" href="{{ section.settings.button_1_link | default: '#' }}">{{ section.settings.button_1_label }} {% render 'icon', name: 'arrow' %}</a>
+            {%- assign btn1_icon = section.settings.button_1_icon | default: 'arrow' -%}
+            <a class="btn btn--saffron" href="{{ section.settings.button_1_link | default: '#' }}">{% if btn1_icon != 'none' %}{% render 'icon', name: btn1_icon %}{% endif %}{{ section.settings.button_1_label }}</a>
           {%- endif -%}
           {%- if section.settings.button_2_label != blank -%}
             {%- assign btn2_icon = section.settings.button_2_icon | default: 'wa' -%}
@@ -114,6 +115,19 @@
       "default": "#bulk-form"
     },
     {
+      "type": "select",
+      "id": "button_1_icon",
+      "label": "Primary button icon",
+      "options": [
+        { "value": "arrow", "label": "Arrow" },
+        { "value": "phone", "label": "Phone" },
+        { "value": "wa", "label": "WhatsApp" },
+        { "value": "mail", "label": "Mail" },
+        { "value": "none", "label": "No icon" }
+      ],
+      "default": "arrow"
+    },
+    {
       "type": "text",
       "id": "button_2_label",
       "label": "Secondary button label",
@@ -131,6 +145,14 @@
         {
           "value": "arrow",
           "label": "Arrow"
+        },
+        {
+          "value": "phone",
+          "label": "Phone"
+        },
+        {
+          "value": "mail",
+          "label": "Mail"
         },
         {
           "value": "none",

@@ -1,0 +1,267 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "split_image_right",
+        "eyebrow": "Franchise",
+        "heading": "Open a Furnisquare <em>experience store</em>",
+        "lede": "We’re looking out for franchise partners to have an experience store — one partner in each city, where customers can have one-on-one interaction with design and quality.",
+        "button_1_label": "+91-9785322576",
+        "button_1_link": "tel:+919785322576",
+        "button_1_icon": "phone",
+        "button_2_label": "info@furnisquare.com",
+        "button_2_link": "mailto:info@furnisquare.com?subject=Franchise%20enquiry",
+        "button_2_icon": "mail",
+        "button_2_external": false,
+        "image": "shopify://shop_images/living-room.webp",
+        "image_alt": "Light-filled living room with a wooden sofa and framed art"
+      }
+    },
+    "facts": {
+      "type": "inner-facts",
+      "blocks": {
+        "b01": {
+          "type": "fact",
+          "settings": {
+            "label": "Floor space",
+            "value": "1,500 – 10,000 sq. ft."
+          }
+        },
+        "b02": {
+          "type": "fact",
+          "settings": {
+            "label": "Initial investment capacity",
+            "value": "Rs. 10 – 25 Lacs"
+          }
+        },
+        "b03": {
+          "type": "fact",
+          "settings": {
+            "label": "Partners per city",
+            "value": "One"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03"
+      ],
+      "settings": {
+        "tinted": false,
+        "eyebrow": "At a glance",
+        "heading": "What a partner <em>needs</em>",
+        "columns": "3"
+      }
+    },
+    "eligibility": {
+      "type": "inner-split",
+      "blocks": {
+        "b01": {
+          "type": "para",
+          "settings": {
+            "text": "<p>Everyone is welcome, however, a candidate must:</p>"
+          }
+        },
+        "b02": {
+          "type": "ticks",
+          "settings": {
+            "items": "Have an overview of the furniture industry and should have a passion to create a space where customers can have one on one interaction with design and quality.\nOr must not be in business earlier, however, is keen to venture into Furniture Industry by being a part of Furnisquare.\n(If in any business earlier) Have valid documents / license / registrations / GST etc."
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02"
+      ],
+      "settings": {
+        "tinted": true,
+        "flip": false,
+        "eyebrow": "Eligibility",
+        "heading": "Who can take a <em>franchise?</em>",
+        "image": "shopify://shop_images/banner-sofa.webp",
+        "image_alt": "Wooden sofa set with armchairs and a slatted coffee table in a living room"
+      }
+    },
+    "provide": {
+      "type": "inner-values",
+      "blocks": {
+        "b01": {
+          "type": "value",
+          "settings": {
+            "icon": "boxes",
+            "title": "Ability to start a company overnight",
+            "text": ""
+          }
+        },
+        "b02": {
+          "type": "value",
+          "settings": {
+            "icon": "arrow",
+            "title": "Tailored career path",
+            "text": ""
+          }
+        },
+        "b03": {
+          "type": "value",
+          "settings": {
+            "icon": "star",
+            "title": "Control over your own success",
+            "text": ""
+          }
+        },
+        "b04": {
+          "type": "value",
+          "settings": {
+            "icon": "check",
+            "title": "Training in our unique method",
+            "text": ""
+          }
+        },
+        "b05": {
+          "type": "value",
+          "settings": {
+            "icon": "tag",
+            "title": "Marketing & PR support",
+            "text": ""
+          }
+        },
+        "b06": {
+          "type": "value",
+          "settings": {
+            "icon": "shield",
+            "title": "Use of our trademarked name",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05",
+        "b06"
+      ],
+      "settings": {
+        "tinted": false,
+        "eyebrow": "Partner support",
+        "heading": "Here is what we <em>provide</em>"
+      }
+    },
+    "cities": {
+      "type": "inner-pills",
+      "blocks": {
+        "b01": {
+          "type": "pill",
+          "settings": {
+            "label": "Delhi"
+          }
+        },
+        "b02": {
+          "type": "pill",
+          "settings": {
+            "label": "Mumbai"
+          }
+        },
+        "b03": {
+          "type": "pill",
+          "settings": {
+            "label": "Ahmedabad"
+          }
+        },
+        "b04": {
+          "type": "pill",
+          "settings": {
+            "label": "Surat"
+          }
+        },
+        "b05": {
+          "type": "pill",
+          "settings": {
+            "label": "Jaipur"
+          }
+        },
+        "b06": {
+          "type": "pill",
+          "settings": {
+            "label": "Pune"
+          }
+        },
+        "b07": {
+          "type": "pill",
+          "settings": {
+            "label": "Hyderabad"
+          }
+        },
+        "b08": {
+          "type": "pill",
+          "settings": {
+            "label": "Bengaluru"
+          }
+        },
+        "b09": {
+          "type": "pill",
+          "settings": {
+            "label": "Chennai"
+          }
+        },
+        "b10": {
+          "type": "pill",
+          "settings": {
+            "label": "Vizag"
+          }
+        },
+        "b11": {
+          "type": "pill",
+          "settings": {
+            "label": "Kolkata"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05",
+        "b06",
+        "b07",
+        "b08",
+        "b09",
+        "b10",
+        "b11"
+      ],
+      "settings": {
+        "tinted": true,
+        "eyebrow": "Where we’re opening",
+        "heading": "Cities we’re <em>looking at</em>",
+        "text": "We are looking to open in the following cities and want one partner in each city."
+      }
+    },
+    "cta": {
+      "type": "inner-cta",
+      "settings": {
+        "aria_label": "Contact for franchise",
+        "heading": "Interested in the <em>franchise partner program?</em>",
+        "text": "Kindly contact us for more details — +91-9785322576 · info@furnisquare.com",
+        "button_1_label": "Call us",
+        "button_1_link": "tel:+919785322576",
+        "button_1_icon": "phone",
+        "button_2_label": "WhatsApp",
+        "button_2_link": "https://wa.me/919785322576?text=Hi%2C%20I%27m%20interested%20in%20the%20Furnisquare%20franchise",
+        "button_2_icon": "wa",
+        "button_2_external": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "facts",
+    "eligibility",
+    "provide",
+    "cities",
+    "cta"
+  ]
+}

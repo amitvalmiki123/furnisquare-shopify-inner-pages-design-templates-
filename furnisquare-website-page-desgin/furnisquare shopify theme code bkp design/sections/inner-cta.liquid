@@ -14,10 +14,12 @@
       {%- if section.settings.button_1_label != blank or section.settings.button_2_label != blank -%}
         <div class="ctaband__acts">
           {%- if section.settings.button_1_label != blank -%}
-            <a class="btn btn--saffron" href="{{ section.settings.button_1_link | default: '#' }}">{{ section.settings.button_1_label }} {% render 'icon', name: 'arrow' %}</a>
+            {%- assign btn1_icon = section.settings.button_1_icon | default: 'arrow' -%}
+            <a class="btn btn--saffron" href="{{ section.settings.button_1_link | default: '#' }}">{% if btn1_icon != 'none' %}{% render 'icon', name: btn1_icon %}{% endif %}{{ section.settings.button_1_label }}</a>
           {%- endif -%}
           {%- if section.settings.button_2_label != blank -%}
-            <a class="btn btn--line" href="{{ section.settings.button_2_link | default: '#' }}">{{ section.settings.button_2_label }}</a>
+            {%- assign btn2_icon = section.settings.button_2_icon | default: 'none' -%}
+            <a class="btn btn--line" href="{{ section.settings.button_2_link | default: '#' }}"{% if section.settings.button_2_external %} target="_blank" rel="noopener"{% endif %}>{% if btn2_icon != 'none' %}{% render 'icon', name: btn2_icon %}{% endif %}{{ section.settings.button_2_label }}</a>
           {%- endif -%}
         </div>
       {%- endif -%}
@@ -61,6 +63,19 @@
       "default": "/collections/all"
     },
     {
+      "type": "select",
+      "id": "button_1_icon",
+      "label": "Primary button icon",
+      "options": [
+        { "value": "arrow", "label": "Arrow" },
+        { "value": "phone", "label": "Phone" },
+        { "value": "wa", "label": "WhatsApp" },
+        { "value": "mail", "label": "Mail" },
+        { "value": "none", "label": "No icon" }
+      ],
+      "default": "arrow"
+    },
+    {
       "type": "text",
       "id": "button_2_label",
       "label": "Secondary button label",
@@ -71,6 +86,25 @@
       "id": "button_2_link",
       "label": "Secondary button link",
       "default": "/pages/contact"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon",
+      "label": "Secondary button icon",
+      "options": [
+        { "value": "none", "label": "No icon" },
+        { "value": "arrow", "label": "Arrow" },
+        { "value": "phone", "label": "Phone" },
+        { "value": "wa", "label": "WhatsApp" },
+        { "value": "mail", "label": "Mail" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_2_external",
+      "label": "Open secondary link in a new tab",
+      "default": false
     }
   ],
   "presets": [

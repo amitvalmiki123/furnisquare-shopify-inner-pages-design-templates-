@@ -5,7 +5,7 @@
 {%- liquid
   assign heading_id = 'pills-title-' | append: section.id
 -%}
-<section class="sec" aria-labelledby="{{ heading_id }}">
+<section class="sec{% if section.settings.tinted %} sec--tint{% endif %}" aria-labelledby="{{ heading_id }}">
   <div class="wrap">
     <header class="shead">
       {%- if section.settings.eyebrow != blank -%}
@@ -28,6 +28,12 @@
 {
   "name": "Inner Pills",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "tinted",
+      "label": "Cream band background",
+      "default": false
+    },
     {
       "type": "text",
       "id": "eyebrow",

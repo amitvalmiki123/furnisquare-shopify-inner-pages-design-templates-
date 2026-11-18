@@ -36,7 +36,7 @@
               <span class="card__ico">{% render 'icon', name: block.settings.icon %}</span>
             {%- endif -%}
             <h3>{{ block.settings.title }}</h3>
-            <p>{{ block.settings.text }}{% if block.settings.link_label != blank and block.settings.link_url != blank %} <a href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>{% endif %}</p>
+            {%- if block.settings.text != blank or block.settings.link_label != blank -%}<p>{{ block.settings.text }}{% if block.settings.link_label != blank and block.settings.link_url != blank %} <a href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>{% endif %}</p>{%- endif -%}
           </li>
         {%- endfor -%}
       </ul>

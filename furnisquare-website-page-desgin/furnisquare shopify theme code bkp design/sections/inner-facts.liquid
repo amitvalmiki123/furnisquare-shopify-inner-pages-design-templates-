@@ -1,0 +1,95 @@
+{%- comment -%}
+  Inner page facts strip — label/value cells in a row (e.g. "At a glance"
+  requirements). Blocks = individual cells. Visual reference: mockup .facts / .fact.
+{%- endcomment -%}
+{%- liquid
+  assign heading_id = 'facts-title-' | append: section.id
+-%}
+<section class="sec{% if section.settings.tinted %} sec--tint{% endif %}" aria-labelledby="{{ heading_id }}">
+  <div class="wrap">
+    <header class="shead">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="mast__title" id="{{ heading_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
+    </header>
+    {%- if section.blocks.size > 0 -%}
+      <ul class="facts" style="--cols: {{ section.settings.columns }}">
+        {%- for block in section.blocks -%}
+          <li class="fact" {{ block.shopify_attributes }}>
+            <span>{{ block.settings.label }}</span>
+            <strong>{{ block.settings.value }}</strong>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Facts Strip",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "tinted",
+      "label": "Cream band background",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "At a glance"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading (H2)",
+      "info": "Saffron = wrap text in <em>…</em>",
+      "default": "What a partner <em>needs</em>"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "fact",
+      "name": "Fact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Floor space"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "1,500 – 10,000 sq. ft."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Facts Strip",
+      "blocks": [
+        { "type": "fact", "settings": { "label": "Floor space", "value": "1,500 – 10,000 sq. ft." } },
+        { "type": "fact", "settings": { "label": "Initial investment capacity", "value": "Rs. 10 – 25 Lacs" } },
+        { "type": "fact", "settings": { "label": "Partners per city", "value": "One" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
