@@ -38,7 +38,7 @@
         <p class="fcard__intro">{{ section.settings.form_intro }}</p>
       {%- endif -%}
 
-      {%- form 'contact', class: 'enquiry-form', id: uid, accept-charset: 'UTF-8' -%}
+      {%- form 'contact', class: 'enquiry-form', id: uid -%}
         <input type="hidden" name="contact[Request]" value="{{ section.settings.request_tag }}">
 
         {%- if form.posted_successfully? -%}

@@ -1,0 +1,85 @@
+{%- comment -%}
+  Inner page milestones ("Our journey").
+  Visual reference: mockup .miles / .mile.
+{%- endcomment -%}
+{%- liquid
+  assign title_id = 'miles-title-' | append: section.id
+-%}
+<section class="sec" aria-labelledby="{{ title_id }}">
+  <div class="wrap">
+    <header class="shead">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
+    </header>
+    {%- if section.blocks.size > 0 -%}
+      <ol class="miles">
+        {%- for block in section.blocks -%}
+          <li class="mile" {{ block.shopify_attributes }}>
+            <b>{{ block.settings.year }}</b>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Milestones",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Our journey"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>Furnisquare</em>.",
+      "default": "From 35 designs to <em>Furnisquare</em>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mile",
+      "name": "Milestone",
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year / label",
+          "default": "1989"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Jangid Handicrafts begins"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "We started with a goal of quality products. Back then, our catalogue featured just 35 designs."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Milestones",
+      "blocks": [
+        { "type": "mile", "settings": { "year": "1989", "title": "Jangid Handicrafts begins", "text": "We started with a goal of quality products. Back then, our catalogue featured just 35 designs." } },
+        { "type": "mile", "settings": { "year": "2020", "title": "Furnisquare goes online", "text": "We started our online store with the brand name Furnisquare." } },
+        { "type": "mile", "settings": { "year": "Today", "title": "Spaces that mirror who you are", "text": "We’re here not just to sell well-designed products — we’re here to help you create spaces that mirror who you are." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

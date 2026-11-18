@@ -1,0 +1,227 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "split_image_right",
+        "eyebrow": "About us",
+        "heading": "Making a million homes <em>beautiful</em> since 1989",
+        "lede": "We started our journey as Jangid Handicrafts in 1989 with a goal of quality products and a vision — to make a million homes beautiful. In 2020 we started our online store with the brand name Furnisquare.",
+        "button_1_label": "Shop the collection",
+        "button_1_link": "/collections/all",
+        "button_2_label": "Read our story",
+        "button_2_link": "/pages/our-story",
+        "button_2_external": false,
+        "button_2_icon": "none",
+        "image": "shopify://shop_images/banner-console.webp",
+        "image_alt": "Hand-carved wooden console table with a lamp and flowers in a warm-lit hallway"
+      }
+    },
+    "milestones": {
+      "type": "inner-milestones",
+      "blocks": {
+        "b01": {
+          "type": "mile",
+          "settings": {
+            "year": "1989",
+            "title": "Jangid Handicrafts begins",
+            "text": "We started with a goal of quality products. Back then, our catalogue featured just 35 designs."
+          }
+        },
+        "b02": {
+          "type": "mile",
+          "settings": {
+            "year": "2020",
+            "title": "Furnisquare goes online",
+            "text": "We started our online store with the brand name Furnisquare."
+          }
+        },
+        "b03": {
+          "type": "mile",
+          "settings": {
+            "year": "Today",
+            "title": "Spaces that mirror who you are",
+            "text": "We’re here not just to sell well-designed products — we’re here to help you create spaces that mirror who you are."
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03"
+      ],
+      "settings": {
+        "eyebrow": "Our journey",
+        "heading": "From 35 designs to <em>Furnisquare</em>"
+      }
+    },
+    "story": {
+      "type": "inner-split",
+      "blocks": {
+        "b01": {
+          "type": "para",
+          "settings": {
+            "text": "<p>Back then, our catalogue featured just 35 designs. Yet, when our customers shared photographs of their homes, we saw they were remarkably distinct. The same table, the same chair was used differently by different people. This told us something. People want their homes to be unique.</p><p>We also realized that people are a lot happier creating things than they are buying things. We are a creative, imaginative, expressive species. And our homes are just one of the many canvases we have at our disposal.</p><p>Today, we understand that we’re here not just to sell well-designed products. We’re here to help you create spaces that mirror who you are. At Furnisquare, we want you to discover the joy of creating. Starting with your home.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b01"
+      ],
+      "settings": {
+        "tinted": true,
+        "flip": false,
+        "eyebrow": "What we learned",
+        "heading": "People want their homes to be <em>unique</em>",
+        "image": "shopify://shop_images/banner-dining.webp",
+        "image_alt": "Six seater carved wooden dining set with cushioned chairs in a bright dining room"
+      }
+    },
+    "quote": {
+      "type": "inner-quote",
+      "settings": {
+        "aria_label": "Our belief",
+        "quote": "Take a few square feet of nothing, and transform it into something <em>beautiful.</em>",
+        "caption": "We want you to think of the setting up of a space as an energizing, creative pursuit — to breathe life into empty rooms with your ideas."
+      }
+    },
+    "values": {
+      "type": "inner-values",
+      "blocks": {
+        "b01": {
+          "type": "value",
+          "settings": {
+            "icon": "star",
+            "title": "Customer Obsession",
+            "text": "Customers are at the center of whatever we do at Furnisquare. We ensure that we get the right customer solution in all our initiatives. We establish a long-term relationship with every customer and aim to delight them in every interaction. We aim to set the global benchmark for customer happiness scores."
+          }
+        },
+        "b02": {
+          "type": "value",
+          "settings": {
+            "icon": "shield",
+            "title": "Honesty & Transparency",
+            "text": "We are honest, ethical, and trustworthy in the way we live life. We hold the highest standards of corporate governance in all our activities. We communicate transparently with all our stakeholders. When we make mistakes, we are honest and upfront about owning up to them."
+          }
+        },
+        "b03": {
+          "type": "value",
+          "settings": {
+            "icon": "arrow",
+            "title": "Action Orientation",
+            "text": "We have a bias for action. We empower our teams to take fast and well informed decisions. We continuously iterate and learn from our mistakes. Scale and robustness are built in as we move along."
+          }
+        },
+        "b04": {
+          "type": "value",
+          "settings": {
+            "icon": "check",
+            "title": "Stepping Up",
+            "text": "We take charge, go the extra mile, and think differently to find innovative solutions. When in doubt, we push ourselves harder to solve newer challenges and get better solutions."
+          }
+        },
+        "b05": {
+          "type": "value",
+          "settings": {
+            "icon": "leaf",
+            "title": "Efficiency",
+            "text": "We are here to build a long-term sustainable business. We aim to do more with less and focus on zero waste. We believe that a self-sustaining business will be responsible and solve customer problems in the right manner."
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05"
+      ],
+      "settings": {
+        "tinted": true,
+        "eyebrow": "Our values",
+        "heading": "What we <em>stand for</em>"
+      }
+    },
+    "trust": {
+      "type": "inner-trust",
+      "blocks": {
+        "b01": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "badge": "",
+            "title": "Free shipping",
+            "subtitle": "All over India"
+          }
+        },
+        "b02": {
+          "type": "item",
+          "settings": {
+            "icon": "card",
+            "badge": "",
+            "title": "No Cost EMI",
+            "subtitle": "On leading bank cards"
+          }
+        },
+        "b03": {
+          "type": "item",
+          "settings": {
+            "icon": "tag",
+            "badge": "",
+            "title": "Extra 10% off",
+            "subtitle": "On prepaid orders"
+          }
+        },
+        "b04": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "badge": "",
+            "title": "36-month warranty",
+            "subtitle": "Incl. termite resistance"
+          }
+        },
+        "b05": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "badge": "1989",
+            "title": "30+ years",
+            "subtitle": "Of proven expertise"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05"
+      ],
+      "settings": {
+        "aria_label": "Why shop with Furnisquare"
+      }
+    },
+    "cta": {
+      "type": "inner-cta",
+      "settings": {
+        "aria_label": "Next steps",
+        "heading": "Start creating your <em>home</em>",
+        "text": "Solid wood furniture for every room, delivered free across India.",
+        "button_1_label": "Shop now",
+        "button_1_link": "/collections/all",
+        "button_2_label": "Contact us",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "milestones",
+    "story",
+    "quote",
+    "values",
+    "trust",
+    "cta"
+  ]
+}

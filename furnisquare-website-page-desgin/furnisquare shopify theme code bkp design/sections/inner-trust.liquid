@@ -1,0 +1,101 @@
+{%- comment -%}
+  Inner page trust strip ("Why shop with Furnisquare").
+  Reuses the theme's existing .trust / .trust__grid / .trust__year styles
+  (custom.css). One block per cell; an optional badge (e.g. 1989) renders a
+  big number instead of the icon.
+{%- endcomment -%}
+<section class="trust" aria-label="{{ section.settings.aria_label | escape }}">
+  <div class="wrap">
+    {%- if section.blocks.size > 0 -%}
+      <ul class="trust__grid">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>
+            {%- if block.settings.badge != blank -%}
+              <span class="trust__year">{{ block.settings.badge }}</span>
+            {%- elsif block.settings.icon != blank and block.settings.icon != 'none' -%}
+              {% render 'icon', name: block.settings.icon %}
+            {%- endif -%}
+            <div>
+              <strong>{{ block.settings.title }}</strong>
+              <span>{{ block.settings.subtitle }}</span>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Trust Strip",
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Section label (accessibility)",
+      "default": "Why shop with Furnisquare"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "truck", "label": "Truck" },
+            { "value": "card", "label": "Card" },
+            { "value": "tag", "label": "Tag" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "star", "label": "Star" },
+            { "value": "check", "label": "Check" },
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "phone", "label": "Phone" },
+            { "value": "pencil", "label": "Pencil" },
+            { "value": "help", "label": "Help" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "wa", "label": "WhatsApp" },
+            { "value": "none", "label": "No icon" }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge text",
+          "info": "Optional — a big standalone value like 1989. Replaces the icon.",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Free shipping"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "All over India"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Trust Strip",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "title": "Free shipping", "subtitle": "All over India" } },
+        { "type": "item", "settings": { "icon": "card", "title": "No Cost EMI", "subtitle": "On leading bank cards" } },
+        { "type": "item", "settings": { "icon": "tag", "title": "Extra 10% off", "subtitle": "On prepaid orders" } },
+        { "type": "item", "settings": { "icon": "shield", "title": "36-month warranty", "subtitle": "Incl. termite resistance" } },
+        { "type": "item", "settings": { "badge": "1989", "title": "30+ years", "subtitle": "Of proven expertise" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

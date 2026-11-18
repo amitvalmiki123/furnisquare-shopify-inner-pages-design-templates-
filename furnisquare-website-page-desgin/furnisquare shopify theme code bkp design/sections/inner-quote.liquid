@@ -1,0 +1,44 @@
+{%- comment -%}
+  Inner page pull quote ("qband").
+  Visual reference: mockup .qband — centred display type, saffron emphasis.
+{%- endcomment -%}
+<section class="sec qband" aria-label="{{ section.settings.aria_label | escape }}">
+  <div class="wrap">
+    <blockquote>{{ section.settings.quote }}</blockquote>
+    {%- if section.settings.caption != blank -%}
+      <p>{{ section.settings.caption }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Quote",
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Section label (accessibility)",
+      "default": "Our belief"
+    },
+    {
+      "type": "text",
+      "id": "quote",
+      "label": "Quote",
+      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>beautiful.</em>",
+      "default": "Take a few square feet of nothing, and transform it into something <em>beautiful.</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "caption",
+      "label": "Caption",
+      "default": "We want you to think of the setting up of a space as an energizing, creative pursuit — to breathe life into empty rooms with your ideas."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Quote"
+    }
+  ]
+}
+{% endschema %}

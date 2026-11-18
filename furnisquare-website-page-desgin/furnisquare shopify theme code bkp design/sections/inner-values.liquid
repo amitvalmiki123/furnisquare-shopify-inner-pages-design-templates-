@@ -1,0 +1,129 @@
+{%- comment -%}
+  Inner page values cards ("Our values").
+  Layout: 6-column grid, 3 cards per row. The last row is
+  width-aware, so there is never a ragged gap:
+    - last row of 2  → both cards span half the row (3 + 3)
+    - last row of 1  → the card spans the full row (6)
+  Icons come from the theme's built-in icon snippet.
+{%- endcomment -%}
+{%- liquid
+  assign title_id = 'values-title-' | append: section.id
+  assign total = section.blocks.size
+  assign mod = total | modulo: 3
+-%}
+<section class="sec{% if section.settings.tinted %} sec--tint{% endif %}" aria-labelledby="{{ title_id }}">
+  <div class="wrap">
+    <header class="shead">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
+    </header>
+    {%- if total > 0 -%}
+      <ul class="cards">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign from_end = total | minus: forloop.index0
+            assign fill = ''
+            if mod == 2 and from_end <= 2
+              assign fill = ' card--wide'
+            elsif mod == 1 and from_end == 1
+              assign fill = ' card--full'
+            endif
+          -%}
+          <li class="card{{ fill }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank and block.settings.icon != 'none' -%}
+              <span class="card__ico">{% render 'icon', name: block.settings.icon %}</span>
+            {%- endif -%}
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Values",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "tinted",
+      "label": "Cream band background",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Our values"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>stand for</em>.",
+      "default": "What we <em>stand for</em>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "star", "label": "Star" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "arrow", "label": "Arrow" },
+            { "value": "check", "label": "Check" },
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "tag", "label": "Tag" },
+            { "value": "pencil", "label": "Pencil" },
+            { "value": "phone", "label": "Phone" },
+            { "value": "help", "label": "Help" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "card", "label": "Card" },
+            { "value": "wa", "label": "WhatsApp" },
+            { "value": "track", "label": "Map pin" },
+            { "value": "user", "label": "User" },
+            { "value": "bag", "label": "Bag" },
+            { "value": "none", "label": "No icon" }
+          ],
+          "default": "star"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Customer Obsession"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Customers are at the center of whatever we do at Furnisquare."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Values",
+      "blocks": [
+        { "type": "value", "settings": { "icon": "star", "title": "Customer Obsession", "text": "Customers are at the center of whatever we do at Furnisquare. We ensure that we get the right customer solution in all our initiatives. We establish a long-term relationship with every customer and aim to delight them in every interaction. We aim to set the global benchmark for customer happiness scores." } },
+        { "type": "value", "settings": { "icon": "shield", "title": "Honesty & Transparency", "text": "We are honest, ethical, and trustworthy in the way we live life. We hold the highest standards of corporate governance in all our activities. We communicate transparently with all our stakeholders. When we make mistakes, we are honest and upfront about owning up to them." } },
+        { "type": "value", "settings": { "icon": "arrow", "title": "Action Orientation", "text": "We have a bias for action. We empower our teams to take fast and well informed decisions. We continuously iterate and learn from our mistakes. Scale and robustness are built in as we move along." } },
+        { "type": "value", "settings": { "icon": "check", "title": "Stepping Up", "text": "We take charge, go the extra mile, and think differently to find innovative solutions. When in doubt, we push ourselves harder to solve newer challenges and get better solutions." } },
+        { "type": "value", "settings": { "icon": "leaf", "title": "Efficiency", "text": "We are here to build a long-term sustainable business. We aim to do more with less and focus on zero waste. We believe that a self-sustaining business will be responsible and solve customer problems in the right manner." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

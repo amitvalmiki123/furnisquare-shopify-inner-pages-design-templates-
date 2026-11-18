@@ -29,7 +29,8 @@
             <a class="btn btn--saffron" href="{{ section.settings.button_1_link | default: '#' }}">{{ section.settings.button_1_label }} {% render 'icon', name: 'arrow' %}</a>
           {%- endif -%}
           {%- if section.settings.button_2_label != blank -%}
-            <a class="btn btn--line" href="{{ section.settings.button_2_link | default: '#' }}"{% if section.settings.button_2_external %} target="_blank" rel="noopener"{% endif %}>{% render 'icon', name: 'wa' %}{{ section.settings.button_2_label }}</a>
+            {%- assign btn2_icon = section.settings.button_2_icon | default: 'wa' -%}
+            <a class="btn btn--line" href="{{ section.settings.button_2_link | default: '#' }}"{% if section.settings.button_2_external %} target="_blank" rel="noopener"{% endif %}>{% if btn2_icon != 'none' %}{% render 'icon', name: btn2_icon %}{% endif %}{{ section.settings.button_2_label }}</a>
           {%- endif -%}
         </div>
       {%- endif -%}
@@ -90,8 +91,19 @@
     {
       "type": "text",
       "id": "button_2_label",
-      "label": "WhatsApp button label",
+      "label": "Secondary button label",
       "default": "WhatsApp us"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon",
+      "label": "Secondary button icon",
+      "options": [
+        { "value": "wa", "label": "WhatsApp" },
+        { "value": "arrow", "label": "Arrow" },
+        { "value": "none", "label": "No icon" }
+      ],
+      "default": "wa"
     },
     {
       "type": "text",
