@@ -165,3 +165,20 @@
   .cards > .card, .cards > .card--wide, .cards > .card--full { grid-column: span 6; }
   .ctaband__acts, .ctaband__acts .btn { width: 100%; }
 }
+
+/* ---------- FAQ page ---------- */
+.faqnav__title { font: 500 22px/1.2 var(--f-display); margin-bottom: 12px; }
+.faqnav__list { counter-reset: q; display: grid; gap: 2px; max-height: calc(100vh - var(--hdr-h, 80px) - 260px); overflow-y: auto; padding-right: 8px; scrollbar-width: thin; padding-left: 0; list-style: none; }
+.faqnav__list li { counter-increment: q; }
+.faqnav__list a { display: grid; grid-template-columns: 28px 1fr; gap: 6px; padding: 7px 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); border-bottom: 1px solid var(--line); text-decoration: none; }
+.faqnav__list a::before { content: counter(q, decimal-leading-zero); font-weight: 600; color: var(--saffron-deep); }
+.faqnav__list a:hover { color: var(--saffron-deep); }
+.faqnav__help { margin-top: 22px; padding: 18px; background: var(--band); border-radius: 12px; }
+.faqnav__help p { font-size: 14px; color: var(--ink-2); margin-bottom: 12px; }
+.faq .qa { scroll-margin-top: calc(var(--hdr-h, 80px) + 24px); }
+.faq .qa__a ul { margin: 10px 0 12px; padding-left: 0; display: grid; gap: 8px; }
+.faq .qa__a ul li { position: relative; padding-left: 20px; list-style: none; }
+.faq .qa__a ul li::before { content: ""; position: absolute; left: 0; top: 10px; width: 7px; height: 7px; border: 1.5px solid var(--saffron); }
+.faq .qa__a p + p { margin-top: 10px; }
+@media (max-width: 1024px) { .faqnav__list { max-height: none; } }
+@media (max-width: 900px) { .faq__grid { grid-template-columns: 1fr; } .faq__grid .faq__aside { position: static; } }

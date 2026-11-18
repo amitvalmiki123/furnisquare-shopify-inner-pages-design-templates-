@@ -1,0 +1,267 @@
+{%- comment -%}
+  Inner page FAQ (page.faq). Sidebar index (auto-built from the accordion),
+  help box (phone + WhatsApp from theme settings), single-open accordion.
+  Visual reference: mockup .faq / .faq__grid / .qa / .faqnav__list.
+  FAQPage JSON-LD is emitted from the blocks.
+{%- endcomment -%}
+{%- liquid
+  assign title_id = 'faq-list-title-' | append: section.id
+-%}
+<section class="sec faq" aria-labelledby="{{ title_id }}">
+  <div class="wrap faq__grid">
+    <aside class="faq__aside">
+      <h2 class="faqnav__title" id="{{ title_id }}">{{ section.settings.aside_title }}</h2>
+      <ol class="faqnav__list" data-faqnav></ol>
+      <div class="faqnav__help">
+        {%- if section.settings.help_text != blank -%}<p>{{ section.settings.help_text }}</p>{%- endif -%}
+        <div class="faq__help">
+          {%- if settings.phone != blank -%}
+            {%- assign tel = settings.phone | replace: ' ', '' | replace: '-', '' -%}
+            <a class="btn btn--ink" href="tel:{{ tel }}">{% render 'icon', name: 'phone' %}{{ settings.phone }}</a>
+          {%- endif -%}
+          {%- if settings.whatsapp != blank -%}
+            <a class="btn btn--line" href="https://wa.me/{{ settings.whatsapp }}" target="_blank" rel="noopener">{% render 'icon', name: 'wa' %}WhatsApp us</a>
+          {%- endif -%}
+        </div>
+      </div>
+    </aside>
+    <div class="faq__list">
+      {%- for block in section.blocks -%}
+        <details class="qa"{% if block.settings.open %} open{% endif %} id="faq-{{ block.id }}" {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}</summary>
+          <div class="qa__a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<script>
+(function() {
+  var root = document.currentScript.closest('.faq');
+  if (!root) return;
+  var list = root.querySelector('.faq__list');
+  var nav = root.querySelector('[data-faqnav]');
+  var items = Array.prototype.slice.call(list.querySelectorAll('details.qa'));
+  if (nav) {
+    items.forEach(function(qa) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + qa.id;
+      a.textContent = qa.querySelector('summary').textContent;
+      a.addEventListener('click', function() { qa.open = true; });
+      li.appendChild(a);
+      nav.appendChild(li);
+    });
+    if (location.hash) {
+      var target = items.filter(function(i) { return '#' + i.id === location.hash; })[0];
+      if (target) target.open = true;
+    }
+  }
+  items.forEach(function(item) {
+    item.addEventListener('toggle', function() {
+      if (item.open) {
+        items.forEach(function(other) { if (other !== item) other.open = false; });
+      }
+    });
+  });
+})();
+</script>
+{%- if section.blocks.size > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in section.blocks -%}
+      {
+        "@type": "Question",
+        "name": {{ block.settings.question | json }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | strip_newlines | json }} }
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Inner FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "aside_title",
+      "label": "Aside title (H2)",
+      "default": "All questions"
+    },
+    {
+      "type": "textarea",
+      "id": "help_text",
+      "label": "Help text",
+      "info": "HTML allowed — e.g. <strong>…</strong>.",
+      "default": "<strong>Still need help?</strong> Our team is a call or a WhatsApp away, 24/7."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Frequently asked question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Answer text.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open on load",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner FAQ",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "Is Shipping Free?",
+            "answer": "<p>Yes. We ship all products for free.</p>",
+            "open": true
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What if there is some issue/damage in transit?",
+            "answer": "<p>All the transit related damages are totally our responsibility.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What are the payment options available?",
+            "answer": "<p>Yes, we offer Cash on Delivery (COD) on selected products.</p><p>COD is available only for our Ready-to-Ship Products that are currently in stock. These products can be dispatched immediately after your order is placed.</p><p>However, Made-to-Order or Custom Products are specially manufactured after an order is received. Therefore, COD is not available for these items, and prepaid payment is required to confirm the order.</p><p>If you're unsure whether a product is eligible for COD, please contact our support team before placing your order.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "How do I track my order?",
+            "answer": "<p>The ideal way to track your order is to sign-up at furnisquare.com and then visit the order tracking page. Or, as a guest, you can visit the Order Status page and your Email address or phone number linked with the order. Here, you can check the details pertaining to your order, such as Order confirmation, Manufacturing progress, Quality check and dispatch details. We always try our best to deliver the product within the specified or communicated time limit. We also proactively get in touch with the customer, either through electronic means or through calls, to notify them about the status of their product and where it is in transit. If, in a rare case, you haven’t received communication of any form from us after 10 days of placing an order, feel free to give us a call at our customer care number or drop an email at <a href=\"mailto:info@furnisquare.com\">info@furnisquare.com</a>.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What is the estimated time for a delivery?",
+            "answer": "<p>Delivery times depend on the type of product you order:</p><ul><li>Ready-to-Ship Products: These are our regularly stocked products and are typically delivered within 7–10 business days.</li><li>Made-to-Order Products: Some of our products are custom-made only after an order is placed. Since these items are crafted specifically for you, delivery may take 25–30 days.</li></ul><p>If you have any questions about the delivery timeline for a specific product, please feel free to contact our support team.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Are there any delivery or installation charges, or any hidden fees?",
+            "answer": "<p>Absolutely not. Delivery of any product is free of charge for all orders in INDIA. We deliver across India, except for a few non-serviceable PIN codes. Before placing an order, you can enter your city’s or town’s PIN code in the box provided to check whether we deliver to your area or not. In certain exceptions, however, when we do agree to deliver the Products to the non-serviceable PIN codes, we may deliver the product to You, provided that the cost of transportation/delivery and installation is borne by you in advance. Also, the product will not be covered under any warranty.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Will the product be exactly as shown on the Website?",
+            "answer": "<p>furnisquare tries its best to deliver Products and Services exactly the way they are described on the Website. However, the nature and tendency of natural material-based products is that each piece of furniture is unique in its own way. furnisquare hereby disclaims any guarantees of exactness of the finish or appearance of the final Products or Services ordered by the User over and above generally acceptable standards on the same. The quality of the Products, Services, information, or other material purchased or obtained by you through the Website may not meet your expectations.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What should I check when the product is delivered to me?",
+            "answer": "<ul><li>Please check all the external surfaces of your product for any forms of breakages, cracks, chip-offs, unfinished patches or insect infestations.</li><li>In case there is some dust deposit, or the product lacks shine, our delivery team will be able to fix this on-the-spot by applying a coat of wood polish or by rubbing the surface in question with a cloth. Please know that this is an accepted industry-standard way of cleaning the surface or polishing it.</li><li>If there is a scratch or a crack on the product, raise this issue with the delivery personnel as well as our customer support team. After that we shall re-manufacture the product/part of the product.</li><li>For all products that inform any form of assembly, please ensure that the delivery team assembles the product, so that you have the peace of mind that everything fits well and is accounted for.</li><li>For all products that require wall mounting/installation, kindly decide, prior to the delivery of the product, on the exact location in your house where you would want the product to be placed. Instruct the delivery team of the same. Please make sure that you have all the necessary approvals for drilling, etc., that may be required for mounting the products on your walls.</li><li>For all products that are kept on the floor, such as tables and chairs, ensure that the product stands stable and straight. If there happens to be an uneven leg (having less than 5mm of difference), then please manually install the bushes sent within the box. If the difference of the uneven leg is more than 5mm, we will take the item back and provide a replacement or a repair, based on the extent of the change required.</li><li>For all forms of seating products, such as sofas, kindly sit on the product to ensure that the whole structure is stable with your weight on it. Also check the fabrics for any deformities or defects.</li><li>We make sure that the insides of storage products, such as drawers, are well-finished so as to not have any splinters or loose pieces that might hurt your arms. However, the extent of polish in these internal areas may not match with the extent of polish on the external areas.</li><li>Wood, especially hardwoods, have natural physical aspects, such as differing grain patterns and minimal stain differences. No knots will be present in your product, as these result in structural weakness, and are rejected at the quality control stage. Differing grain patterns and stain differences are generally acceptable on hardwood products.</li><li>During the summer months, hardwood products may expand slightly, which might result in some drawers to get stuck. This is completely normal, and you need not worry about it. Minimize the exposure of the product to heat, and when Summer passes, it will return back to the previous form.</li></ul><p>Once the product has been delivered to you, and after your inspections, our delivery team has left your premises, Furnisquare won’t be liable to any damage that occurs due to mishandling or rough usage. Any self-mishandled or damage issues reported after successful delivery of the product, will not be considered as company’s responsibility. On such circumstances the customer is 100% accountable for these self-damages caused to the product and shall not receive any replacement or refund from the company. As well any damage on inspection if found due to rigid use or mis-handling will overpass the criteria of refund/replacement or compensations.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "I have received my order, how about assembly?",
+            "answer": "<p>Some of the furnisquare furniture can be assembled manually by going through the assembling instructions which will be provided by furnisquare and does not require any professional Carpenter to assemble those products. But some of the heavy products may require professional carpenter to assemble the furniture which can be managed by the knowledge of the customer.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What if I receive a damaged product or there is a manufacturing defect?",
+            "answer": "<p>We practice highly specialized and strict quality control measures to ensure that the product is up to our standards even at the time of delivery. In case you do happen to receive a product that has been damaged during transportation, or there is some manufacturing defect, such as, balancing, levelling, finish, paint, fabric, etc., please raise this issue to the delivery personnel immediately and also contact customer support. In case you notice an issue later, within 24 hours of delivery, please write to us at <a href=\"mailto:info@furnisquare.com\">info@furnisquare.com</a>, providing photographic evidence of the said issue. Our team will assess the damage and get back to you within 2 business days. Depending on the degree of the damage in question, we will either repair the product or provide you with a replacement. For issues concerning manufacturing defects, the defect will be assessed and it will be fixed to the form that you had ordered.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Can I cancel an order?",
+            "answer": "<p>In those rare cases, when you do not like the item delivered to you, or are unable to make space for it, you may request for the cancellation of that order in the following cases and manner:</p><p>Cancellation within 24 Hours: You can cancel any order within 24 hours from the time of placing the order. During this duration, your order is confirmed and is processed to be passed for manufacturing. After 24 hours, the product enters the manufacturing phase. Since every product is made to order (MTO), its manufacturing will take into account the dimensional changes or any form of customization requested by You. Please note: Customization in the dimensions of the product should be provided by you through an email on <a href=\"mailto:info@furnisquare.com\">info@furnisquare.com</a>. Hence, no form of cancellation will be entertained once manufacturing has begun, and the Product will be labelled as Sold. Once your cancellation is initiated, paid amount will be refunded within 7-10 working days. If there are certain design requirements that furnisquare cannot fulfill, cancellation of the order will be initiated by us after informing the customer.</p><p>Cancellation after delivery is NOT Allowed.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Is there any form of cancellation fee?",
+            "answer": "<p>Provided that you cancelled your order during the specified 24-hour time limit after placing the order, there will be no cancellation fee deducted, and the complete amount, that you paid for the Product, will be returned to you.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "When will I get a refund, if eligible?",
+            "answer": "<p>Refund initiation shall be subject to the pick up of all items of an order from the customer’s premises. All refunds will be initiated within 4-5 working days after the product is collected. Refund will be paid back to customer at the payment details provided by the customer.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Can I initiate a return on a custom product?",
+            "answer": "<p>All custom made orders are manufactured as per specific requirements to each individual customer thus the company will NOT ACCEPT the return of such products unless there are incorrect handlings from the company and are inspected by customer upon delivery. In such case where product was received damaged, customer does need to make a complaint on spot of delivery via emailing at: <a href=\"mailto:info@furnisquare.com\">info@furnisquare.com</a> and attach the photos of products as well as proof of purchase.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What sort of warranty does furniture carry?",
+            "answer": "<p>Furnisquare furniture carries 36 month warranty against manufacturing defects.</p>",
+            "open": false
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Is payment safe?",
+            "answer": "<p>Yes, absolutely. We use industry leading security measures PCI/DSS for all our payments and thus guarantee the security of your payment method.Please note: All the information of your payment method can be stored by the payment gateway provider for the Payment Security Purpose only. Furnisquare never store any payment credentials of the customer's payment method.</p>",
+            "open": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
