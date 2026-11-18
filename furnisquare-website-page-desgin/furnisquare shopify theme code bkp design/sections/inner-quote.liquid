@@ -2,7 +2,7 @@
   Inner page pull quote ("qband").
   Visual reference: mockup .qband — centred display type, saffron emphasis.
 {%- endcomment -%}
-<section class="sec qband" aria-label="{{ section.settings.aria_label | escape }}">
+<section class="sec{% if section.settings.tinted %} sec--tint{% endif %} qband" aria-label="{{ section.settings.aria_label | escape }}">
   <div class="wrap">
     <blockquote>{{ section.settings.quote | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</blockquote>
     {%- if section.settings.caption != blank -%}
@@ -15,6 +15,12 @@
 {
   "name": "Inner Quote",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "tinted",
+      "label": "Cream band background",
+      "default": false
+    },
     {
       "type": "text",
       "id": "aria_label",

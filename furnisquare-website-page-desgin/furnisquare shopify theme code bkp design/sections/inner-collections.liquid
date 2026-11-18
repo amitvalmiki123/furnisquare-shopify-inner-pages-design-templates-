@@ -5,7 +5,7 @@
 {%- liquid
   assign title_id = 'collections-title-' | append: section.id
 -%}
-<section class="sec sec--tint" aria-labelledby="{{ title_id }}">
+<section class="sec{% if section.settings.tinted %} sec--tint{% endif %}" aria-labelledby="{{ title_id }}">
   <div class="wrap">
     <header class="shead">
       {%- if section.settings.eyebrow != blank -%}
@@ -15,7 +15,7 @@
       {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
     </header>
     {%- if section.blocks.size > 0 -%}
-      <ul class="bulkcols">
+      <ul class="bulkcols" style="--cols: {{ section.settings.columns }}">
         {%- for block in section.blocks -%}
           {%- liquid
             assign tile_collection = block.settings.collection
@@ -44,6 +44,25 @@
 {
   "name": "Inner Collections",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "tinted",
+      "label": "Cream band background",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" },
+        { "value": "6", "label": "6" }
+      ],
+      "default": "5"
+    },
     {
       "type": "text",
       "id": "eyebrow",

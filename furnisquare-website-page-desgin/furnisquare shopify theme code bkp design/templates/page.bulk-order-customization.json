@@ -235,7 +235,9 @@
       ],
       "settings": {
         "eyebrow": "Collections",
-        "heading": "Popular for <em>bulk orders</em>"
+        "heading": "Popular for <em>bulk orders</em>",
+        "columns": "5",
+        "tinted": true
       }
     }
   },

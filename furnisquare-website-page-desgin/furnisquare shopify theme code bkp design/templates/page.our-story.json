@@ -1,0 +1,120 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "split_image_right",
+        "eyebrow": "Our story",
+        "heading": "Every home has a <em>story</em>",
+        "lede": "Once upon a time, homes were rich with character, intricate details, and told stories about generations of family history. Today’s modern world however, looks quite different, doesn’t it? Now you walk into your average home and find just that — average looking, mass produced furniture that has little to say about its home or its history.",
+        "button_1_label": "",
+        "button_2_label": "",
+        "image": "shopify://shop_images/banner-diwan.webp",
+        "image_alt": "Carved wooden diwan with bolster cushions beside a lamp and side table"
+      }
+    },
+    "why": {
+      "type": "inner-split",
+      "blocks": {
+        "b01": {
+          "type": "lead",
+          "settings": {
+            "text": "There’s just something about the past that has always enchanted us."
+          }
+        },
+        "b02": {
+          "type": "para",
+          "settings": {
+            "text": "<p>We wanted to create a space where people could find quality home furnishings filled with character that both tell a story and invoke the charm and romance of times past. You might find a little fusion of old and new too!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02"
+      ],
+      "settings": {
+        "tinted": false,
+        "flip": true,
+        "eyebrow": "Why Furnisquare",
+        "heading": "That’s why we created <em>Furnisquare</em>",
+        "image": "shopify://shop_images/banner-bedroom.webp",
+        "image_alt": "Solid sheesham king size bed with a matching bedside table in a warm-lit bedroom"
+      }
+    },
+    "belief": {
+      "type": "inner-quote",
+      "settings": {
+        "tinted": true,
+        "aria_label": "Our belief",
+        "quote": "We believe that every home has a <em>story.</em>",
+        "caption": "Whether you’re looking to begin your story, add to it, or start fresh, Furnisquare is here to help you craft a beautiful one that will speak for generations to come."
+      }
+    },
+    "rooms": {
+      "type": "inner-collections",
+      "blocks": {
+        "b01": {
+          "type": "tile",
+          "settings": {
+            "collection": "temples",
+            "image": "shopify://shop_images/temples.webp",
+            "image_alt": "Solid wood handcrafted temple with carved details",
+            "name": "Temples"
+          }
+        },
+        "b02": {
+          "type": "tile",
+          "settings": {
+            "collection": "swing-jhula",
+            "image": "shopify://shop_images/swing-jhula.webp",
+            "image_alt": "Wooden swing jhula in a living room",
+            "name": "Swing Jhula"
+          }
+        },
+        "b03": {
+          "type": "tile",
+          "settings": {
+            "collection": "wooden-chowki",
+            "image": "shopify://shop_images/wooden-chowki.webp",
+            "image_alt": "Carved wooden chowki",
+            "name": "Wooden Chowki"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03"
+      ],
+      "settings": {
+        "tinted": false,
+        "columns": "3",
+        "eyebrow": "Old and new",
+        "heading": "Pieces with <em>character</em>"
+      }
+    },
+    "cta": {
+      "type": "inner-cta",
+      "settings": {
+        "aria_label": "Next steps",
+        "heading": "Begin your <em>story</em>",
+        "text": "Find furniture made to be handed down — free delivery across India.",
+        "button_1_label": "Shop now",
+        "button_1_link": "/collections/all",
+        "button_1_icon": "arrow",
+        "button_2_label": "About us",
+        "button_2_link": "/pages/about-us",
+        "button_2_icon": "none",
+        "button_2_external": false
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "why",
+    "belief",
+    "rooms",
+    "cta"
+  ]
+}
