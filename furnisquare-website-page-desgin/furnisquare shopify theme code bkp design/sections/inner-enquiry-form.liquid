@@ -16,7 +16,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
       {%- if section.blocks.size > 0 -%}
         <ul class="why">
           {%- for block in section.blocks -%}
@@ -125,11 +125,11 @@
       "default": "Why choose Furnisquare?"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>elegance</em>.",
-      "default": "Premium furniture crafted with quality, comfort & <em>elegance</em>"
+      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
+      "default": "<p>Premium furniture crafted with quality, comfort & <em>elegance</em></p>"
     },
     {
       "type": "header",
@@ -270,10 +270,38 @@
     {
       "name": "Inner Enquiry Form",
       "blocks": [
-        { "type": "why_item", "settings": { "icon": "shield", "title": "Premium Quality", "text": "Crafted with durable materials and premium finishing for long-lasting elegance." } },
-        { "type": "why_item", "settings": { "icon": "truck", "title": "Fast Delivery", "text": "Quick and secure delivery service to ensure your furniture reaches safely." } },
-        { "type": "why_item", "settings": { "icon": "star", "title": "Modern Designs", "text": "Stylish and modern furniture designs that perfectly match your lifestyle." } },
-        { "type": "why_item", "settings": { "icon": "tag", "title": "Affordable Luxury", "text": "Luxury furniture experience at budget-friendly pricing for every home." } }
+        {
+          "type": "why_item",
+          "settings": {
+            "icon": "shield",
+            "title": "Premium Quality",
+            "text": "Crafted with durable materials and premium finishing for long-lasting elegance."
+          }
+        },
+        {
+          "type": "why_item",
+          "settings": {
+            "icon": "truck",
+            "title": "Fast Delivery",
+            "text": "Quick and secure delivery service to ensure your furniture reaches safely."
+          }
+        },
+        {
+          "type": "why_item",
+          "settings": {
+            "icon": "star",
+            "title": "Modern Designs",
+            "text": "Stylish and modern furniture designs that perfectly match your lifestyle."
+          }
+        },
+        {
+          "type": "why_item",
+          "settings": {
+            "icon": "tag",
+            "title": "Affordable Luxury",
+            "text": "Luxury furniture experience at budget-friendly pricing for every home."
+          }
+        }
       ]
     }
   ]

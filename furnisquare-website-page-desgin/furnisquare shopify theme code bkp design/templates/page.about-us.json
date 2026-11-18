@@ -5,7 +5,7 @@
       "settings": {
         "layout": "split_image_right",
         "eyebrow": "About us",
-        "heading": "Making a million homes <em>beautiful</em> since 1989",
+        "heading": "<p>Making a million homes <em>beautiful</em> since 1989</p>",
         "lede": "We started our journey as Jangid Handicrafts in 1989 with a goal of quality products and a vision — to make a million homes beautiful. In 2020 we started our online store with the brand name Furnisquare.",
         "button_1_label": "Shop the collection",
         "button_1_link": "/collections/all",
@@ -52,7 +52,7 @@
       ],
       "settings": {
         "eyebrow": "Our journey",
-        "heading": "From 35 designs to <em>Furnisquare</em>"
+        "heading": "<p>From 35 designs to <em>Furnisquare</em></p>"
       }
     },
     "story": {
@@ -72,7 +72,7 @@
         "tinted": true,
         "flip": false,
         "eyebrow": "What we learned",
-        "heading": "People want their homes to be <em>unique</em>",
+        "heading": "<p>People want their homes to be <em>unique</em></p>",
         "image": "shopify://shop_images/banner-dining.webp",
         "image_alt": "Six seater carved wooden dining set with cushioned chairs in a bright dining room"
       }
@@ -81,7 +81,7 @@
       "type": "inner-quote",
       "settings": {
         "aria_label": "Our belief",
-        "quote": "Take a few square feet of nothing, and transform it into something <em>beautiful.</em>",
+        "quote": "<p>Take a few square feet of nothing, and transform it into something <em>beautiful.</em></p>",
         "caption": "We want you to think of the setting up of a space as an energizing, creative pursuit — to breathe life into empty rooms with your ideas."
       }
     },
@@ -139,7 +139,7 @@
       "settings": {
         "tinted": true,
         "eyebrow": "Our values",
-        "heading": "What we <em>stand for</em>"
+        "heading": "<p>What we <em>stand for</em></p>"
       }
     },
     "trust": {
@@ -206,7 +206,7 @@
       "type": "inner-cta",
       "settings": {
         "aria_label": "Next steps",
-        "heading": "Start creating your <em>home</em>",
+        "heading": "<p>Start creating your <em>home</em></p>",
         "text": "Solid wood furniture for every room, delivered free across India.",
         "button_1_label": "Shop now",
         "button_1_link": "/collections/all",

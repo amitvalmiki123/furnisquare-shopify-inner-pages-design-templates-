@@ -13,7 +13,7 @@
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 id="{{ title_id }}">{{ section.settings.heading }}</h2>
+        <h2 id="{{ title_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
       {%- endif -%}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -63,11 +63,11 @@
       "default": "Customization"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>space</em>.",
-      "default": "Made for your <em>space</em>"
+      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
+      "default": "<p>Made for your <em>space</em></p>"
     },
     {
       "type": "image_picker",
@@ -130,9 +130,15 @@
     {
       "name": "Inner Split",
       "blocks": [
-        { "type": "para" },
-        { "type": "ticks" },
-        { "type": "link" }
+        {
+          "type": "para"
+        },
+        {
+          "type": "ticks"
+        },
+        {
+          "type": "link"
+        }
       ]
     }
   ]

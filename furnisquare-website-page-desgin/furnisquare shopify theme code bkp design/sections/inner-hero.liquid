@@ -19,7 +19,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h1 class="phead__title" id="{{ heading_id }}">{{ section.settings.heading }}</h1>
+      <h1 class="phead__title" id="{{ heading_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h1>
       {%- if section.settings.lede != blank -%}
         <p class="phead__lede">{{ section.settings.lede }}</p>
       {%- endif -%}
@@ -52,8 +52,14 @@
       "id": "layout",
       "label": "Layout",
       "options": [
-        { "value": "split_image_right", "label": "Text + image (image right)" },
-        { "value": "plain", "label": "Plain (no image)" }
+        {
+          "value": "split_image_right",
+          "label": "Text + image (image right)"
+        },
+        {
+          "value": "plain",
+          "label": "Plain (no image)"
+        }
       ],
       "default": "split_image_right"
     },
@@ -64,11 +70,11 @@
       "default": "Bulk orders & customization"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>bulk orders</em>.",
-      "default": "Enquiry for <em>bulk orders</em>"
+      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
+      "default": "<p>Enquiry for <em>bulk orders</em></p>"
     },
     {
       "type": "textarea",
@@ -99,9 +105,18 @@
       "id": "button_2_icon",
       "label": "Secondary button icon",
       "options": [
-        { "value": "wa", "label": "WhatsApp" },
-        { "value": "arrow", "label": "Arrow" },
-        { "value": "none", "label": "No icon" }
+        {
+          "value": "wa",
+          "label": "WhatsApp"
+        },
+        {
+          "value": "arrow",
+          "label": "Arrow"
+        },
+        {
+          "value": "none",
+          "label": "No icon"
+        }
       ],
       "default": "wa"
     },

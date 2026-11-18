@@ -11,7 +11,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
     </header>
     {%- if section.blocks.size > 0 -%}
       <ol class="miles">
@@ -38,11 +38,11 @@
       "default": "Our journey"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>Furnisquare</em>.",
-      "default": "From 35 designs to <em>Furnisquare</em>"
+      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
+      "default": "<p>From 35 designs to <em>Furnisquare</em></p>"
     }
   ],
   "blocks": [
@@ -75,9 +75,30 @@
     {
       "name": "Inner Milestones",
       "blocks": [
-        { "type": "mile", "settings": { "year": "1989", "title": "Jangid Handicrafts begins", "text": "We started with a goal of quality products. Back then, our catalogue featured just 35 designs." } },
-        { "type": "mile", "settings": { "year": "2020", "title": "Furnisquare goes online", "text": "We started our online store with the brand name Furnisquare." } },
-        { "type": "mile", "settings": { "year": "Today", "title": "Spaces that mirror who you are", "text": "We’re here not just to sell well-designed products — we’re here to help you create spaces that mirror who you are." } }
+        {
+          "type": "mile",
+          "settings": {
+            "year": "1989",
+            "title": "Jangid Handicrafts begins",
+            "text": "We started with a goal of quality products. Back then, our catalogue featured just 35 designs."
+          }
+        },
+        {
+          "type": "mile",
+          "settings": {
+            "year": "2020",
+            "title": "Furnisquare goes online",
+            "text": "We started our online store with the brand name Furnisquare."
+          }
+        },
+        {
+          "type": "mile",
+          "settings": {
+            "year": "Today",
+            "title": "Spaces that mirror who you are",
+            "text": "We’re here not just to sell well-designed products — we’re here to help you create spaces that mirror who you are."
+          }
+        }
       ]
     }
   ]

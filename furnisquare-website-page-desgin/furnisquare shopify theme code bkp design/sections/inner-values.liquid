@@ -17,7 +17,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
     </header>
     {%- if total > 0 -%}
       <ul class="cards">
@@ -61,11 +61,11 @@
       "default": "Our values"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>stand for</em>.",
-      "default": "What we <em>stand for</em>"
+      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
+      "default": "<p>What we <em>stand for</em></p>"
     }
   ],
   "blocks": [
@@ -78,23 +78,74 @@
           "id": "icon",
           "label": "Icon",
           "options": [
-            { "value": "star", "label": "Star" },
-            { "value": "shield", "label": "Shield" },
-            { "value": "arrow", "label": "Arrow" },
-            { "value": "check", "label": "Check" },
-            { "value": "leaf", "label": "Leaf" },
-            { "value": "heart", "label": "Heart" },
-            { "value": "tag", "label": "Tag" },
-            { "value": "pencil", "label": "Pencil" },
-            { "value": "phone", "label": "Phone" },
-            { "value": "help", "label": "Help" },
-            { "value": "truck", "label": "Truck" },
-            { "value": "card", "label": "Card" },
-            { "value": "wa", "label": "WhatsApp" },
-            { "value": "track", "label": "Map pin" },
-            { "value": "user", "label": "User" },
-            { "value": "bag", "label": "Bag" },
-            { "value": "none", "label": "No icon" }
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "arrow",
+              "label": "Arrow"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "pencil",
+              "label": "Pencil"
+            },
+            {
+              "value": "phone",
+              "label": "Phone"
+            },
+            {
+              "value": "help",
+              "label": "Help"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "wa",
+              "label": "WhatsApp"
+            },
+            {
+              "value": "track",
+              "label": "Map pin"
+            },
+            {
+              "value": "user",
+              "label": "User"
+            },
+            {
+              "value": "bag",
+              "label": "Bag"
+            },
+            {
+              "value": "none",
+              "label": "No icon"
+            }
           ],
           "default": "star"
         },
@@ -117,11 +168,46 @@
     {
       "name": "Inner Values",
       "blocks": [
-        { "type": "value", "settings": { "icon": "star", "title": "Customer Obsession", "text": "Customers are at the center of whatever we do at Furnisquare. We ensure that we get the right customer solution in all our initiatives. We establish a long-term relationship with every customer and aim to delight them in every interaction. We aim to set the global benchmark for customer happiness scores." } },
-        { "type": "value", "settings": { "icon": "shield", "title": "Honesty & Transparency", "text": "We are honest, ethical, and trustworthy in the way we live life. We hold the highest standards of corporate governance in all our activities. We communicate transparently with all our stakeholders. When we make mistakes, we are honest and upfront about owning up to them." } },
-        { "type": "value", "settings": { "icon": "arrow", "title": "Action Orientation", "text": "We have a bias for action. We empower our teams to take fast and well informed decisions. We continuously iterate and learn from our mistakes. Scale and robustness are built in as we move along." } },
-        { "type": "value", "settings": { "icon": "check", "title": "Stepping Up", "text": "We take charge, go the extra mile, and think differently to find innovative solutions. When in doubt, we push ourselves harder to solve newer challenges and get better solutions." } },
-        { "type": "value", "settings": { "icon": "leaf", "title": "Efficiency", "text": "We are here to build a long-term sustainable business. We aim to do more with less and focus on zero waste. We believe that a self-sustaining business will be responsible and solve customer problems in the right manner." } }
+        {
+          "type": "value",
+          "settings": {
+            "icon": "star",
+            "title": "Customer Obsession",
+            "text": "Customers are at the center of whatever we do at Furnisquare. We ensure that we get the right customer solution in all our initiatives. We establish a long-term relationship with every customer and aim to delight them in every interaction. We aim to set the global benchmark for customer happiness scores."
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "shield",
+            "title": "Honesty & Transparency",
+            "text": "We are honest, ethical, and trustworthy in the way we live life. We hold the highest standards of corporate governance in all our activities. We communicate transparently with all our stakeholders. When we make mistakes, we are honest and upfront about owning up to them."
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "arrow",
+            "title": "Action Orientation",
+            "text": "We have a bias for action. We empower our teams to take fast and well informed decisions. We continuously iterate and learn from our mistakes. Scale and robustness are built in as we move along."
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "check",
+            "title": "Stepping Up",
+            "text": "We take charge, go the extra mile, and think differently to find innovative solutions. When in doubt, we push ourselves harder to solve newer challenges and get better solutions."
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "leaf",
+            "title": "Efficiency",
+            "text": "We are here to build a long-term sustainable business. We aim to do more with less and focus on zero waste. We believe that a self-sustaining business will be responsible and solve customer problems in the right manner."
+          }
+        }
       ]
     }
   ]

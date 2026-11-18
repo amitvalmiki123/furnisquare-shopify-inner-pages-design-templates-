@@ -5,7 +5,7 @@
       "settings": {
         "layout": "split_image_right",
         "eyebrow": "Bulk orders & customization",
-        "heading": "Enquiry for <em>bulk orders</em>",
+        "heading": "<p>Enquiry for <em>bulk orders</em></p>",
         "lede": "Our dedicated team will contact you within 24 hours with a customized catalog and quotation.",
         "button_1_label": "Send an enquiry",
         "button_1_link": "#bulk-form",
@@ -73,7 +73,7 @@
       ],
       "settings": {
         "eyebrow": "Who we work with",
-        "heading": "Bulk furniture for <em>every kind of buyer</em>"
+        "heading": "<p>Bulk furniture for <em>every kind of buyer</em></p>"
       }
     },
     "enquiry": {
@@ -121,7 +121,7 @@
       "settings": {
         "anchor": "bulk-form",
         "eyebrow": "Why choose Furnisquare?",
-        "heading": "Premium furniture crafted with quality, comfort & <em>elegance</em>",
+        "heading": "<p>Premium furniture crafted with quality, comfort & <em>elegance</em></p>",
         "form_heading": "Enquiry for bulk orders",
         "form_intro": "Our dedicated team will contact you within 24 hours with a customized catalog and quotation.",
         "request_tag": "Bulk order enquiry",
@@ -172,7 +172,7 @@
         "tinted": false,
         "flip": false,
         "eyebrow": "Customization",
-        "heading": "Made for your <em>space</em>",
+        "heading": "<p>Made for your <em>space</em></p>",
         "image": "shopify://shop_images/banner-bedroom.webp",
         "image_alt": "Solid sheesham king size bed with storage and a matching bedside table"
       }
@@ -235,7 +235,7 @@
       ],
       "settings": {
         "eyebrow": "Collections",
-        "heading": "Popular for <em>bulk orders</em>"
+        "heading": "<p>Popular for <em>bulk orders</em></p>"
       }
     }
   },
