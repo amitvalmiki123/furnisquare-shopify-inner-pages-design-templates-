@@ -1,0 +1,183 @@
+{%- comment -%}
+  Inner page contact form. Real Shopify contact form (posts to the store
+  inbox), reference design's two-column layout. Left: eyebrow + heading +
+  text + quick-help links (blocks). Right: the form card.
+  Visual reference: mockup .fwrap / .fcard on contact.html.
+{%- endcomment -%}
+{%- liquid
+  assign title_id = 'contact-form-' | append: section.id
+  assign uid = 'contact-' | append: section.id
+-%}
+<section class="sec sec--tint" aria-labelledby="{{ title_id }}">
+  <div class="wrap fwrap">
+    <div class="fside">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <h3 class="fside__h">{{ section.settings.quick_title }}</h3>
+        <ul class="quick">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.url | default: '#' }}">{% render 'icon', name: block.settings.icon %}{{ block.settings.label }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+    <div class="fcard">
+      {%- form 'contact', class: 'contact-form', id: uid -%}
+        {%- if form.posted_successfully? -%}
+          <div class="fdone" tabindex="-1">
+            {% render 'icon', name: 'check' %}
+            <h3>{{ section.settings.done_title }}</h3>
+            <p>{{ section.settings.done_text }}</p>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="fcard__errors" role="alert">
+              {%- if section.settings.error_heading != blank -%}<strong>{{ section.settings.error_heading }}</strong>{%- endif -%}
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+          <div class="fgrid">
+            <div class="ff">
+              <label for="{{ uid }}-name">Name</label>
+              <input id="{{ uid }}-name" type="text" name="contact[name]" autocomplete="name" value="{{ form.name }}">
+            </div>
+            <div class="ff">
+              <label for="{{ uid }}-email">Email <i aria-hidden="true">*</i></label>
+              <input id="{{ uid }}-email" type="email" name="contact[email]" autocomplete="email" required value="{{ form.email }}">
+            </div>
+            <div class="ff ff--phone full">
+              <label for="{{ uid }}-phone">Phone number</label>
+              <input id="{{ uid }}-phone" type="tel" name="contact[phone]" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" value="{{ form.phone }}">
+            </div>
+            <div class="ff full">
+              <label for="{{ uid }}-body">Comment</label>
+              <textarea id="{{ uid }}-body" name="contact[body]" rows="5">{{ form.body }}</textarea>
+            </div>
+          </div>
+          <div class="fsubmit">
+            <button class="btn btn--ink" type="submit">Send {% render 'icon', name: 'arrow' %}</button>
+            <small>{{ section.settings.submit_note }}</small>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Contact Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Write to us"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading (H2)",
+      "info": "Saffron = wrap text in <em>…</em>",
+      "default": "Send us a <em>message</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Leave your details and a short note, and our team will get back to you. For anything urgent, call or WhatsApp us on +91-9785322576."
+    },
+    {
+      "type": "text",
+      "id": "quick_title",
+      "label": "Quick help heading (H3)",
+      "default": "Quick help"
+    },
+    {
+      "type": "header",
+      "content": "Form card"
+    },
+    {
+      "type": "text",
+      "id": "submit_note",
+      "label": "Submit note",
+      "default": "We reply by email or phone."
+    },
+    {
+      "type": "text",
+      "id": "error_heading",
+      "label": "Error heading",
+      "info": "Shown above the field errors when the form is rejected.",
+      "default": "Please check the following:"
+    },
+    {
+      "type": "header",
+      "content": "Success state"
+    },
+    {
+      "type": "text",
+      "id": "done_title",
+      "label": "Done title",
+      "default": "Thanks for contacting us"
+    },
+    {
+      "type": "text",
+      "id": "done_text",
+      "label": "Done text",
+      "default": "We’ll get back to you as soon as possible. For anything urgent, call +91-9785322576."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quick",
+      "name": "Quick help link",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "track", "label": "Track" },
+            { "value": "close", "label": "Cancel" },
+            { "value": "boxes", "label": "Boxes" },
+            { "value": "help", "label": "Help" },
+            { "value": "arrow", "label": "Arrow" },
+            { "value": "phone", "label": "Phone" },
+            { "value": "wa", "label": "WhatsApp" }
+          ],
+          "default": "track"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Track your order"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "Link",
+          "default": "/apps/track-shipment"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Contact Form",
+      "blocks": [
+        { "type": "quick", "settings": { "icon": "track", "label": "Track your order", "url": "/apps/track-shipment" } },
+        { "type": "quick", "settings": { "icon": "close", "label": "Cancel an order", "url": "/pages/cancel-order" } },
+        { "type": "quick", "settings": { "icon": "boxes", "label": "Bulk orders & customisation", "url": "/pages/bulk-order-customization" } },
+        { "type": "quick", "settings": { "icon": "help", "label": "Read the FAQs", "url": "/pages/faq" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

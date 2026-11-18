@@ -23,6 +23,19 @@
       {%- if section.settings.lede != blank -%}
         <p class="phead__lede">{{ section.settings.lede }}</p>
       {%- endif -%}
+      {%- if section.settings.facts != blank -%}
+        <p class="phead__facts">
+          {%- assign fact_lines = section.settings.facts | newline_to_br | split: '<br />' -%}
+          {%- for line in fact_lines -%}
+            {%- assign parts = line | strip | split: '|' -%}
+            {%- assign fact_label = parts[0] | strip -%}
+            {%- assign fact_value = parts[1] | strip -%}
+            {%- if fact_label != blank -%}
+              <span>{{ fact_label | escape }}: <strong>{{ fact_value | escape }}</strong></span>
+            {%- endif -%}
+          {%- endfor -%}
+        </p>
+      {%- endif -%}
       {%- if section.settings.button_1_label != blank or section.settings.button_2_label != blank -%}
         <div class="phead__acts">
           {%- if section.settings.button_1_label != blank -%}
@@ -81,6 +94,12 @@
       "id": "lede",
       "label": "Lede",
       "default": "Our dedicated team will contact you within 24 hours with a customized catalog and quotation."
+    },
+    {
+      "type": "textarea",
+      "id": "facts",
+      "label": "Facts (optional)",
+      "info": "One per line — Label|Value"
     },
     {
       "type": "text",

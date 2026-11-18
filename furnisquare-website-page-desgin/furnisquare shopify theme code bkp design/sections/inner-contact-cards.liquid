@@ -1,0 +1,105 @@
+{%- comment -%}
+  Inner page contact cards (4-up). Visual reference: mockup .ccards / .ccard.
+  One block per card. If a link is set the card renders as <a>; otherwise a <div>
+  (e.g. the address card). Icons come from the theme's icon snippet.
+{%- endcomment -%}
+<section class="sec" aria-label="{{ section.settings.aria_label | escape }}">
+  <div class="wrap">
+    {%- if section.blocks.size > 0 -%}
+      <div class="ccards">
+        {%- for block in section.blocks -%}
+          {%- capture inner -%}
+            {% render 'icon', name: block.settings.icon %}
+            <span>{{ block.settings.label }}</span>
+            <strong>{{ block.settings.value }}</strong>
+            {%- if block.settings.sub != blank -%}<small>{{ block.settings.sub }}</small>{%- endif -%}
+          {%- endcapture -%}
+          {%- if block.settings.link != blank -%}
+            <a class="ccard" href="{{ block.settings.link }}"{% if block.settings.new_tab %} target="_blank" rel="noopener"{% endif %} {{ block.shopify_attributes }}>{{ inner }}</a>
+          {%- else -%}
+            <div class="ccard" {{ block.shopify_attributes }}>{{ inner }}</div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Contact Cards",
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Section label (accessibility)",
+      "default": "Ways to reach us"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Contact card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "phone", "label": "Phone" },
+            { "value": "wa", "label": "WhatsApp" },
+            { "value": "mail", "label": "Mail" },
+            { "value": "pin", "label": "Map pin" },
+            { "value": "help", "label": "Help" },
+            { "value": "user", "label": "User" },
+            { "value": "track", "label": "Track" },
+            { "value": "arrow", "label": "Arrow" }
+          ],
+          "default": "phone"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Call us"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "+91-9785322576"
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Sub text",
+          "default": "Buy on phone, or ask about any order"
+        },
+        {
+          "type": "text",
+          "id": "link",
+          "label": "Link (optional)",
+          "info": "e.g. tel:+91-9785322576, https://wa.me/919785322576 or mailto:info@furnisquare.com — blank = non-link card."
+        },
+        {
+          "type": "checkbox",
+          "id": "new_tab",
+          "label": "Open in a new tab",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Contact Cards",
+      "blocks": [
+        { "type": "card", "settings": { "icon": "phone", "label": "Call us · 24/7", "value": "+91-9785322576", "sub": "Buy on phone, or ask about any order", "link": "tel:+919785322576" } },
+        { "type": "card", "settings": { "icon": "wa", "label": "WhatsApp", "value": "Chat with our team", "sub": "Send photos, sizes or questions", "link": "https://wa.me/919785322576", "new_tab": true } },
+        { "type": "card", "settings": { "icon": "mail", "label": "Email", "value": "info@furnisquare.com", "sub": "For orders, warranty and feedback", "link": "mailto:info@furnisquare.com" } },
+        { "type": "card", "settings": { "icon": "pin", "label": "Address", "value": "Jangid Handicraft", "sub": "Near Sankat Mochan Balaji Temple, Jaipur Road, Ratangarh, Churu (Rajasthan) 331022" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
