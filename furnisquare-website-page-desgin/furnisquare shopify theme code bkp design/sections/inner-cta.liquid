@@ -6,7 +6,7 @@
   <div class="wrap">
     <div class="ctaband">
       <div>
-        <h2>{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
+        <h2>{{ section.settings.heading }}</h2>
         {%- if section.settings.text != blank -%}
           <p>{{ section.settings.text }}</p>
         {%- endif -%}
@@ -36,11 +36,11 @@
       "default": "Next steps"
     },
     {
-      "type": "richtext",
+      "type": "html",
       "id": "heading",
       "label": "Heading",
-      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
-      "default": "<p>Start creating your <em>home</em></p>"
+      "info": "Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>home</em>.",
+      "default": "Start creating your <em>home</em>"
     },
     {
       "type": "text",

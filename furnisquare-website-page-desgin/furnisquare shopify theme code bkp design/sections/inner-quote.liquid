@@ -4,7 +4,7 @@
 {%- endcomment -%}
 <section class="sec qband" aria-label="{{ section.settings.aria_label | escape }}">
   <div class="wrap">
-    <blockquote>{{ section.settings.quote | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</blockquote>
+    <blockquote>{{ section.settings.quote }}</blockquote>
     {%- if section.settings.caption != blank -%}
       <p>{{ section.settings.caption }}</p>
     {%- endif -%}
@@ -22,11 +22,11 @@
       "default": "Our belief"
     },
     {
-      "type": "richtext",
+      "type": "html",
       "id": "quote",
       "label": "Quote",
-      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
-      "default": "<p>Take a few square feet of nothing, and transform it into something <em>beautiful.</em></p>"
+      "info": "Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>home</em>.",
+      "default": "Take a few square feet of nothing, and transform it into something <em>beautiful.</em>"
     },
     {
       "type": "textarea",

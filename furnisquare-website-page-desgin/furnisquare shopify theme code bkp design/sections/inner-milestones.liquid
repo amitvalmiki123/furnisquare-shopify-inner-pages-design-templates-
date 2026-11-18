@@ -11,7 +11,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
     </header>
     {%- if section.blocks.size > 0 -%}
       <ol class="miles">
@@ -38,11 +38,11 @@
       "default": "Our journey"
     },
     {
-      "type": "richtext",
+      "type": "html",
       "id": "heading",
       "label": "Heading",
-      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
-      "default": "<p>From 35 designs to <em>Furnisquare</em></p>"
+      "info": "Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>home</em>.",
+      "default": "From 35 designs to <em>Furnisquare</em>"
     }
   ],
   "blocks": [

@@ -19,7 +19,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h1 class="phead__title" id="{{ heading_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h1>
+      <h1 class="phead__title" id="{{ heading_id }}">{{ section.settings.heading }}</h1>
       {%- if section.settings.lede != blank -%}
         <p class="phead__lede">{{ section.settings.lede }}</p>
       {%- endif -%}
@@ -70,11 +70,11 @@
       "default": "Bulk orders & customization"
     },
     {
-      "type": "richtext",
+      "type": "html",
       "id": "heading",
       "label": "Heading",
-      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
-      "default": "<p>Enquiry for <em>bulk orders</em></p>"
+      "info": "Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>home</em>.",
+      "default": "Enquiry for <em>bulk orders</em>"
     },
     {
       "type": "textarea",

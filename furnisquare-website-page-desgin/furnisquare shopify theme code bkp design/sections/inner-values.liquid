@@ -17,7 +17,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
     </header>
     {%- if total > 0 -%}
       <ul class="cards">
@@ -61,11 +61,11 @@
       "default": "Our values"
     },
     {
-      "type": "richtext",
+      "type": "html",
       "id": "heading",
       "label": "Heading",
-      "info": "Select the saffron word(s) and click the Italic (I) button — italic text renders in saffron.",
-      "default": "<p>What we <em>stand for</em></p>"
+      "info": "Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>home</em>.",
+      "default": "What we <em>stand for</em>"
     }
   ],
   "blocks": [
