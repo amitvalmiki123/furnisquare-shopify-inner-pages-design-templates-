@@ -1,0 +1,13 @@
+{%- comment -%}
+  Inner page breadcrumb (Home / current page).
+  Fully dynamic — rendered at the top of inner-hero, same approach as the
+  collection template's breadcrumb (Home › Collections › {{ collection.title }}).
+  No settings: Home link and the current label always come from the page object.
+  Reuses the theme's existing .crumbs styles from custom.css.
+{%- endcomment -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol class="wrap">
+    <li><a href="{{ routes.root_url }}">Home</a></li>
+    <li aria-current="page">{{ page.title }}</li>
+  </ol>
+</nav>

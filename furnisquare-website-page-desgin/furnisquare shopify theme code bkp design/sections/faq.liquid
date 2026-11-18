@@ -1,0 +1,249 @@
+{%- liquid
+  assign tel = settings.phone | replace: ' ', '' | replace: '-', ''
+  assign title_lower = collection.title | downcase
+  assign handle_lower = collection.handle | downcase
+  assign is_tv = false
+  if title_lower contains 'tv' or handle_lower contains 'tv'
+    assign is_tv = true
+  endif
+
+  assign has_faqs = false
+
+  if template.name == 'collection'
+    if collection.metafields.custom.faqs != blank
+      assign has_faqs = true
+    endif
+  endif
+-%}
+
+{%- if has_faqs -%}
+<section class="sec faq" id="faq" aria-labelledby="faq-title-{{ section.id }}">
+  <div class="wrap faq__grid">
+    <div class="faq__aside reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="mast__title" id="faq-title-{{ section.id }}">
+        {%- if template.name == 'index' -%}
+          {{ section.settings.heading }}
+        {%- else -%}
+          {{ collection.title }}, <em>answered</em>
+        {%- endif -%}
+      </h2>
+      {%- if template.name == 'index' -%}
+        {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
+      {%- else -%}
+        <p>Materials, custom sizes, warranty and care — the questions we hear most about our {{ collection.title | downcase }}. Anything else, our team is a call or a WhatsApp away, 24/7.</p>
+      {%- endif -%}
+      <div class="faq__help">
+        {%- if settings.phone != blank -%}
+          <a class="btn btn--ink" href="tel:{{ tel }}">{% render 'icon', name: 'phone' %}{{ settings.phone }}</a>
+        {%- endif -%}
+        {%- if settings.whatsapp != blank -%}
+          <a class="btn btn--line" href="https://wa.me/{{ settings.whatsapp }}" target="_blank" rel="noopener">{% render 'icon', name: 'wa' %}WhatsApp us</a>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.link_label != blank -%}
+        <a class="link-arrow" href="{{ section.settings.link_url | default: '#' }}">{{ section.settings.link_label }} {% render 'icon', name: 'arrow' %}</a>
+      {%- endif -%}
+    </div>
+    <div class="faq__list">
+      {%- if template.name == 'collection' and collection.metafields.custom.faqs != blank -%}
+        {%- liquid
+          assign is_metaobject_list = false
+          if collection.metafields.custom.faqs.value.first != blank and collection.metafields.custom.faqs.value.first.question != blank
+            assign is_metaobject_list = true
+          endif
+        -%}
+
+        {%- if is_metaobject_list -%}
+          {%- for faq_item in collection.metafields.custom.faqs.value -%}
+            {%- liquid
+              assign q = faq_item.question.value | default: faq_item.question | default: faq_item.title.value | default: faq_item.title | default: faq_item.heading.value | default: faq_item.heading | default: ''
+              assign a = faq_item.answer.value | default: faq_item.answer | default: faq_item.content.value | default: faq_item.content | default: faq_item.text.value | default: faq_item.text | default: ''
+            -%}
+            {%- if q != blank -%}
+              <details class="qa"{% if forloop.first %} open{% endif %}>
+                <summary>{{ q }}</summary>
+                <div class="qa__a">{{ a }}</div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- liquid
+            assign raw_html = collection.metafields.custom.faqs | metafield_tag
+            assign faq_norm = raw_html | replace: '<h3>', '<p><strong>' | replace: '</h3>', '</strong></p>' | replace: '<h2>', '<p><strong>' | replace: '</h2>', '</strong></p>' | replace: '<h4>', '<p><strong>' | replace: '</h4>', '</strong></p>' | replace: '<b>', '<strong>' | replace: '</b>', '</strong>'
+            assign faq_chunks = faq_norm | split: '<strong'
+            assign rendered_count = 0
+          -%}
+          {%- if faq_chunks.size > 1 -%}
+            {%- for chunk in faq_chunks -%}
+              {%- unless forloop.first -%}
+                {%- liquid
+                  assign q_and_a = chunk | split: '</strong>'
+                  assign q_text = q_and_a[0] | remove_first: '>' | strip_html | strip
+                  assign a_raw = q_and_a[1]
+                  assign first_4 = a_raw | slice: 0, 4
+                  if first_4 == '</p>'
+                    assign a_content = a_raw | remove_first: '</p>'
+                  else
+                    assign a_content = a_raw
+                  endif
+                -%}
+                {%- if q_text != blank -%}
+                  {%- assign rendered_count = rendered_count | plus: 1 -%}
+                  <details class="qa"{% if rendered_count == 1 %} open{% endif %}>
+                    <summary>{{ q_text }}</summary>
+                    <div class="qa__a">{{ a_content }}</div>
+                  </details>
+                {%- endif -%}
+              {%- endunless -%}
+            {%- endfor -%}
+          {%- endif -%}
+
+          <div data-faq-source style="display:none;">{{ raw_html }}</div>
+          <script type="application/json" data-faq-json>{{ collection.metafields.custom.faqs.value | json }}</script>
+        {%- endif -%}
+      {%- else -%}
+        {%- for block in section.blocks -%}
+          <details class="qa"{% if block.settings.open %} open{% endif %} {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.question }}</summary>
+            <div class="qa__a">{{ block.settings.answer }}</div>
+          </details>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var list = document.querySelector('#faq-title-{{ section.id }}')?.closest('.faq')?.querySelector('.faq__list');
+  if (!list) return;
+
+  var existingItems = list.querySelectorAll('details.qa');
+  if (existingItems.length === 0) {
+    var jsonEl = list.querySelector('[data-faq-json]');
+    var parsedFromAst = false;
+    if (jsonEl && jsonEl.textContent.trim()) {
+      try {
+        var data = JSON.parse(jsonEl.textContent.trim());
+        var children = data && data.children ? data.children : (Array.isArray(data) ? data : null);
+        if (children && children.length) {
+          var curDetails = null;
+          var curA = null;
+          var count = 0;
+
+          children.forEach(function(node) {
+            var text = '';
+            if (node.children && Array.isArray(node.children)) {
+              text = node.children.map(function(c) { return c.value || ''; }).join('');
+            } else if (node.value) {
+              text = node.value;
+            }
+
+            if (node.type === 'heading') {
+              count++;
+              curDetails = document.createElement('details');
+              curDetails.className = 'qa';
+              if (count === 1) curDetails.open = true;
+
+              var sum = document.createElement('summary');
+              sum.textContent = text.trim();
+              curDetails.appendChild(sum);
+
+              curA = document.createElement('div');
+              curA.className = 'qa__a';
+              curDetails.appendChild(curA);
+
+              list.appendChild(curDetails);
+              parsedFromAst = true;
+            } else if (node.type === 'paragraph' && curA) {
+              var p = document.createElement('p');
+              p.textContent = text.trim();
+              curA.appendChild(p);
+            }
+          });
+        }
+      } catch (err) {}
+    }
+
+    if (!parsedFromAst) {
+      var sourceEl = list.querySelector('[data-faq-source]');
+      if (sourceEl) {
+        var elements = Array.from(sourceEl.children);
+        var curDetails = null;
+        var curA = null;
+        var count = 0;
+
+        elements.forEach(function(el) {
+          var isH = /^H[1-6]$/.test(el.tagName);
+          var str = el.querySelector('strong, b');
+          var isStrongP = !isH && str && (el.textContent.trim() === str.textContent.trim());
+
+          if (isH || isStrongP) {
+            count++;
+            curDetails = document.createElement('details');
+            curDetails.className = 'qa';
+            if (count === 1) curDetails.open = true;
+
+            var sum = document.createElement('summary');
+            sum.textContent = el.textContent.trim();
+            curDetails.appendChild(sum);
+
+            curA = document.createElement('div');
+            curA.className = 'qa__a';
+            curDetails.appendChild(curA);
+
+            list.appendChild(curDetails);
+          } else if (curA) {
+            curA.appendChild(el.cloneNode(true));
+          }
+        });
+      }
+    }
+  }
+
+  var allItems = Array.from(list.querySelectorAll('details.qa'));
+  allItems.forEach(function(item) {
+    item.addEventListener('toggle', function() {
+      if (item.open) {
+        allItems.forEach(function(other) {
+          if (other !== item && other.open) other.open = false;
+        });
+      }
+    });
+  });
+})();
+</script>
+{%- endif -%}
+
+{%- if has_faqs and section.blocks.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for block in section.blocks -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.question | json }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | json }} }
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}

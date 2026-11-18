@@ -1,0 +1,218 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Header group",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "l1": {
+          "type": "link",
+          "settings": {
+            "icon": "cash",
+            "label": "Cash on Delivery",
+            "url": ""
+          }
+        },
+        "l2": {
+          "type": "link",
+          "settings": {
+            "icon": "pencil",
+            "label": "Customization",
+            "url": "/pages/bulk-order-customization"
+          }
+        },
+        "l3": {
+          "type": "link",
+          "settings": {
+            "icon": "boxes",
+            "label": "Buy in Bulk",
+            "url": "/pages/bulk-order-customization"
+          }
+        },
+        "l4": {
+          "type": "link",
+          "settings": {
+            "icon": "track",
+            "label": "Track Order",
+            "url": "/apps/track-shipment"
+          }
+        },
+        "m1": {
+          "type": "message",
+          "settings": {
+            "text": "Pan India free shipping"
+          }
+        },
+        "m2": {
+          "type": "message",
+          "settings": {
+            "text": "Extra 10% off on prepaid orders - applied automatically"
+          }
+        },
+        "m3": {
+          "type": "message",
+          "settings": {
+            "text": "No Cost EMI on leading bank cards"
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "m1",
+        "m2",
+        "m3"
+      ],
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mf_sofa": {
+          "type": "mega_feature",
+          "settings": {
+            "menu_title": "Sofa",
+            "image": "shopify://shop_images/wooden-sofa-sets.webp",
+            "label": "Wooden sofa sets",
+            "link": "/collections/wooden-sofa-sets"
+          }
+        },
+        "mf_living": {
+          "type": "mega_feature",
+          "settings": {
+            "menu_title": "Living Room",
+            "image": "shopify://shop_images/console-tables.webp",
+            "label": "Console tables",
+            "link": "/collections/console-tables"
+          }
+        },
+        "mf_bedroom": {
+          "type": "mega_feature",
+          "settings": {
+            "menu_title": "Bedroom",
+            "image": "shopify://shop_images/king-size-bed.webp",
+            "label": "King size beds",
+            "link": "/collections/king-size-bed"
+          }
+        },
+        "mf_dining": {
+          "type": "mega_feature",
+          "settings": {
+            "menu_title": "Dining",
+            "image": "shopify://shop_images/6-seater-dining-sets.webp",
+            "label": "6 seater dining sets",
+            "link": "/collections/6-seater-dining-sets"
+          }
+        },
+        "mf_decor": {
+          "type": "mega_feature",
+          "settings": {
+            "menu_title": "Decor",
+            "image": "shopify://shop_images/decor.webp",
+            "label": "Decor",
+            "link": "/collections/decor"
+          }
+        },
+        "sc1": {
+          "type": "search_chip",
+          "settings": {
+            "label": "King size bed",
+            "url": "/collections/king-size-bed"
+          }
+        },
+        "sc2": {
+          "type": "search_chip",
+          "settings": {
+            "label": "6 seater dining set",
+            "url": "/collections/6-seater-dining-sets"
+          }
+        },
+        "sc3": {
+          "type": "search_chip",
+          "settings": {
+            "label": "TV unit",
+            "url": "/collections/tv-unit"
+          }
+        },
+        "sc4": {
+          "type": "search_chip",
+          "settings": {
+            "label": "Wooden sofa set",
+            "url": "/collections/wooden-sofa-sets"
+          }
+        },
+        "sc5": {
+          "type": "search_chip",
+          "settings": {
+            "label": "Temples",
+            "url": "/collections/temples"
+          }
+        },
+        "sc6": {
+          "type": "search_chip",
+          "settings": {
+            "label": "Swing jhula",
+            "url": "/collections/swing-jhula"
+          }
+        },
+        "sc7": {
+          "type": "search_chip",
+          "settings": {
+            "label": "Study tables",
+            "url": "/collections/study-tables"
+          }
+        },
+        "ul1": {
+          "type": "utility_link",
+          "settings": {
+            "icon": "pencil",
+            "label": "Customization & bulk orders",
+            "url": "/pages/bulk-order-customization"
+          }
+        },
+        "ul2": {
+          "type": "utility_link",
+          "settings": {
+            "icon": "track",
+            "label": "Track order",
+            "url": "/apps/track-shipment"
+          }
+        }
+      },
+      "block_order": [
+        "mf_sofa",
+        "mf_living",
+        "mf_bedroom",
+        "mf_dining",
+        "mf_decor",
+        "sc1",
+        "sc2",
+        "sc3",
+        "sc4",
+        "sc5",
+        "sc6",
+        "sc7",
+        "ul1",
+        "ul2"
+      ],
+      "settings": {
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

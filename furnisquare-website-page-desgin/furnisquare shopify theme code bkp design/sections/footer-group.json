@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Footer group",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "c1": {
+          "type": "menu",
+          "settings": {
+            "heading": "Information",
+            "menu": "information"
+          }
+        },
+        "c2": {
+          "type": "menu",
+          "settings": {
+            "heading": "Category",
+            "menu": "category"
+          }
+        },
+        "menu_VYTwQA": {
+          "type": "menu",
+          "settings": {
+            "heading": "Useful links",
+            "menu": "useful-links"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "menu_VYTwQA"
+      ],
+      "settings": {
+        "nl_eyebrow": "Sign up for newsletter",
+        "nl_heading": "Be the first to know.",
+        "nl_text": "New designs, festive offers and care tips — straight to your inbox.",
+        "trust_text": "Furnisquare is trusted by <strong>20K+</strong> satisfied customers",
+        "base_menu": "footer"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,216 @@
+{%- liquid
+  assign tel = settings.phone | replace: ' ', '' | replace: '-', ''
+-%}
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <ul class="topbar__links" aria-label="Shopping services">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'link' -%}
+          <li {{ block.shopify_attributes }}>
+            {%- if block.settings.url != blank -%}
+              <a href="{{ block.settings.url }}">{% render 'icon', name: block.settings.icon %}{{ block.settings.label }}</a>
+            {%- else -%}
+              {% render 'icon', name: block.settings.icon %}{{ block.settings.label }}
+            {%- endif -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+    <div class="topbar__news" aria-live="polite">
+      {%- assign first_msg = true -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'message' -%}
+          <p{% if first_msg %} class="is-on"{% endif %} {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+          {%- assign first_msg = false -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%- if settings.phone != blank -%}
+      <a class="topbar__phone" href="tel:{{ tel }}">{% render 'icon', name: 'phone' %}{{ settings.phone }}</a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "enabled_on": { "groups": ["header"] },
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Service link",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "cash",
+              "label": "Cash"
+            },
+            {
+              "value": "pencil",
+              "label": "Pencil"
+            },
+            {
+              "value": "boxes",
+              "label": "Boxes"
+            },
+            {
+              "value": "track",
+              "label": "Track"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "phone",
+              "label": "Phone"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "mail",
+              "label": "Mail"
+            },
+            {
+              "value": "pin",
+              "label": "Pin"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "help",
+              "label": "Help"
+            },
+            {
+              "value": "user",
+              "label": "User"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "bag",
+              "label": "Bag"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "wa",
+              "label": "Wa"
+            }
+          ],
+          "default": "pencil"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Customization"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "name": "Rotating message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Pan India free shipping"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link",
+        "settings": {
+          "icon": "cash",
+          "label": "Cash on Delivery"
+        }
+      },
+      {
+        "type": "link",
+        "settings": {
+          "icon": "pencil",
+          "label": "Customization",
+          "url": "/pages/bulk-order-customization"
+        }
+      },
+      {
+        "type": "link",
+        "settings": {
+          "icon": "boxes",
+          "label": "Buy in Bulk",
+          "url": "/pages/bulk-order-customization"
+        }
+      },
+      {
+        "type": "link",
+        "settings": {
+          "icon": "track",
+          "label": "Track Order",
+          "url": "/apps/track-shipment"
+        }
+      },
+      {
+        "type": "message",
+        "settings": {
+          "text": "Pan India free shipping"
+        }
+      },
+      {
+        "type": "message",
+        "settings": {
+          "text": "Extra 10% off on prepaid orders — applied automatically"
+        }
+      },
+      {
+        "type": "message",
+        "settings": {
+          "text": "No Cost EMI on leading bank cards"
+        }
+      }
+    ]
+  }
+}
+{% endschema %}

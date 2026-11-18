@@ -1,0 +1,140 @@
+{%- comment -%}
+  Inner page split: prose blocks on one side, image on the other.
+  Blocks: para (richtext) / ticks (ticked list, one item per line) / link (arrow link).
+  Visual reference: mockup .split / .prose / .ticks2.
+{%- endcomment -%}
+{%- liquid
+  assign title_id = 'split-title-' | append: section.id
+-%}
+<section class="sec{% if section.settings.tinted %} sec--tint{% endif %}" aria-labelledby="{{ title_id }}">
+  <div class="wrap split{% if section.settings.flip %} split--flip{% endif %}">
+    <div class="prose">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 id="{{ title_id }}">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'para' -%}
+            <div class="prose__block" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+          {%- when 'ticks' -%}
+            {%- assign tick_lines = block.settings.items | newline_to_br | split: '<br />' -%}
+            <ul class="ticks2" {{ block.shopify_attributes }}>
+              {%- for line in tick_lines -%}
+                {%- assign item = line | strip -%}
+                {%- if item != blank -%}<li>{{ item | escape }}</li>{%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- when 'link' -%}
+            <p {{ block.shopify_attributes }}><a href="{{ block.settings.url | default: '#' }}">{{ block.settings.label }}</a></p>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.image != blank -%}
+      <figure class="split__media">
+        {{ section.settings.image | image_url: width: 2000 | image_tag: alt: section.settings.image_alt, widths: '480, 800, 1100, 1400, 1800, 2000', sizes: '(min-width: 900px) 50vw, 100vw', loading: 'lazy' }}
+      </figure>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Split",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "tinted",
+      "label": "Cream band background",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "flip",
+      "label": "Flip (image on the left)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Customization"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "HTML allowed, e.g. <em>space</em> for the saffron emphasis.",
+      "default": "Made for your <em>space</em>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Solid sheesham king size bed with storage and a matching bedside table"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "para",
+      "name": "Paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>A customized product is made according to the specific requirements or preferences of the customer.</p>"
+        }
+      ]
+    },
+    {
+      "type": "ticks",
+      "name": "Ticked list",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "Items",
+          "info": "One item per line.",
+          "default": "Payment for customized orders is fully in advance.\nManufacturing starts as soon as the order details are confirmed.\nCustomized orders can take up to 5–7 weeks to dispatch."
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Link label",
+          "default": "Read the full Customize Order Policy"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "Link URL",
+          "default": "/pages/customize-order-policy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Split",
+      "blocks": [
+        { "type": "para" },
+        { "type": "ticks" },
+        { "type": "link" }
+      ]
+    }
+  ]
+}
+{% endschema %}

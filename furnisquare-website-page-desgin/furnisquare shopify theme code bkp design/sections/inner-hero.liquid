@@ -1,0 +1,126 @@
+{%- comment -%}
+  Inner page hero ("phead"). Split layout: text + image, or plain (no image).
+  Visual reference: mockup .phead / .phead--split.
+  The dynamic breadcrumb (snippets/inner-crumbs) renders above the hero,
+  same as the collection template renders its own above the collection intro.
+{%- endcomment -%}
+{% render 'inner-crumbs' %}
+{%- liquid
+  assign layout = section.settings.layout | default: 'split_image_right'
+  assign heading_id = 'phead-title-' | append: section.id
+  assign has_image = false
+  if layout != 'plain' and section.settings.image != blank
+    assign has_image = true
+  endif
+-%}
+<section class="phead{% if layout != 'plain' %} phead--split{% endif %}" aria-labelledby="{{ heading_id }}">
+  <div class="wrap phead__grid">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h1 class="phead__title" id="{{ heading_id }}">{{ section.settings.heading }}</h1>
+      {%- if section.settings.lede != blank -%}
+        <p class="phead__lede">{{ section.settings.lede }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_1_label != blank or section.settings.button_2_label != blank -%}
+        <div class="phead__acts">
+          {%- if section.settings.button_1_label != blank -%}
+            <a class="btn btn--saffron" href="{{ section.settings.button_1_link | default: '#' }}">{{ section.settings.button_1_label }} {% render 'icon', name: 'arrow' %}</a>
+          {%- endif -%}
+          {%- if section.settings.button_2_label != blank -%}
+            <a class="btn btn--line" href="{{ section.settings.button_2_link | default: '#' }}"{% if section.settings.button_2_external %} target="_blank" rel="noopener"{% endif %}>{% render 'icon', name: 'wa' %}{{ section.settings.button_2_label }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- if has_image -%}
+      <figure class="phead__media">
+        {{ section.settings.image | image_url: width: 2200 | image_tag: alt: section.settings.image_alt, widths: '480, 800, 1100, 1400, 1800, 2200', sizes: '(min-width: 900px) 50vw, 100vw', loading: 'eager', fetchpriority: 'high' }}
+      </figure>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Page Hero",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "split_image_right", "label": "Text + image (image right)" },
+        { "value": "plain", "label": "Plain (no image)" }
+      ],
+      "default": "split_image_right"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Bulk orders & customization"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "HTML allowed, e.g. <em>bulk orders</em> for the saffron emphasis.",
+      "default": "Enquiry for <em>bulk orders</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "lede",
+      "label": "Lede",
+      "default": "Our dedicated team will contact you within 24 hours with a customized catalog and quotation."
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "Primary button label",
+      "default": "Send an enquiry"
+    },
+    {
+      "type": "text",
+      "id": "button_1_link",
+      "label": "Primary button link",
+      "default": "#bulk-form"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "WhatsApp button label",
+      "default": "WhatsApp us"
+    },
+    {
+      "type": "text",
+      "id": "button_2_link",
+      "label": "WhatsApp button link",
+      "default": "https://wa.me/919785322576?text=Hi%2C%20I%27d%20like%20a%20bulk%20order%20quotation"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_2_external",
+      "label": "Open WhatsApp link in a new tab",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Six seater carved wooden dining set with cushioned chairs"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Page Hero"
+    }
+  ]
+}
+{% endschema %}

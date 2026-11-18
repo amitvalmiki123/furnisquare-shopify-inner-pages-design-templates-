@@ -1,0 +1,97 @@
+{%- comment -%}
+  Inner page collection tiles ("Popular for bulk orders"). Reuses the theme's
+  .cat__* markup (custom.css) with the mockup's 5-up grid (acustom.css .bulkcols).
+{%- endcomment -%}
+{%- liquid
+  assign title_id = 'collections-title-' | append: section.id
+-%}
+<section class="sec sec--tint" aria-labelledby="{{ title_id }}">
+  <div class="wrap">
+    <header class="shead">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="mast__title" id="{{ title_id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
+    </header>
+    {%- if section.blocks.size > 0 -%}
+      <ul class="bulkcols">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign tile_alt = block.settings.image_alt | default: block.settings.name
+          -%}
+          <li {{ block.shopify_attributes }}>
+            <a class="cat__link" href="{{ block.settings.url | default: '#' }}">
+              <span class="cat__media">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: alt: tile_alt, width: 600, height: 600, loading: 'lazy' }}
+                {%- endif -%}
+              </span>
+              <span class="cat__name">{{ block.settings.name }}</span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Collections"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "HTML allowed, e.g. <em>bulk orders</em> for the saffron emphasis.",
+      "default": "Popular for <em>bulk orders</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Supporting text (optional)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Collection tile",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Collection name"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Collections"
+    }
+  ]
+}
+{% endschema %}

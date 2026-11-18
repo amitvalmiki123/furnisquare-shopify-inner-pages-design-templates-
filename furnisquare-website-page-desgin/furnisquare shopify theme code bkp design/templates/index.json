@@ -1,0 +1,1604 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero-slider",
+      "blocks": {
+        "b01": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-bedroom.webp",
+            "image_alt": "Solid sheesham king size bed with storage and matching bedside table in a warm-lit bedroom",
+            "focus_desktop": "center",
+            "focus_mobile": "66% center",
+            "eyebrow": "Jangid Handicraft · Since 1989",
+            "kicker": "",
+            "heading": "Solid sheesham, crafted to be <em>handed down.</em>",
+            "subtext": "Free shipping across India · No Cost EMI · Cash on Delivery",
+            "button_label": "Shop king size beds",
+            "button_link": "/collections/king-size-bed"
+          }
+        },
+        "b02": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-dining.webp",
+            "image_alt": "Six seater carved wooden dining set with cushioned chairs on a jute rug",
+            "focus_desktop": "center",
+            "focus_mobile": "58% center",
+            "eyebrow": "Up to 10% instant discount — on EMI too",
+            "kicker": "",
+            "heading": "6 Seater <em>Dining Sets</em>",
+            "subtext": "Family-size tables with cushioned chairs, in solid wood.",
+            "button_label": "Shop now",
+            "button_link": "/collections/6-seater-dining-sets"
+          }
+        },
+        "b03": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-console.webp",
+            "image_alt": "Hand-carved wooden console table with a lamp, flowers and a Furnisquare placard",
+            "focus_desktop": "center",
+            "focus_mobile": "50% center",
+            "eyebrow": "Extra 10% off on prepaid orders",
+            "kicker": "",
+            "heading": "Carved <em>Console Tables</em>",
+            "subtext": "Hand-finished pieces for entryways and hallways.",
+            "button_label": "Shop now",
+            "button_link": "/collections/console-tables"
+          }
+        },
+        "b04": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-diwan.webp",
+            "image_alt": "Wooden diwan with bolster cushions beside a lamp and side table",
+            "focus_desktop": "center",
+            "focus_mobile": "50% center",
+            "eyebrow": "Free shipping across India",
+            "kicker": "",
+            "heading": "Wooden <em>Diwans</em>",
+            "subtext": "A traditional form, finished for modern homes — with or without storage.",
+            "button_label": "Shop now",
+            "button_link": "/collections/wooden-diwan"
+          }
+        },
+        "b05": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-sofa.webp",
+            "image_alt": "Wooden sofa set with armchairs and a slatted coffee table in a living room",
+            "focus_desktop": "center",
+            "focus_mobile": "52% center",
+            "eyebrow": "36-month warranty incl. termites",
+            "kicker": "",
+            "heading": "Wooden <em>Sofa Sets</em>",
+            "subtext": "Solid frames and cushioned seats for every living room.",
+            "button_label": "Shop now",
+            "button_link": "/collections/wooden-sofa-sets"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05"
+      ],
+      "settings": {
+        "label": "Featured collections",
+        "autoplay": true,
+        "delay": 6
+      }
+    },
+    "ratings": {
+      "type": "ratings-strip",
+      "blocks": {
+        "b01": {
+          "type": "rating",
+          "settings": {
+            "source": "Store reviews",
+            "score": "4.99",
+            "out_of": "5",
+            "caption": "334 verified reviews",
+            "url": "https://app.judge.me/reviews/stores/furnisquare.com"
+          }
+        },
+        "b02": {
+          "type": "rating",
+          "settings": {
+            "source": "Flipkart",
+            "score": "4.7",
+            "out_of": "5",
+            "caption": "3,000+ reviews",
+            "url": "https://www.flipkart.com/search?q=furnisquare&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off"
+          }
+        },
+        "b03": {
+          "type": "rating",
+          "settings": {
+            "source": "Amazon",
+            "score": "5",
+            "out_of": "5",
+            "caption": "2,000+ reviews",
+            "url": "https://www.amazon.in/stores/Furnisquare/page/3A18B0B4-2BF8-445F-BD00-9176CA509509?lp_asin=B0GWV8SZXR&ref_=ast_bln"
+          }
+        },
+        "b04": {
+          "type": "rating",
+          "settings": {
+            "source": "Google",
+            "score": "5",
+            "out_of": "5",
+            "caption": "19 reviews",
+            "url": "https://www.google.com/search?q=furnisquare+furniture"
+          }
+        },
+        "b05": {
+          "type": "highlight",
+          "settings": {
+            "label": "Trusted by",
+            "value": "20K+",
+            "caption": "satisfied customers"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05"
+      ],
+      "settings": {
+        "label": "Ratings and reviews"
+      }
+    },
+    "categories": {
+      "type": "category-slider",
+      "blocks": {
+        "b01": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/wooden-sofa-sets_5af4bae9-b773-456e-a3ea-cc71563e88b9.webp",
+            "title": "Wooden Sofa Sets",
+            "link": "/collections/wooden-sofa-sets",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b02": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/king-size-bed.webp",
+            "title": "King Size Bed",
+            "link": "/collections/king-size-bed",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b03": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/2-seater-dining-sets.webp",
+            "title": "2 Seater Dining Sets",
+            "link": "/collections/2-seater-dining-sets",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b04": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/cabinet-sideboards.webp",
+            "title": "Sideboard Cabinet",
+            "link": "/collections/cabinet-sideboards",
+            "group": "storage",
+            "tag": "Sale live"
+          }
+        },
+        "b05": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/wooden-chowki.jpg",
+            "title": "Wooden Chowki",
+            "link": "/collections/wooden-chowki",
+            "group": "heritage",
+            "tag": "Sale live"
+          }
+        },
+        "b06": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/wooden-sofa-cum-bed.webp",
+            "title": "Wooden Sofa Cum Bed",
+            "link": "/collections/wooden-sofa-cum-bed",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b07": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/queen-size-bed.webp",
+            "title": "Queen Size Bed",
+            "link": "/collections/queen-size-bed",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b08": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/4-seater-dining-sets.webp",
+            "title": "4 Seater Dining Sets",
+            "link": "/collections/4-seater-dining-sets",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b09": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bookshelves.webp",
+            "title": "Bookshelves",
+            "link": "/collections/bookshelves",
+            "group": "storage",
+            "tag": "Sale live"
+          }
+        },
+        "b10": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/temples.webp",
+            "title": "Temples",
+            "link": "/collections/temples",
+            "group": "heritage",
+            "tag": "Sale live"
+          }
+        },
+        "b11": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/coffee-table-sets.webp",
+            "title": "Coffee Table Sets",
+            "link": "/collections/coffee-table-sets",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b12": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/single-beds.webp",
+            "title": "Single Beds",
+            "link": "/collections/single-beds",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b13": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/6-seater-dining-sets_8c5e0983-4e18-45c0-97ff-e3a7a3ffe3e3.webp",
+            "title": "6 Seater Dining Sets",
+            "link": "/collections/6-seater-dining-sets",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b14": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/chest-of-drawers.webp",
+            "title": "Chest of Drawers",
+            "link": "/collections/chest-of-drawers",
+            "group": "storage",
+            "tag": "Sale live"
+          }
+        },
+        "b15": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/swing-jhula.webp",
+            "title": "Swing Jhula",
+            "link": "/collections/swing-jhula",
+            "group": "heritage",
+            "tag": "Sale live"
+          }
+        },
+        "b16": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/console-tables_74907ae7-730d-4234-89f4-a38926b56fe9.webp",
+            "title": "Console Tables",
+            "link": "/collections/console-tables",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b17": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bunk-beds.webp",
+            "title": "Bunk Beds",
+            "link": "/collections/bunk-beds",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b18": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/8-seater-dining-sets.webp",
+            "title": "8 Seater Dining Sets",
+            "link": "/collections/8-seater-dining-sets",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b19": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/study-tables_a108debd-48f1-4f81-bd8e-d5c311a8fcf2.webp",
+            "title": "Study Tables",
+            "link": "/collections/study-tables",
+            "group": "storage",
+            "tag": "Sale live"
+          }
+        },
+        "b20": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/wooden-diwan.webp",
+            "title": "Wooden Diwan",
+            "link": "/collections/wooden-diwan",
+            "group": "heritage",
+            "tag": "Sale live"
+          }
+        },
+        "b21": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/side-end-tables.webp",
+            "title": "Side & End Tables",
+            "link": "/collections/side-end-tables",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b22": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/kids-beds.webp",
+            "title": "Kids Beds",
+            "link": "/collections/kids-beds",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b23": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/dining-chairs.webp",
+            "title": "Dining Chairs",
+            "link": "/collections/chairs-1",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b24": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/trunk-blanket-boxes.webp",
+            "title": "Trunk & Blanket Boxes",
+            "link": "/collections/trunk-blanket-boxes",
+            "group": "storage",
+            "tag": "Sale live"
+          }
+        },
+        "b25": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/wooden-diwan-with-storage.webp",
+            "title": "Wooden Diwan with Storage",
+            "link": "/collections/wooden-diwan-with-storage",
+            "group": "heritage",
+            "tag": "Sale live"
+          }
+        },
+        "b26": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/nest-of-tables.webp",
+            "title": "Nest of Tables",
+            "link": "/collections/nest-of-tables",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b27": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/upholstered-bed.webp",
+            "title": "Upholstered Bed",
+            "link": "/collections/upholstered-bed",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b28": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/kitchen-accessories.webp",
+            "title": "Kitchen Accessories",
+            "link": "/collections/kitchen-accessories",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b29": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/decor_0581220d-58a0-4210-afeb-d14f4f874509.webp",
+            "title": "Decor",
+            "link": "/collections/decor",
+            "group": "heritage",
+            "tag": "Sale live"
+          }
+        },
+        "b30": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/tv-unit.webp",
+            "title": "TV Units",
+            "link": "/collections/tv-unit",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b31": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/poster-beds.webp",
+            "title": "Poster Beds",
+            "link": "/collections/poster-beds",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b32": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bar-cabinets.webp",
+            "title": "Bar Cabinets",
+            "link": "/collections/bar-cabinets",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b33": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/chairs.webp",
+            "title": "Living Chairs",
+            "link": "/collections/chairs",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b34": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/hydraulic-storage-beds.webp",
+            "title": "Hydraulic Storage Beds",
+            "link": "/collections/hydraulic-storage-beds",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b35": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bar-trolleys.webp",
+            "title": "Bar Trolleys",
+            "link": "/collections/bar-trolleys",
+            "group": "dining",
+            "tag": "Sale live"
+          }
+        },
+        "b36": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/stools.webp",
+            "title": "Stools",
+            "link": "/collections/stools",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b37": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bedside-tables.webp",
+            "title": "Bedside Tables",
+            "link": "/collections/bedside-tables",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b38": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/living-bench.webp",
+            "title": "Living Bench",
+            "link": "/collections/living-bench",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b39": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/wardrobe_1035a18b-38ae-4465-bbf5-8c042dca2511.webp",
+            "title": "Wardrobes",
+            "link": "/collections/wardrobe",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b40": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/mirrors.webp",
+            "title": "Mirrors",
+            "link": "/collections/mirrors",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        },
+        "b41": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/dressing-table.webp",
+            "title": "Dressing Table",
+            "link": "/collections/dressing-table",
+            "group": "bedroom",
+            "tag": "Sale live"
+          }
+        },
+        "b42": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/shoe-rack.webp",
+            "title": "Shoe Rack",
+            "link": "/collections/shoe-rack",
+            "group": "living",
+            "tag": "Sale live"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05",
+        "b06",
+        "b07",
+        "b08",
+        "b09",
+        "b10",
+        "b11",
+        "b12",
+        "b13",
+        "b14",
+        "b15",
+        "b16",
+        "b17",
+        "b18",
+        "b19",
+        "b20",
+        "b21",
+        "b22",
+        "b23",
+        "b24",
+        "b25",
+        "b26",
+        "b27",
+        "b28",
+        "b29",
+        "b30",
+        "b31",
+        "b32",
+        "b33",
+        "b34",
+        "b35",
+        "b36",
+        "b37",
+        "b38",
+        "b39",
+        "b40",
+        "b41",
+        "b42"
+      ],
+      "settings": {
+        "eyebrow": "Renovate your home",
+        "heading": "Shop wooden furniture <em>online in India</em>",
+        "show_filters": true,
+        "filters": "dining|Dining\nbedroom|Bedroom\nliving|Living\nstorage|Storage & Study\nheritage|Heritage & Decor"
+      }
+    },
+    "sale": {
+      "type": "special-sale",
+      "blocks": {
+        "b01": {
+          "type": "bank",
+          "settings": {
+            "image": "shopify://shop_images/fs-hdfc.webp",
+            "alt": "HDFC Bank"
+          }
+        },
+        "b02": {
+          "type": "bank",
+          "settings": {
+            "image": "shopify://shop_images/fs-sbi.webp",
+            "alt": "SBI Card"
+          }
+        },
+        "b03": {
+          "type": "bank",
+          "settings": {
+            "image": "shopify://shop_images/fs-axis.webp",
+            "alt": "Axis Bank"
+          }
+        },
+        "b04": {
+          "type": "bank",
+          "settings": {
+            "image": "shopify://shop_images/fs-indusind.webp",
+            "alt": "IndusInd Bank"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04"
+      ],
+      "settings": {
+        "enable_sale": true,
+        "live_label": "Diwali sale live",
+        "heading": "Special <em>Sale</em>",
+        "countdown_label": "Ends in",
+        "countdown_end": "2026-11-30T23:59:00+05:30",
+        "offer_1": "<strong>Extra 10% off</strong> on prepaid orders — applied automatically",
+        "offer_2": "<strong>Up to 10% instant discount</strong> — on EMI too"
+      }
+    },
+    "best_sellers": {
+      "type": "product-rail",
+      "name": "Best sellers",
+      "settings": {
+        "collection": "bar-furniture",
+        "eyebrow": "Most loved",
+        "heading": "Best <em>sellers</em>",
+        "link_label": "All products",
+        "link_url": "/collections/all?sort_by=best-selling",
+        "limit": 12,
+        "tag_text": "",
+        "style": "best"
+      }
+    },
+    "product_rail_VKfYM3": {
+      "type": "product-rail",
+      "name": "Product slider",
+      "settings": {
+        "collection": "bedroom",
+        "eyebrow": "Just in",
+        "heading": "&nbsp;New <em>arrivals</em>",
+        "link_label": "All products",
+        "link_url": "",
+        "limit": 12,
+        "tag_text": "",
+        "style": "hot"
+      }
+    },
+    "feature_block_gaMcTN": {
+      "type": "feature-block",
+      "blocks": {
+        "point_AVxVYA": {
+          "type": "point",
+          "settings": {
+            "icon": "pencil",
+            "title": "Customization",
+            "text": "<p>Change a size, a finish or a detail. <a href=\"https://furnisquare.com/pages/customize-order-policy\">Customise policy</a></p>"
+          }
+        },
+        "point_UeqtH3": {
+          "type": "point",
+          "settings": {
+            "icon": "boxes",
+            "title": "Buy in bulk",
+            "text": "<p>For retailers, wholesalers, designers, architects, hotels, offices and distributors — a catalogue and quotation within 24 hours.</p>"
+          }
+        },
+        "point_9Nrjn8": {
+          "type": "point",
+          "settings": {
+            "icon": "phone",
+            "title": "Buy on phone",
+            "text": "<p>Ask about stock or COD eligibility and order over a call — <a href=\"tel:+919785322576\">+91-9785322576</a>, 24/7.</p>"
+          }
+        },
+        "market_WYQcw8": {
+          "type": "market",
+          "settings": {
+            "image": "shopify://shop_images/furnisquare_amazon-01_jpg.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.amazon.in/stores/Furnisquare/page/3A18B0B4-2BF8-445F-BD00-9176CA509509?lp_asin=B0GWV8SZXR&ref_=ast_bln"
+          }
+        },
+        "market_GNkbde": {
+          "type": "market",
+          "settings": {
+            "image": "shopify://shop_images/furnisquare_flipkart-01_jpg.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.flipkart.com/search?q=furnisquare&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off"
+          }
+        }
+      },
+      "block_order": [
+        "point_AVxVYA",
+        "point_UeqtH3",
+        "point_9Nrjn8",
+        "market_WYQcw8",
+        "market_GNkbde"
+      ],
+      "name": "Feature (image + text)",
+      "settings": {
+        "image": "shopify://shop_images/6-seater-dining-sets_8c5e0983-4e18-45c0-97ff-e3a7a3ffe3e3.webp",
+        "ref_image": "cats/6-seater-dining-sets.webp",
+        "image_alt": "Six seater wooden dining set with carved chairs",
+        "eyebrow": "Featuring",
+        "heading": "Made to order, <em>made in bulk</em>",
+        "text": "Not every home fits a catalogue. Design, colour, size and features can all be tailored — customised pieces are made only for you, fully prepaid, crafted once your details are confirmed and dispatched in 5–7 weeks.",
+        "button_label": "Enquire for bulk & custom",
+        "button_link": "#",
+        "show_whatsapp": true,
+        "markets_label": "Also on"
+      }
+    },
+    "product_rail_ibLc9C": {
+      "type": "product-rail",
+      "name": "Product slider",
+      "settings": {
+        "collection": "living-room",
+        "eyebrow": "Living collection",
+        "heading": "&nbsp;Sideboards & <em>living storage</em>&nbsp;",
+        "link_label": "All products",
+        "link_url": "shopify://collections/living-room",
+        "limit": 12,
+        "tag_text": "",
+        "style": "hot"
+      }
+    },
+    "shop_by_room_9J6gjN": {
+      "type": "shop-by-room",
+      "blocks": {
+        "room_PfQKGm": {
+          "type": "room",
+          "settings": {
+            "image": "shopify://shop_images/living-room.webp",
+            "ref_image": "",
+            "alt": "",
+            "label": "Living room",
+            "link": "shopify://collections/living-room"
+          }
+        },
+        "room_x6r8XK": {
+          "type": "room",
+          "settings": {
+            "image": "shopify://shop_images/dining-room.webp",
+            "ref_image": "",
+            "alt": "",
+            "label": "Dining room",
+            "link": "shopify://collections/dining"
+          }
+        },
+        "room_WyDtCh": {
+          "type": "room",
+          "settings": {
+            "image": "shopify://shop_images/bedroom.webp",
+            "ref_image": "",
+            "alt": "",
+            "label": "Bedroom",
+            "link": "shopify://collections/bedroom"
+          }
+        },
+        "room_Qr9pTY": {
+          "type": "room",
+          "settings": {
+            "image": "shopify://shop_images/study-room.webp",
+            "ref_image": "",
+            "alt": "",
+            "label": "Study room",
+            "link": "shopify://collections/study"
+          }
+        },
+        "room_LFJrGk": {
+          "type": "room",
+          "settings": {
+            "image": "shopify://shop_images/storage.webp",
+            "ref_image": "",
+            "alt": "",
+            "label": "Storage",
+            "link": "shopify://collections/storage-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "room_PfQKGm",
+        "room_x6r8XK",
+        "room_WyDtCh",
+        "room_Qr9pTY",
+        "room_LFJrGk"
+      ],
+      "name": "Shop by room",
+      "settings": {
+        "eyebrow": "One wood, every room",
+        "heading": "Shop by <em>room</em>"
+      }
+    },
+    "video_gallery_6dMa3K": {
+      "type": "video-gallery",
+      "blocks": {
+        "video_krjgK4": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "wqIEgxRnMXQ",
+            "image": "shopify://shop_images/poster-1.webp",
+            "ref_image": "",
+            "caption": ""
+          }
+        },
+        "video_QhkRYd": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "8YSQEntDLns",
+            "image": "shopify://shop_images/poster-2.webp",
+            "ref_image": "",
+            "caption": ""
+          }
+        },
+        "video_9LXzQ6": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "F1JNaszhKKE",
+            "image": "shopify://shop_images/Screenshot_2026-11-01_174325.png",
+            "ref_image": "",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_krjgK4",
+        "video_QhkRYd",
+        "video_9LXzQ6"
+      ],
+      "name": "Video gallery",
+      "settings": {
+        "eyebrow": "What’s trending",
+        "heading": "Watch our <em>videos</em>",
+        "link_label": "Subscribe on YouTube",
+        "link_url": ""
+      }
+    },
+    "trust_strip_R9zt6i": {
+      "type": "trust-strip",
+      "blocks": {
+        "item_WLWHRU": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "big_text": "",
+            "title": "Free shipping",
+            "text": "All over India"
+          }
+        },
+        "item_nmUjYw": {
+          "type": "item",
+          "settings": {
+            "icon": "card",
+            "big_text": "",
+            "title": "No Cost EMI",
+            "text": "On leading bank cards"
+          }
+        },
+        "item_fcTcCB": {
+          "type": "item",
+          "settings": {
+            "icon": "cash",
+            "big_text": "",
+            "title": "Cash on Delivery",
+            "text": "On ready-to-ship pieces"
+          }
+        },
+        "item_NY3FCa": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "big_text": "",
+            "title": "36-month warranty",
+            "text": "Incl. termite resistance"
+          }
+        },
+        "item_aigLDi": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "big_text": "1989",
+            "title": "30+ years",
+            "text": "Of proven expertise"
+          }
+        }
+      },
+      "block_order": [
+        "item_WLWHRU",
+        "item_nmUjYw",
+        "item_fcTcCB",
+        "item_NY3FCa",
+        "item_aigLDi"
+      ],
+      "name": "Trust strip",
+      "settings": {
+        "label": "Why shop with us",
+        "ticker": "Cash on Delivery available\nExtra 10% off on prepaid orders — applied automatically\nFree delivery across India\n36-month warranty against termites"
+      }
+    },
+    "press_news_ABECVK": {
+      "type": "press-news",
+      "blocks": {
+        "article_7RwTQK": {
+          "type": "article",
+          "settings": {
+            "source": "Dailyhunt · ANI",
+            "title": "Furnisquare announces free delivery initiative",
+            "quote": "Furnisquare was created to make furniture shopping simple, stylish, and affordable. Our goal is to help people create beautiful homes with ease.",
+            "quote_by": "— Manoj Jangid, Furnisquare",
+            "body": "",
+            "link_label": "Read article",
+            "url": "https://m.dailyhunt.in/news/india/english/ani+english-epaper-anieng/online+furniture+store+furnisquare+announce+new+initiative+free+shipping+across+india+to+customers-newsid-n679459601"
+          }
+        },
+        "article_kyaYUn": {
+          "type": "article",
+          "settings": {
+            "source": "Zee News",
+            "title": "Furnisquare launches free shipping across India",
+            "quote": "Furnisquare, an online furniture company, launches a nationwide free shipping offer to make stylish, high-quality furniture more accessible to customers.",
+            "quote_by": "",
+            "body": "",
+            "link_label": "Read article",
+            "url": "https://zeenews.india.com/consumer-connect/furnisquare-launches-free-shipping-initiative-for-customers-across-india-2959022.html"
+          }
+        },
+        "logo_pG3fYU": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/images_1.png",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.latestly.com/agency-news/business-news-online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers-7091388.html"
+          }
+        },
+        "logo_qMDkMU": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/big-news-network_1_1.png",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.bignewsnetwork.com/news/278549336/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers"
+          }
+        },
+        "logo_CnRE7T": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/b72b31bb6d1408728191f930096c6c6e.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://news.google.com/search?q=Online%20Furniture%20Store&hl=en-IN&gl=IN&ceid=IN%3Aen"
+          }
+        },
+        "logo_g6e7AY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/jio-news.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.aninews.in/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113148/?utm_source=JioNews&utm_medium=referral&utm_campaign=JioNews"
+          }
+        },
+        "logo_QpHWaM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/dailyhunt_1.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://m.dailyhunt.in/news/india/english/ani+english-epaper-anieng/online+furniture+store+furnisquare+announce+new+initiative+free+shipping+across+india+to+customers-newsid-n679459601?sm="
+          }
+        },
+        "logo_xH8DXk": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/hindustantimeslogo-freelogovectors.net.png",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.hindustantimes.com/brand-stories/furnisquare-redefines-online-furniture-shopping-with-free-nationwide-shipping-101758037512531.html"
+          }
+        },
+        "logo_eCH73H": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/7c26e53fa2262ce4f5fa79d1b394c06a.png",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://zeenews.india.com/consumer-connect/furnisquare-launches-free-shipping-initiative-for-customers-across-india-2959022.html"
+          }
+        },
+        "logo_JjynaA": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/OIP.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://news.abplive.com/brand-wire/furnisquare-an-online-furniture-start-up-announces-free-shipping-all-over-india-1799956"
+          }
+        },
+        "logo_QXyGgM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ani_180x79_6db6cbe8-44b4-43d6-8399-43f119c6e89f.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://aninews.in/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113148/"
+          }
+        },
+        "logo_g3fA78": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7-01_d98e3483-04df-45c7-8fd9-33ed5ee30cbc.jpg",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.tribuneindia.com/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/"
+          }
+        },
+        "logo_AWq33a": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_2_1.png",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.mid-day.com/buzzfeed/article/furnisquare-free-shipping-india-online-furniture-store-initiative-7261"
+          }
+        },
+        "logo_hLDCy6": {
+          "type": "logo",
+          "settings": {
+            "ref_image": "",
+            "alt": "",
+            "url": ""
+          }
+        },
+        "logo_ghj9Hi": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/LOKMAT-TIMES-01-1_1.png",
+            "ref_image": "",
+            "alt": "",
+            "url": "https://www.lokmattimes.com/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/"
+          }
+        }
+      },
+      "block_order": [
+        "article_7RwTQK",
+        "article_kyaYUn",
+        "logo_pG3fYU",
+        "logo_qMDkMU",
+        "logo_CnRE7T",
+        "logo_g6e7AY",
+        "logo_QpHWaM",
+        "logo_xH8DXk",
+        "logo_eCH73H",
+        "logo_JjynaA",
+        "logo_QXyGgM",
+        "logo_g3fA78",
+        "logo_AWq33a",
+        "logo_hLDCy6",
+        "logo_ghj9Hi"
+      ],
+      "name": "In the news",
+      "settings": {
+        "eyebrow": "Media connects",
+        "heading": "In the <em>news</em>",
+        "link_label": "View all media",
+        "link_url": "shopify://blogs/news"
+      }
+    },
+    "seo_text_GxmM3h": {
+      "type": "seo-text",
+      "blocks": {
+        "heading_prkjDq": {
+          "type": "heading",
+          "settings": {
+            "text": "Buy Wooden Furniture Online for Every Home by Furnisquare",
+            "level": "h2"
+          }
+        },
+        "paragraph_D9CmGa": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Welcome to Furnisquare.com, your trusted destination to buy wooden furniture online crafted from the finest solid wood and sheesham wood. Each piece at Furnisquare reflects timeless craftsmanship, durability, and style — designed to transform your home with warmth and elegance. Whether you’re furnishing a cozy apartment or a spacious villa, our collection brings the perfect blend of modern design and natural wood charm. From sleek finishes to handcrafted textures, our furniture ensures long-lasting quality and sophistication.</p><p>Explore a wide range of <a href=\"https://furnisquare.com/collections/all\">solid wood furniture online</a>, made with precision to meet your comfort and aesthetic needs. With secure online shopping, doorstep delivery, and quality assurance, Furnisquare makes it easy to bring home furniture that lasts for generations. Discover the joy of owning authentic sheesham wood furniture online, created to make your home truly yours.</p>"
+          }
+        },
+        "heading_dtMnQz": {
+          "type": "heading",
+          "settings": {
+            "text": "Our Range of Solid Wood Furniture",
+            "level": "h2"
+          }
+        },
+        "paragraph_WqyX6k": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>We offer a complete range of wooden furniture for every space in your home. Our <a href=\"https://furnisquare.com/collections/bedroom\">bedroom furniture</a> collection includes elegant beds, wardrobes, bedside tables, and dressing tables, crafted from premium solid wood for lasting strength. For your dining area, explore the <a href=\"https://furnisquare.com/collections/dining-table-sets\">dining table set</a>, dining chairs, benches, and crockery units that add a rich wooden charm to your meals. Elevate your home’s social space with <a href=\"https://furnisquare.com/collections/living-room\">living room furniture</a> such as sofa sets, <a href=\"https://furnisquare.com/collections/coffee-tables\">coffee table</a>, TV units, and bookshelves, designed for comfort and style.</p><p>Each category reflects our commitment to sustainable materials and artistic craftsmanship. Whether you’re upgrading your interiors or starting fresh, Furnisquare’s range of sheesham wood furniture fits seamlessly into modern homes while maintaining a natural, timeless appeal. Shop now and experience the perfect combination of quality, design, and affordability — only at Furnisquare.</p>"
+          }
+        },
+        "heading_cUEtAJ": {
+          "type": "heading",
+          "settings": {
+            "text": "Shop by Room:",
+            "level": "h2"
+          }
+        },
+        "heading_FBpM9U": {
+          "type": "heading",
+          "settings": {
+            "text": "Wooden Beds Crafted for Every Bedroom",
+            "level": "h3"
+          }
+        },
+        "paragraph_EmxWyD": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Enhance your bedroom with the perfect combination of comfort and style. Our <a href=\"https://furnisquare.com/collections/king-size-bed\">king size bed</a> provides spacious luxury for restful nights, while the <a href=\"https://furnisquare.com/collections/queen-size-bed\">queen size bed</a> offers a cozy and elegant solution for smaller rooms or guest spaces. Crafted from high-quality wood, these beds combine durability with timeless design, ensuring your bedroom remains both functional and visually appealing. Each piece is designed to elevate your interiors while offering practical comfort. Whether you want a statement piece for your master bedroom or a stylish addition for a compact space, Furnisquare’s king and queen size beds provide the ideal balance of aesthetics, support, and quality, making them a perfect choice for modern homes seeking both elegance and practicality.</p><p>Maximize your bedroom’s functionality without compromising on style. Opt for a bed with storage to keep essentials like linens, blankets, and pillows neatly organized, creating a clutter-free and serene environment. For those who prefer a minimalist approach, a bed without storage provides a clean, sleek design that enhances your bedroom’s aesthetics. Every bed is crafted with premium wood, ensuring durability, strength, and long-lasting beauty. From compact bedrooms to spacious master suites, our <a href=\"https://furnisquare.com/collections/beds\">beds</a> with or without storage offer versatile solutions that bring style, convenience, and timeless appeal to any modern home.</p>"
+          }
+        },
+        "heading_kDmmRj": {
+          "type": "heading",
+          "settings": {
+            "text": "Elevate Every Meal with Stylish Wooden Dining Tables & Chairs",
+            "level": "h3"
+          }
+        },
+        "paragraph_BehEw8": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Create a dining space that combines elegance, comfort, and functionality with Furnisquare’s <a href=\"https://furnisquare.com/collections/dining\">dining room furniture</a>. Our <a href=\"https://furnisquare.com/collections/6-seater-dining-sets\">dining table 6 seater</a> and <a href=\"https://furnisquare.com/collections/4-seater-dining-sets\">dining table 4 seater</a> options are perfect for family gatherings, intimate dinners, or entertaining guests, offering the ideal balance of space and style. Each dining table is crafted from high-quality wood, ensuring durability and timeless appeal while enhancing your home décor. Complement your table with our thoughtfully designed <a href=\"https://furnisquare.com/collections/dining-chairs\">dining chairs</a>, available in multiple finishes and styles to match your aesthetic. From cozy apartments to spacious dining rooms, Furnisquare’s collection of tables and chairs transforms every meal into a delightful experience.<br/><br/></p>"
+          }
+        },
+        "heading_WjPder": {
+          "type": "heading",
+          "settings": {
+            "text": "Stylish Living Room Furniture – Elegant Coffee & Center Tables",
+            "level": "h3"
+          }
+        },
+        "paragraph_nqezBc": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Transform your living space with Furnisquare’s living room furniture, designed to combine style, functionality, and durability. Our wooden <a href=\"https://furnisquare.com/collections/coffee-tables\">coffee table</a> and center table options serve as the perfect focal point for your living room, offering practical surfaces for décor, drinks, and daily essentials. For added versatility, explore <a href=\"https://furnisquare.com/collections/coffee-tables\">coffee tables with stools</a>, ideal for accommodating extra seating without taking up space. Maximize convenience with coffee tables with storage, providing hidden compartments for books, magazines, or other essentials while keeping your room organized and clutter-free. Each piece is crafted from premium wood, blending timeless elegance with modern design.<br/><br/></p>"
+          }
+        },
+        "heading_BLGwn6": {
+          "type": "heading",
+          "settings": {
+            "text": "Complete Home Furniture Collection – Living, Dining, Bedroom & Storage",
+            "level": "h3"
+          }
+        },
+        "paragraph_kdbHYW": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Transform your home with our curated selection of wooden furniture, combining functionality with timeless design. Our <a href=\"https://furnisquare.com/collections/bar-cabinets\">bar cabinets</a> offer elegant storage solutions for your beverages and glassware, while <a href=\"https://furnisquare.com/collections/tv-unit\">TV units</a> provide a sleek and practical setup for your entertainment needs. Enhance your reading corner with our sturdy <a href=\"https://furnisquare.com/collections/bookshelves\">bookshelves</a>, perfect for organizing your favorite books and decorative items. For entryways or bedrooms, our <a href=\"https://furnisquare.com/collections/shoe-rack\">shoe rack</a> with seat helps keep your space tidy and organized.</p><p>Maximize your home’s storage potential with our diverse range of furniture. Our <a href=\"https://furnisquare.com/collections/cabinet-sideboards\">sideboard buffets</a> serve as versatile storage units, ideal for dining rooms or hallways, offering ample space for your essentials. The <a href=\"https://furnisquare.com/collections/chest-of-drawers\">chest of drawers</a> provides efficient storage for clothing and accessories, helping you maintain an organized living space. Incorporate a touch of spirituality with our intricately designed <a href=\"https://furnisquare.com/collections/temples\">temples</a>, perfect for creating a serene corner in your home.</p><p>Optimize your living space with our multi-functional furniture pieces. The <a href=\"https://furnisquare.com/collections/nest-of-tables\">nest of tables</a> offers flexibility, serving as side tables or additional surfaces when needed. Our <a href=\"https://furnisquare.com/collections/side-end-tables\">side and end tables</a> provide convenient spots for lamps, drinks, or decorative items, enhancing the functionality of your living area. The wooden <a href=\"https://furnisquare.com/collections/console-tables\">console tables</a> are perfect for entryways or hallways, adding both style and utility. For those who enjoy entertaining, complement your bar setup with our stylish <a href=\"https://furnisquare.com/collections/bar-stools-chairs\">bar stools and chairs</a>, designed for comfort and elegance.</p>"
+          }
+        },
+        "heading_4H6Rwt": {
+          "type": "heading",
+          "settings": {
+            "text": "Things to Consider Before Buying Furniture Online",
+            "level": "h2"
+          }
+        },
+        "paragraph_684MdU": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Here are some key things to keep in mind before you decide to buy furniture online.</p>"
+          }
+        },
+        "heading_hJfMQC": {
+          "type": "heading",
+          "settings": {
+            "text": "Materials",
+            "level": "h3"
+          }
+        },
+        "paragraph_NXRHg3": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>The furniture materials play a crucial role in both the durability and appearance of your furniture. Whether you’re considering wood, metal, or fabric, each material has its own advantages and care requirements. For example, wooden furniture offers timeless appeal but requires regular maintenance, while metal furniture is often more durable and low-maintenance. Make sure the material fits your needs and lifestyle.</p>"
+          }
+        },
+        "heading_r9BbVr": {
+          "type": "heading",
+          "settings": {
+            "text": "Size",
+            "level": "h3"
+          }
+        },
+        "paragraph_KjDD48": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Furniture size is crucial, especially when shopping for home furniture online. Always measure the space where you plan to place the furniture before purchasing. Take note of the dimensions provided online to ensure that the piece fits comfortably in your room without overcrowding it. Oversized furniture in a small room can make it feel cramped, while undersized furniture can look out of place in a large area.</p>"
+          }
+        },
+        "heading_n8a9dV": {
+          "type": "heading",
+          "settings": {
+            "text": "Design",
+            "level": "h3"
+          }
+        },
+        "paragraph_FGd98V": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Another important factor is the furniture design. Do you prefer modern, minimalist styles, or are you drawn to more traditional or vintage pieces? Make sure the design complements your existing home décor and meets your practical needs. Whether it’s a sleek sofa, a rustic dining table, or a storage unit, the design should align with your style and functionality preferences.</p>"
+          }
+        },
+        "heading_yJ79G9": {
+          "type": "heading",
+          "settings": {
+            "text": "Colour",
+            "level": "h3"
+          }
+        },
+        "paragraph_QQcRPW": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>The furniture colour you choose can dramatically affect the overall ambience of your room. Lighter tones can create a sense of space, while darker shades offer a more sophisticated and cosy feel. Consider your room’s colour scheme and choose furniture that blends well with your walls, flooring, and other décor items.</p>"
+          }
+        },
+        "heading_RPhL6T": {
+          "type": "heading",
+          "settings": {
+            "text": "Price",
+            "level": "h3"
+          }
+        },
+        "paragraph_FaUwi7": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Furniture prices vary greatly depending on the material, design, and brand. Set a realistic budget before shopping, and compare options within your price range. While it’s tempting to go for cheaper alternatives, investing in quality pieces can save you money in the long run as they tend to last longer.</p>"
+          }
+        },
+        "heading_YmaXUT": {
+          "type": "heading",
+          "settings": {
+            "text": "Comfort",
+            "level": "h3"
+          }
+        },
+        "paragraph_6QnYbD": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Comfort is a key factor to consider when buying furniture online, as it directly affects your daily living experience. Look for furniture that offers ergonomic support, especially for items like sofas, chairs, and beds. Check product descriptions for cushioning materials, seat depth, and backrest design to ensure they meet your comfort requirements.</p>"
+          }
+        },
+        "heading_dn9jg7": {
+          "type": "heading",
+          "settings": {
+            "text": "Return Policy",
+            "level": "h3"
+          }
+        },
+        "paragraph_XWGYnn": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Understanding the return and exchange policy is crucial when purchasing furniture online. Ensure the website has a flexible policy if the product is damaged, doesn’t match the description, or doesn’t fit your space. A hassle-free return process can save you from potential disappointments. Read our <a href=\"https://furnisquare.com/pages/return-refund-policy\">return & refund policy</a>.</p>"
+          }
+        },
+        "heading_t7zcGU": {
+          "type": "heading",
+          "settings": {
+            "text": "Sustainability",
+            "level": "h3"
+          }
+        },
+        "paragraph_W8KDN8": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>If you value eco-friendly practices, consider furniture made from sustainable materials or brands committed to ethical production. Sustainable choices benefit the environment and add a unique touch to your home.</p>"
+          }
+        },
+        "heading_Rgfh7w": {
+          "type": "heading",
+          "settings": {
+            "text": "Reviews",
+            "level": "h3"
+          }
+        },
+        "paragraph_kWUa6A": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Before finalising a purchase, check customer reviews. Reviews can give you valuable insights into the furniture’s quality, comfort, and durability. Pay attention to both positive and negative feedback, as this can help you make a more informed decision.</p>"
+          }
+        },
+        "heading_kC87np": {
+          "type": "heading",
+          "settings": {
+            "text": "Warranty",
+            "level": "h3"
+          }
+        },
+        "paragraph_iTfkTL": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>It’s always a good idea to look for furniture with a warranty. A good warranty protects your investment if the product has manufacturing defects or damage. Knowing that you’re covered if something goes wrong offers peace of mind. See our <a href=\"https://furnisquare.com/pages/warranty-care-instructions\">warranty & care</a> details.</p>"
+          }
+        },
+        "heading_YtMeq4": {
+          "type": "heading",
+          "settings": {
+            "text": "Payment",
+            "level": "h3"
+          }
+        },
+        "paragraph_NzMFnU": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>When buying furniture online, make sure the website offers secure and convenient payment options. Look for payment methods that suit you, such as credit cards, digital wallets, or EMI options. Always check for any hidden charges, delivery fees, or additional costs.</p><p>By considering these factors when shopping for home furniture online, you can make a more informed decision and select the perfect pieces for your home.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_prkjDq",
+        "paragraph_D9CmGa",
+        "heading_dtMnQz",
+        "paragraph_WqyX6k",
+        "heading_cUEtAJ",
+        "heading_FBpM9U",
+        "paragraph_EmxWyD",
+        "heading_kDmmRj",
+        "paragraph_BehEw8",
+        "heading_WjPder",
+        "paragraph_nqezBc",
+        "heading_BLGwn6",
+        "paragraph_kdbHYW",
+        "heading_4H6Rwt",
+        "paragraph_684MdU",
+        "heading_hJfMQC",
+        "paragraph_NXRHg3",
+        "heading_r9BbVr",
+        "paragraph_KjDD48",
+        "heading_n8a9dV",
+        "paragraph_FGd98V",
+        "heading_yJ79G9",
+        "paragraph_QQcRPW",
+        "heading_RPhL6T",
+        "paragraph_FaUwi7",
+        "heading_YmaXUT",
+        "paragraph_6QnYbD",
+        "heading_dn9jg7",
+        "paragraph_XWGYnn",
+        "heading_t7zcGU",
+        "paragraph_W8KDN8",
+        "heading_Rgfh7w",
+        "paragraph_kWUa6A",
+        "heading_kC87np",
+        "paragraph_iTfkTL",
+        "heading_YtMeq4",
+        "paragraph_NzMFnU"
+      ],
+      "name": "SEO text block",
+      "settings": {
+        "label": "About Furnisquare"
+      }
+    },
+    "faq_949zwL": {
+      "type": "faq",
+      "blocks": {
+        "qa_KCUNx7": {
+          "type": "qa",
+          "settings": {
+            "question": "Is shipping free?",
+            "answer": "<p>Yes. We ship all products for free. Delivery of any product is free of charge for all orders in India — we deliver across the country, except for a few non-serviceable PIN codes.</p>",
+            "open": true
+          }
+        },
+        "qa_G6D6Pc": {
+          "type": "qa",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p><strong>Ready-to-Ship products</strong> are regularly stocked and typically delivered within 7–10 business days. <strong>Made-to-Order products</strong> are crafted specifically for you after the order is placed, so delivery may take 25–30 days.</p>",
+            "open": false
+          }
+        },
+        "qa_JRF6mt": {
+          "type": "qa",
+          "settings": {
+            "question": "Is Cash on Delivery available?",
+            "answer": "<p>Yes — COD is available on Ready-to-Ship products that are currently in stock. Made-to-Order and custom products are manufactured after an order is received, so prepaid payment is required to confirm them. Prepaid orders also get an extra 10% off, applied automatically.</p>",
+            "open": false
+          }
+        },
+        "qa_zhhXzr": {
+          "type": "qa",
+          "settings": {
+            "question": "What if something is damaged in transit?",
+            "answer": "<p>All transit-related damage is totally our responsibility. Raise it with the delivery team and our customer support; if you notice an issue later, write to <a href=\"mailto:info@furnisquare.com\">info@furnisquare.com</a> within 24 hours of delivery with photos. We’ll assess it within 2 business days and repair or replace the product.</p>",
+            "open": false
+          }
+        },
+        "qa_NzDa49": {
+          "type": "qa",
+          "settings": {
+            "question": "Is there a warranty?",
+            "answer": "<p>Products come with a 36-month warranty against manufacturing defects and termites, for domestic use and when the care instructions are followed. Email photos with your order details and our team will contact you within 48 hours. <a href=\"/pages/warranty-care-instructions\" title=\"Warranty & Care Instructions\">Warranty & care</a></p>",
+            "open": false
+          }
+        },
+        "qa_6p7QdW": {
+          "type": "qa",
+          "settings": {
+            "question": "Can I get a piece customised?",
+            "answer": "<p>Yes. Design, colour, size and features can be tailored. Customised orders are fully prepaid, go into production as soon as details are confirmed (so they can’t be cancelled), and can take 5–7 weeks to dispatch. <a href=\"#\" title=\"#\">Customise order policy</a></p>",
+            "open": false
+          }
+        },
+        "qa_4nrmyc": {
+          "type": "qa",
+          "settings": {
+            "question": "Do you take bulk orders?",
+            "answer": "<p>Yes — for retailers, wholesalers, interior designers, architects, hotels, offices and distributors. Send a <a href=\"https://furnisquare.com/pages/bulk-order-customization\">bulk enquiry</a> and our team will contact you within 24 hours with a customised catalogue and quotation.</p>",
+            "open": false
+          }
+        },
+        "qa_RmFLcW": {
+          "type": "qa",
+          "settings": {
+            "question": "How do I track my order?",
+            "answer": "<p>Sign in and visit the order tracking page, or use <a href=\"https://furnisquare.com/apps/track-shipment\">Track Shipment</a> as a guest with the email or phone number linked to your order. You’ll see order confirmation, manufacturing progress, quality check and dispatch details.</p>",
+            "open": false
+          }
+        },
+        "qa_TFhrDn": {
+          "type": "qa",
+          "settings": {
+            "question": "Are there installation charges or hidden fees?",
+            "answer": "<p>Absolutely not. Many pieces can be assembled using the instructions we provide; some heavier products may need a carpenter. Ask our delivery team to assemble where applicable so you know everything fits.</p>",
+            "open": false
+          }
+        },
+        "qa_9k66Le": {
+          "type": "qa",
+          "settings": {
+            "question": "Will my furniture look exactly as shown?",
+            "answer": "<p>We work hard to deliver every product as described. Solid wood is a natural material, though: grain patterns and slight stain differences make each piece unique, and are generally accepted on hardwood furniture.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "qa_KCUNx7",
+        "qa_G6D6Pc",
+        "qa_JRF6mt",
+        "qa_zhhXzr",
+        "qa_NzDa49",
+        "qa_6p7QdW",
+        "qa_4nrmyc",
+        "qa_RmFLcW",
+        "qa_TFhrDn",
+        "qa_9k66Le"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "eyebrow": "FAQ’s",
+        "heading": "Questions, <em>answered</em>",
+        "text": "Shipping, payment, delivery times, warranty and customisation — the things customers ask us most. Anything else, our team is a call or a WhatsApp away, 24/7.",
+        "link_label": "All FAQ’s",
+        "link_url": ""
+      }
+    },
+    "reviews_slider_Mxyjyx": {
+      "type": "reviews-slider",
+      "blocks": {
+        "judge_me_reviews_testimonials_carousel_KbdReA": {
+          "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "star_rating": "all",
+            "max_reviews": 20,
+            "quote_marks_size": "small",
+            "product_name_text_size": "small",
+            "verified_badge_style": "icon",
+            "card_height": "medium",
+            "text_size": "extra_small",
+            "stars_size": "medium",
+            "arrows_position": "bottom",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "quote_marks_style": "serif",
+            "card_color": "#F9F9F9",
+            "stars_and_quote_marks_color": "#F28A0A",
+            "text_color": "#000000",
+            "arrows_color": "#000000",
+            "show_border": false,
+            "border_color": "#108474",
+            "show_drop_shadow": false,
+            "transition_speed": 5,
+            "header_text": "",
+            "show_average_rating": true,
+            "rating_display": "default"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_testimonials_carousel_KbdReA"
+      ],
+      "name": "Customer reviews",
+      "settings": {
+        "eyebrow": "Customers are saying",
+        "heading": "Let customers <em>speak for us</em>",
+        "score": "4.99",
+        "score_caption": "from 334 reviews",
+        "link_label": "Read all 334 reviews",
+        "link_url": ""
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "ratings",
+    "categories",
+    "sale",
+    "best_sellers",
+    "product_rail_VKfYM3",
+    "feature_block_gaMcTN",
+    "product_rail_ibLc9C",
+    "shop_by_room_9J6gjN",
+    "video_gallery_6dMa3K",
+    "trust_strip_R9zt6i",
+    "press_news_ABECVK",
+    "seo_text_GxmM3h",
+    "faq_949zwL",
+    "reviews_slider_Mxyjyx"
+  ]
+}

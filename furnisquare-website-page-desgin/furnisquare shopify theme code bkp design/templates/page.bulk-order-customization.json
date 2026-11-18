@@ -1,0 +1,249 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "split_image_right",
+        "eyebrow": "Bulk orders & customization",
+        "heading": "Enquiry for <em>bulk orders</em>",
+        "lede": "Our dedicated team will contact you within 24 hours with a customized catalog and quotation.",
+        "button_1_label": "Send an enquiry",
+        "button_1_link": "#bulk-form",
+        "button_2_label": "WhatsApp us",
+        "button_2_link": "https://wa.me/919785322576?text=Hi%2C%20I%27d%20like%20a%20bulk%20order%20quotation",
+        "button_2_external": true,
+        "image": "shopify://shop_images/banner-dining.webp",
+        "image_alt": "Six seater carved wooden dining set with cushioned chairs"
+      }
+    },
+    "who": {
+      "type": "inner-pills",
+      "blocks": {
+        "b01": {
+          "type": "pill",
+          "settings": {
+            "label": "Retailers"
+          }
+        },
+        "b02": {
+          "type": "pill",
+          "settings": {
+            "label": "Wholesalers"
+          }
+        },
+        "b03": {
+          "type": "pill",
+          "settings": {
+            "label": "Interior Designers"
+          }
+        },
+        "b04": {
+          "type": "pill",
+          "settings": {
+            "label": "Architects"
+          }
+        },
+        "b05": {
+          "type": "pill",
+          "settings": {
+            "label": "Hotels"
+          }
+        },
+        "b06": {
+          "type": "pill",
+          "settings": {
+            "label": "Offices"
+          }
+        },
+        "b07": {
+          "type": "pill",
+          "settings": {
+            "label": "Distributors"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05",
+        "b06",
+        "b07"
+      ],
+      "settings": {
+        "eyebrow": "Who we work with",
+        "heading": "Bulk furniture for <em>every kind of buyer</em>"
+      }
+    },
+    "enquiry": {
+      "type": "inner-enquiry-form",
+      "blocks": {
+        "b01": {
+          "type": "why_item",
+          "settings": {
+            "icon": "shield",
+            "title": "Premium Quality",
+            "text": "Crafted with durable materials and premium finishing for long-lasting elegance."
+          }
+        },
+        "b02": {
+          "type": "why_item",
+          "settings": {
+            "icon": "truck",
+            "title": "Fast Delivery",
+            "text": "Quick and secure delivery service to ensure your furniture reaches safely."
+          }
+        },
+        "b03": {
+          "type": "why_item",
+          "settings": {
+            "icon": "star",
+            "title": "Modern Designs",
+            "text": "Stylish and modern furniture designs that perfectly match your lifestyle."
+          }
+        },
+        "b04": {
+          "type": "why_item",
+          "settings": {
+            "icon": "tag",
+            "title": "Affordable Luxury",
+            "text": "Luxury furniture experience at budget-friendly pricing for every home."
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04"
+      ],
+      "settings": {
+        "anchor": "bulk-form",
+        "eyebrow": "Why choose Furnisquare?",
+        "heading": "Premium furniture crafted with quality, comfort & <em>elegance</em>",
+        "form_heading": "Enquiry for bulk orders",
+        "form_intro": "Our dedicated team will contact you within 24 hours with a customized catalog and quotation.",
+        "request_tag": "Bulk order enquiry",
+        "business_label": "Business name",
+        "business_note": "(if applicable)",
+        "name_label": "Full name / contact person",
+        "phone_label": "WhatsApp number",
+        "email_label": "Email",
+        "category_label": "Which category best describes you?",
+        "category_placeholder": "Select category",
+        "category_options": "Retailer\nWholesaler\nInterior Designer\nArchitect\nHotel\nOffice\nDistributor\nOther",
+        "submit_label": "Submit",
+        "submit_note": "We reply within 24 hours.",
+        "done_heading": "Thank you — enquiry received",
+        "done_text": "Our dedicated team will contact you within 24 hours with a customized catalog and quotation.",
+        "error_heading": "Please check the following:"
+      }
+    },
+    "customization": {
+      "type": "inner-split",
+      "blocks": {
+        "b01": {
+          "type": "para",
+          "settings": {
+            "text": "<p>A customized product is made according to the specific requirements or preferences of the customer. It can be modified in terms of design, colour, size, features, or any other aspect that you require.</p>"
+          }
+        },
+        "b02": {
+          "type": "ticks",
+          "settings": {
+            "items": "Payment for customized orders is fully in advance.\nManufacturing starts as soon as the order details are confirmed, so customized orders cannot be cancelled.\nCustomized orders can take up to 5–7 weeks to dispatch."
+          }
+        },
+        "b03": {
+          "type": "link",
+          "settings": {
+            "label": "Read the full Customize Order Policy",
+            "url": "/pages/customize-order-policy"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03"
+      ],
+      "settings": {
+        "tinted": false,
+        "flip": false,
+        "eyebrow": "Customization",
+        "heading": "Made for your <em>space</em>",
+        "image": "shopify://shop_images/banner-bedroom.webp",
+        "image_alt": "Solid sheesham king size bed with storage and a matching bedside table"
+      }
+    },
+    "collections": {
+      "type": "inner-collections",
+      "blocks": {
+        "b01": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/coffee-table-sets.webp",
+            "image_alt": "Wooden coffee table set with stools",
+            "name": "Coffee Table Sets",
+            "url": "/collections/coffee-table-sets"
+          }
+        },
+        "b02": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/8-seater-dining-sets.webp",
+            "image_alt": "Eight seater wooden dining set",
+            "name": "8 Seater Dining Sets",
+            "url": "/collections/8-seater-dining-sets"
+          }
+        },
+        "b03": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/chairs.webp",
+            "image_alt": "Wooden arm chairs",
+            "name": "Arm Chairs",
+            "url": "/collections/arm-chairs"
+          }
+        },
+        "b04": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/bar-cabinets.webp",
+            "image_alt": "Wooden bar cabinet and stools",
+            "name": "Bar Furniture",
+            "url": "/collections/bar-furniture"
+          }
+        },
+        "b05": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/king-size-bed.webp",
+            "image_alt": "Solid wood king size bed",
+            "name": "Bedroom",
+            "url": "/collections/bedroom"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05"
+      ],
+      "settings": {
+        "eyebrow": "Collections",
+        "heading": "Popular for <em>bulk orders</em>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "who",
+    "enquiry",
+    "customization",
+    "collections"
+  ]
+}

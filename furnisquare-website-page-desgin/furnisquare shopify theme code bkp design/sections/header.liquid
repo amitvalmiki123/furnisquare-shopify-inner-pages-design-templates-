@@ -1,0 +1,447 @@
+{%- liquid
+  assign menu = linklists[section.settings.menu]
+  assign tel = settings.phone | replace: ' ', '' | replace: '-', ''
+-%}
+<header class="hdr" id="top" data-header>
+  <div class="wrap hdr__in">
+    <button class="hdr__burger" type="button" aria-controls="nav" aria-expanded="false" aria-label="{{ 'general.menu_open' | t }}">{% render 'icon', name: 'menu' %}</button>
+    <a class="hdr__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {%- if settings.logo != blank -%}
+        {{ settings.logo | image_url: width: 442 | image_tag: alt: shop.name, width: 221, height: 69, loading: 'eager' }}
+      {%- else -%}
+        <span class="hdr__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="nav__head">
+        <span class="nav__logo">
+          {%- if settings.logo != blank -%}
+            {{ settings.logo | image_url: width: 442 | image_tag: alt: shop.name, width: 221, height: 69, loading: 'lazy' }}
+          {%- else -%}
+            <span class="hdr__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </span>
+        <button class="nav__close" type="button" aria-label="{{ 'general.menu_close' | t }}">{% render 'icon', name: 'close' %}</button>
+      </div>
+      <ul class="nav__list">
+        {%- for link in menu.links -%}
+          {%- if link.links.size > 0 -%}
+            {%- liquid
+              assign has_grand = false
+              for child in link.links
+                if child.links.size > 0
+                  assign has_grand = true
+                endif
+              endfor
+              assign link_key = link.title | handle
+            -%}
+            <li class="nav__item">
+              <button class="nav__btn" type="button" aria-expanded="false" aria-controls="mega-{{ forloop.index }}">{{ link.title }}{% render 'icon', name: 'chev' %}</button>
+              <div class="mega" id="mega-{{ forloop.index }}">
+                <div class="wrap mega__in">
+                  <div class="mega__main">
+                    <div class="mega__cols">
+                      {%- if has_grand -%}
+                        {%- for child in link.links -%}
+                          <div class="mega__col">
+                            <a class="mega__h" href="{{ child.url }}">{{ child.title }}</a>
+                            {%- for grandchild in child.links -%}
+                              <a href="{{ grandchild.url }}">{{ grandchild.title }}</a>
+                            {%- endfor -%}
+                          </div>
+                        {%- endfor -%}
+                      {%- else -%}
+                        <div class="mega__col">
+                          {%- for child in link.links -%}
+                            <a href="{{ child.url }}">{{ child.title }}</a>
+                          {%- endfor -%}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                    <div class="mega__foot">
+                      <a class="mega__all" href="{{ link.url }}">Shop all {{ link.title | downcase }}</a>
+                    </div>
+                  </div>
+                  {%- for block in section.blocks -%}
+                    {%- assign block_key = block.settings.menu_title | handle -%}
+                    {%- if block.type == 'mega_feature' and block_key == link_key -%}
+                      <a class="mega__feature" href="{{ block.settings.link | default: link.url }}" {{ block.shopify_attributes }}>
+                        {%- if block.settings.image != blank -%}
+                          {{ block.settings.image | image_url: width: 600 | image_tag: alt: block.settings.label, width: 600, height: 600, loading: 'lazy' }}
+                        {%- endif -%}
+                        {%- if block.settings.label != blank -%}
+                          <span>{{ block.settings.label }} {% render 'icon', name: 'arrow' %}</span>
+                        {%- endif -%}
+                      </a>
+                      {%- break -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+            </li>
+          {%- else -%}
+            <li class="nav__item"><a class="nav__btn" href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      <div class="nav__foot">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'utility_link' -%}
+            <a href="{{ block.settings.url }}" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}{{ block.settings.label }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if customer -%}
+          <a href="{{ routes.account_url }}">{% render 'icon', name: 'user' %}{{ 'customer.account' | t }}</a>
+        {%- else -%}
+          <a href="{{ routes.account_login_url }}">{% render 'icon', name: 'user' %}{{ 'general.login' | t }}</a>
+        {%- endif -%}
+        {%- if settings.phone != blank -%}
+          <a href="tel:{{ tel }}">{% render 'icon', name: 'phone' %}{{ settings.phone }}</a>
+        {%- endif -%}
+      </div>
+    </nav>
+
+    <div class="hdr__acts">
+      <button class="iconbtn" type="button" data-open-search aria-label="{{ 'general.search' | t }}" aria-controls="search" aria-haspopup="dialog">{% render 'icon', name: 'search' %}</button>
+      {%- if settings.help_url != blank -%}
+        <a class="iconbtn hide-sm" href="{{ settings.help_url }}" aria-label="{{ 'general.help' | t }}">{% render 'icon', name: 'help' %}</a>
+      {%- endif -%}
+      {%- if settings.wishlist_url != blank -%}
+        <a class="iconbtn hide-sm" href="{{ settings.wishlist_url }}" aria-label="{{ 'general.wishlist' | t }}">{% render 'icon', name: 'heart' %}<span class="badge" data-wish-count hidden>0</span></a>
+      {%- else -%}
+        <span class="iconbtn hide-sm" role="img" aria-label="{{ 'general.wishlist' | t }}">{% render 'icon', name: 'heart' %}<span class="badge" data-wish-count hidden>0</span></span>
+      {%- endif -%}
+      <a class="iconbtn hide-sm" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" aria-label="{{ 'general.login' | t }}">{% render 'icon', name: 'user' %}</a>
+      <a class="iconbtn" href="{{ routes.cart_url }}" aria-label="{{ 'general.cart' | t }}, {{ 'cart.items' | t: count: cart.item_count }}" data-cart-link>
+        {% render 'icon', name: 'bag' %}<span class="badge" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+  <div class="scrim" data-scrim></div>
+</header>
+
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="{{ 'general.search' | t }}" aria-hidden="true">
+  <div class="search__panel">
+    <div class="wrap search__in">
+      <form class="search__form" action="{{ routes.search_url }}" method="get" role="search" data-search-form>
+        <label class="sr-only" for="search-q">{{ 'search.label' | t }}</label>
+        {% render 'icon', name: 'search' %}
+        <input id="search-q" name="q" type="search" placeholder="{{ 'search.placeholder' | t }}" autocomplete="off" autocapitalize="off" spellcheck="false" data-search-input>
+        <input type="hidden" name="options[prefix]" value="last">
+        <button class="btn btn--ink search__submit" type="submit">{{ 'general.search' | t }}</button>
+        <button class="iconbtn" type="button" data-close-search aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
+      </form>
+
+      <div class="search__idle" data-search-idle>
+        <p class="search__label">{{ 'search.popular' | t }}</p>
+        <ul class="chips">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'search_chip' -%}
+              <li {{ block.shopify_attributes }}><a href="{{ block.settings.url }}">{{ block.settings.label }}</a></li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        <p class="search__hint">Press Esc to close</p>
+      </div>
+
+      <div class="search__results" data-search-results aria-live="polite" hidden></div>
+    </div>
+  </div>
+  <div class="search__scrim" data-close-search></div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "enabled_on": { "groups": ["header"] },
+  "max_blocks": 30,
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main menu",
+      "info": "Use a 3-level menu: top item → column heading → links. Top items with children become mega menus.",
+      "default": "main-menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_feature",
+      "name": "Mega menu feature image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Top-level menu item title",
+          "info": "Must match the menu item (e.g. Bedroom)."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "search_chip",
+      "name": "Popular search",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "utility_link",
+      "name": "Mobile menu link",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "cash",
+              "label": "Cash"
+            },
+            {
+              "value": "pencil",
+              "label": "Pencil"
+            },
+            {
+              "value": "boxes",
+              "label": "Boxes"
+            },
+            {
+              "value": "track",
+              "label": "Track"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "phone",
+              "label": "Phone"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "mail",
+              "label": "Mail"
+            },
+            {
+              "value": "pin",
+              "label": "Pin"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "help",
+              "label": "Help"
+            },
+            {
+              "value": "user",
+              "label": "User"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "bag",
+              "label": "Bag"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "wa",
+              "label": "Wa"
+            }
+          ],
+          "default": "pencil"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "mega_feature",
+        "settings": {
+          "menu_title": "Sofa",
+          "label": "Wooden sofa sets",
+          "link": "/collections/wooden-sofa-sets"
+        }
+      },
+      {
+        "type": "mega_feature",
+        "settings": {
+          "menu_title": "Living Room",
+          "label": "Console tables",
+          "link": "/collections/console-tables"
+        }
+      },
+      {
+        "type": "mega_feature",
+        "settings": {
+          "menu_title": "Bedroom",
+          "label": "King size beds",
+          "link": "/collections/king-size-bed"
+        }
+      },
+      {
+        "type": "mega_feature",
+        "settings": {
+          "menu_title": "Dining",
+          "label": "6 seater dining sets",
+          "link": "/collections/6-seater-dining-sets"
+        }
+      },
+      {
+        "type": "mega_feature",
+        "settings": {
+          "menu_title": "Storage",
+          "label": "Wardrobes",
+          "link": "/collections/wardrobe"
+        }
+      },
+      {
+        "type": "mega_feature",
+        "settings": {
+          "menu_title": "Study",
+          "label": "Study tables",
+          "link": "/collections/study-tables"
+        }
+      },
+      {
+        "type": "mega_feature",
+        "settings": {
+          "menu_title": "Decor",
+          "label": "Decor",
+          "link": "/collections/decor"
+        }
+      },
+      {
+        "type": "search_chip",
+        "settings": {
+          "label": "King size bed",
+          "url": "/collections/king-size-bed"
+        }
+      },
+      {
+        "type": "search_chip",
+        "settings": {
+          "label": "6 seater dining set",
+          "url": "/collections/6-seater-dining-sets"
+        }
+      },
+      {
+        "type": "search_chip",
+        "settings": {
+          "label": "TV unit",
+          "url": "/collections/tv-unit"
+        }
+      },
+      {
+        "type": "search_chip",
+        "settings": {
+          "label": "Wooden sofa set",
+          "url": "/collections/wooden-sofa-sets"
+        }
+      },
+      {
+        "type": "search_chip",
+        "settings": {
+          "label": "Temples",
+          "url": "/collections/temples"
+        }
+      },
+      {
+        "type": "search_chip",
+        "settings": {
+          "label": "Swing jhula",
+          "url": "/collections/swing-jhula"
+        }
+      },
+      {
+        "type": "search_chip",
+        "settings": {
+          "label": "Study tables",
+          "url": "/collections/study-tables"
+        }
+      },
+      {
+        "type": "utility_link",
+        "settings": {
+          "icon": "pencil",
+          "label": "Customization & bulk orders",
+          "url": "/pages/bulk-order-customization"
+        }
+      },
+      {
+        "type": "utility_link",
+        "settings": {
+          "icon": "track",
+          "label": "Track order",
+          "url": "/apps/track-shipment"
+        }
+      }
+    ]
+  }
+}
+{% endschema %}
