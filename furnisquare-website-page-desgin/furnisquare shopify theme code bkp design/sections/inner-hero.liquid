@@ -19,7 +19,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h1 class="phead__title" id="{{ heading_id }}">{{ section.settings.heading }}</h1>
+      <h1 class="phead__title" id="{{ heading_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h1>
       {%- if section.settings.lede != blank -%}
         <p class="phead__lede">{{ section.settings.lede }}</p>
       {%- endif -%}
@@ -73,7 +73,7 @@
       "type": "html",
       "id": "heading",
       "label": "Heading (H1)",
-      "info": "Renders as the page's <h1> — the single main heading. Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>bulk orders</em>.",
+      "info": "Renders inside <h1>…</h1> (tag is added by the section — do NOT type it). Raw HTML shown and saved as typed. Wrap the saffron part in <em>, e.g. <em>bulk orders</em>.",
       "default": "Enquiry for <em>bulk orders</em>"
     },
     {

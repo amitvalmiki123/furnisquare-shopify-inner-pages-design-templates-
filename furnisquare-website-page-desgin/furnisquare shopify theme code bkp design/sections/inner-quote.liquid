@@ -4,7 +4,7 @@
 {%- endcomment -%}
 <section class="sec qband" aria-label="{{ section.settings.aria_label | escape }}">
   <div class="wrap">
-    <blockquote>{{ section.settings.quote }}</blockquote>
+    <blockquote>{{ section.settings.quote | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</blockquote>
     {%- if section.settings.caption != blank -%}
       <p>{{ section.settings.caption }}</p>
     {%- endif -%}
@@ -25,7 +25,7 @@
       "type": "html",
       "id": "quote",
       "label": "Quote (blockquote)",
-      "info": "Renders as <blockquote>…</blockquote>. Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>beautiful.</em>.",
+      "info": "Renders inside <blockquote>…</blockquote> (tag is added by the section — do NOT type it). Raw HTML shown and saved as typed. Wrap the saffron part in <em>, e.g. <em>beautiful.</em>.",
       "default": "Take a few square feet of nothing, and transform it into something <em>beautiful.</em>"
     },
     {

@@ -11,7 +11,7 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="eyebrow"><span class="sq" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      <h2 class="mast__title" id="{{ heading_id }}">{{ section.settings.heading }}</h2>
+      <h2 class="mast__title" id="{{ heading_id }}">{{ section.settings.heading | replace: '</p><p>', ' ' | remove: '<p>' | remove: '</p>' }}</h2>
       {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
     </header>
     {%- if section.blocks.size > 0 -%}
@@ -38,7 +38,7 @@
       "type": "html",
       "id": "heading",
       "label": "Heading (H2)",
-      "info": "Renders as <H2>…</H2>. Raw HTML field — tags are shown and saved exactly as typed. Wrap the saffron part in <em> tags, e.g. <em>every kind of buyer</em>.",
+      "info": "Renders inside <h2>…</h2> (tag is added by the section — do NOT type it). Raw HTML shown and saved as typed. Wrap the saffron part in <em>, e.g. <em>every kind of buyer</em>.",
       "default": "Bulk furniture for <em>every kind of buyer</em>"
     },
     {
