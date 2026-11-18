@@ -1,0 +1,221 @@
+{%- comment -%}
+  Cancel order page body. Two columns: left retention card (.keep) with
+  checklist blocks + WhatsApp CTA, right card (.fcard) with a real Shopify
+  contact form (posts to the store inbox) carrying order details and a
+  hidden Request tag. Visual reference: mockup .fwrap / .keep / .fcard on
+  cancel-order.html.
+{%- endcomment -%}
+{%- liquid
+  assign title_id = 'cancel-title-' | append: section.id
+  assign uid = 'cancel-' | append: section.id
+-%}
+<section class="sec sec--tint" aria-labelledby="{{ title_id }}">
+  <div class="wrap fwrap">
+    <div class="keep">
+      <h2>{{ section.settings.keep_heading }}</h2>
+      {%- if section.settings.keep_text != blank -%}<p>{{ section.settings.keep_text }}</p>{%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <ul class="ticks2">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+        <a class="btn btn--ink" href="{{ section.settings.cta_link }}"{% if section.settings.cta_new_tab %} target="_blank" rel="noopener"{% endif %}>{% render 'icon', name: 'wa' %}{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+    <div class="fcard">
+      <h2 id="{{ title_id }}">{{ section.settings.form_heading }}</h2>
+      {%- if section.settings.form_intro != blank -%}<p class="fcard__intro">{{ section.settings.form_intro }}</p>{%- endif -%}
+      {%- form 'contact', class: 'contact-form', id: uid -%}
+        {%- if form.posted_successfully? -%}
+          <div class="fdone" tabindex="-1">
+            {% render 'icon', name: 'check' %}
+            <h3>{{ section.settings.done_title }}</h3>
+            <p>{{ section.settings.done_text }}</p>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="fcard__errors" role="alert">
+              {%- if section.settings.error_heading != blank -%}<strong>{{ section.settings.error_heading }}</strong>{%- endif -%}
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+          <input type="hidden" name="contact[Request]" value="{{ section.settings.request_tag | escape }}">
+          <div class="fgrid">
+            <div class="ff">
+              <label for="{{ uid }}-order">Order ID <i aria-hidden="true">*</i></label>
+              <input id="{{ uid }}-order" type="text" name="contact[Order ID]" placeholder="Enter your order ID" required>
+            </div>
+            <div class="ff">
+              <label for="{{ uid }}-name">Full name <i aria-hidden="true">*</i></label>
+              <input id="{{ uid }}-name" type="text" name="contact[Full Name]" autocomplete="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="ff ff--phone">
+              <label for="{{ uid }}-phone">Phone number <i aria-hidden="true">*</i></label>
+              <input id="{{ uid }}-phone" type="tel" name="contact[Phone Number]" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+            <div class="ff">
+              <label for="{{ uid }}-email">Email address <i aria-hidden="true">*</i></label>
+              <input id="{{ uid }}-email" type="email" name="contact[email]" autocomplete="email" placeholder="Enter your email" required>
+            </div>
+            <div class="ff full">
+              <label for="{{ uid }}-reason">Cancellation reason <i aria-hidden="true">*</i></label>
+              <select id="{{ uid }}-reason" name="contact[Cancellation Reason]" required>
+                <option value="" selected disabled>Select reason</option>
+                {%- assign reason_lines = section.settings.reason_options | newline_to_br | split: '<br />' -%}
+                {%- for line in reason_lines -%}
+                  {%- assign option_text = line | strip -%}
+                  {%- if option_text != blank -%}
+                    <option>{{ option_text | escape }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+            </div>
+            <div class="ff full">
+              <label for="{{ uid }}-details">Additional details</label>
+              <textarea id="{{ uid }}-details" name="contact[Additional Details]" rows="4" placeholder="Write additional details here…"></textarea>
+            </div>
+            <label class="fcheck full" for="{{ uid }}-cod">
+              <input id="{{ uid }}-cod" type="checkbox" name="contact[COD Policy Accepted]" value="Yes" required>
+              <span>{{ section.settings.cod_label }}</span>
+            </label>
+          </div>
+          <div class="fsubmit">
+            <button class="btn btn--saffron" type="submit">{{ section.settings.submit_label }} {% render 'icon', name: 'arrow' %}</button>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Cancel Order",
+  "settings": [
+    {
+      "type": "text",
+      "id": "keep_heading",
+      "label": "Left heading (H2)",
+      "default": "Before you cancel your order"
+    },
+    {
+      "type": "textarea",
+      "id": "keep_text",
+      "label": "Left text",
+      "default": "Your order is already being prepared with care by the Furnisquare team."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "WhatsApp CTA label",
+      "default": "Contact support on WhatsApp"
+    },
+    {
+      "type": "text",
+      "id": "cta_link",
+      "label": "WhatsApp CTA link",
+      "default": "https://wa.me/919785322576?text=Hi%2C%20I%20have%20a%20question%20about%20my%20order"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_new_tab",
+      "label": "Open in a new tab",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Form card"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Form heading (H2)",
+      "default": "Cancellation request"
+    },
+    {
+      "type": "textarea",
+      "id": "form_intro",
+      "label": "Form intro",
+      "default": "Fill in your order details and we’ll confirm the cancellation with you."
+    },
+    {
+      "type": "text",
+      "id": "request_tag",
+      "label": "Inbox tag",
+      "info": "Hidden value sent with the message — use it to spot cancellations in your inbox.",
+      "default": "Order cancellation"
+    },
+    {
+      "type": "textarea",
+      "id": "reason_options",
+      "label": "Reason options",
+      "info": "One option per line.",
+      "default": "Ordered by mistake\nNeed to change product\nFound cheaper elsewhere\nDelivery taking too long\nPayment issue\nWant different size/color\nOther"
+    },
+    {
+      "type": "text",
+      "id": "cod_label",
+      "label": "COD checkbox label",
+      "default": "I understand that COD orders cannot be cancelled after shipment dispatch."
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit button label",
+      "default": "Submit cancellation request"
+    },
+    {
+      "type": "text",
+      "id": "error_heading",
+      "label": "Error heading",
+      "info": "Shown above the field errors when the form is rejected.",
+      "default": "Please check the following:"
+    },
+    {
+      "type": "header",
+      "content": "Success state"
+    },
+    {
+      "type": "text",
+      "id": "done_title",
+      "label": "Done title",
+      "default": "Request received"
+    },
+    {
+      "type": "textarea",
+      "id": "done_text",
+      "label": "Done text",
+      "default": "Our team will review your cancellation request and contact you. For anything urgent, call +91-9785322576."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tick",
+      "name": "Checklist item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Premium quality checked before dispatch"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Cancel Order",
+      "blocks": [
+        { "type": "tick", "settings": { "text": "Premium quality checked before dispatch" } },
+        { "type": "tick", "settings": { "text": "Fast delivery support available" } },
+        { "type": "tick", "settings": { "text": "Replacement available for damaged products" } },
+        { "type": "tick", "settings": { "text": "Dedicated customer support team" } },
+        { "type": "tick", "settings": { "text": "Thousands of happy customers" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

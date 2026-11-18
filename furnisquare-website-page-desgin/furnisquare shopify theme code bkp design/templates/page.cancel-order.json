@@ -1,0 +1,120 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "plain",
+        "eyebrow": "Order help",
+        "heading": "Cancel your <em>order</em>",
+        "lede": "Orders can only be cancelled within 12 hours after placing the order.",
+        "button_1_label": "",
+        "button_2_label": ""
+      }
+    },
+    "cancel": {
+      "type": "inner-cancel",
+      "blocks": {
+        "b01": {
+          "type": "tick",
+          "settings": {
+            "text": "Premium quality checked before dispatch"
+          }
+        },
+        "b02": {
+          "type": "tick",
+          "settings": {
+            "text": "Fast delivery support available"
+          }
+        },
+        "b03": {
+          "type": "tick",
+          "settings": {
+            "text": "Replacement available for damaged products"
+          }
+        },
+        "b04": {
+          "type": "tick",
+          "settings": {
+            "text": "Dedicated customer support team"
+          }
+        },
+        "b05": {
+          "type": "tick",
+          "settings": {
+            "text": "Thousands of happy customers"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05"
+      ],
+      "settings": {
+        "keep_heading": "Before you cancel your order",
+        "keep_text": "Your order is already being prepared with care by the Furnisquare team.",
+        "cta_label": "Contact support on WhatsApp",
+        "cta_link": "https://wa.me/919785322576?text=Hi%2C%20I%20have%20a%20question%20about%20my%20order",
+        "cta_new_tab": true,
+        "form_heading": "Cancellation request",
+        "form_intro": "Fill in your order details and we’ll confirm the cancellation with you.",
+        "request_tag": "Order cancellation",
+        "reason_options": "Ordered by mistake\nNeed to change product\nFound cheaper elsewhere\nDelivery taking too long\nPayment issue\nWant different size/color\nOther",
+        "cod_label": "I understand that COD orders cannot be cancelled after shipment dispatch.",
+        "submit_label": "Submit cancellation request",
+        "error_heading": "Please check the following:",
+        "done_title": "Request received",
+        "done_text": "Our team will review your cancellation request and contact you. For anything urgent, call +91-9785322576."
+      }
+    },
+    "policy": {
+      "type": "inner-values",
+      "blocks": {
+        "b01": {
+          "type": "value",
+          "settings": {
+            "icon": "clock",
+            "title": "Within 12 hours",
+            "text": "Orders can only be cancelled within 12 hours after placing the order."
+          }
+        },
+        "b02": {
+          "type": "value",
+          "settings": {
+            "icon": "cash",
+            "title": "COD after dispatch",
+            "text": "COD orders cannot be cancelled after shipment dispatch."
+          }
+        },
+        "b03": {
+          "type": "value",
+          "settings": {
+            "icon": "pencil",
+            "title": "Custom orders",
+            "text": "Customised products go into production as soon as details are confirmed.",
+            "link_label": "Customize order policy",
+            "link_url": "/pages/customize-order-policy"
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03"
+      ],
+      "settings": {
+        "tinted": false,
+        "eyebrow": "Good to know",
+        "heading": "Cancellation <em>policy</em>",
+        "notice": "For refunds and returns, see our <a href=\"/pages/return-refund-policy\"><strong>Return &amp; Refund policy</strong></a> and the <a href=\"/pages/faq\"><strong>cancellation FAQs</strong></a>."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "cancel",
+    "policy"
+  ]
+}

@@ -36,10 +36,13 @@
               <span class="card__ico">{% render 'icon', name: block.settings.icon %}</span>
             {%- endif -%}
             <h3>{{ block.settings.title }}</h3>
-            <p>{{ block.settings.text }}</p>
+            <p>{{ block.settings.text }}{% if block.settings.link_label != blank and block.settings.link_url != blank %} <a href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>{% endif %}</p>
           </li>
         {%- endfor -%}
       </ul>
+    {%- endif -%}
+    {%- if section.settings.notice != blank -%}
+      <p class="notice">{% render 'icon', name: 'help' %}<span>{{ section.settings.notice }}</span></p>
     {%- endif -%}
   </div>
 </section>
@@ -66,6 +69,12 @@
       "label": "Heading (H2)",
       "info": "Saffron = wrap text in <em>…</em>",
       "default": "What we <em>stand for</em>"
+    },
+    {
+      "type": "html",
+      "id": "notice",
+      "label": "Notice (optional)",
+      "info": "Shown as a banner below the cards. Raw HTML allowed, e.g. <a href>…</a>"
     }
   ],
   "blocks": [
@@ -131,6 +140,14 @@
               "label": "WhatsApp"
             },
             {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "cash",
+              "label": "Cash"
+            },
+            {
               "value": "track",
               "label": "Map pin"
             },
@@ -160,6 +177,16 @@
           "id": "text",
           "label": "Text",
           "default": "Customers are at the center of whatever we do at Furnisquare."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label (optional)"
+        },
+        {
+          "type": "text",
+          "id": "link_url",
+          "label": "Link URL (optional)"
         }
       ]
     }
