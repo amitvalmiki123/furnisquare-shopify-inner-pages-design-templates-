@@ -18,16 +18,20 @@
       <ul class="bulkcols">
         {%- for block in section.blocks -%}
           {%- liquid
-            assign tile_alt = block.settings.image_alt | default: block.settings.name
+            assign tile_collection = block.settings.collection
+            assign tile_name = block.settings.name | default: tile_collection.title | default: 'Collection'
+            assign tile_url = tile_collection.url | default: '#'
+            assign tile_image = block.settings.image | default: tile_collection.featured_image
+            assign tile_alt = block.settings.image_alt | default: tile_name
           -%}
           <li {{ block.shopify_attributes }}>
-            <a class="cat__link" href="{{ block.settings.url | default: '#' }}">
+            <a class="cat__link" href="{{ tile_url }}">
               <span class="cat__media">
-                {%- if block.settings.image != blank -%}
-                  {{ block.settings.image | image_url: width: 600 | image_tag: alt: tile_alt, width: 600, height: 600, loading: 'lazy' }}
+                {%- if tile_image != blank -%}
+                  {{ tile_image | image_url: width: 600 | image_tag: alt: tile_alt, width: 600, height: 600, loading: 'lazy' }}
                 {%- endif -%}
               </span>
-              <span class="cat__name">{{ block.settings.name }}</span>
+              <span class="cat__name">{{ tile_name }}</span>
             </a>
           </li>
         {%- endfor -%}
@@ -50,7 +54,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "info": "HTML allowed, e.g. <em>bulk orders</em> for the saffron emphasis.",
+      "info": "HTML allowed — wrap the saffron part in <em> tags, e.g. <em>bulk orders</em>.",
       "default": "Popular for <em>bulk orders</em>"
     },
     {
@@ -65,25 +69,28 @@
       "name": "Collection tile",
       "settings": [
         {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Tile links to this collection. Leave Name / Image blank below to use the collection's title and featured image."
+        },
+        {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "Image",
+          "info": "Optional — leave blank to use the collection's featured image."
         },
         {
           "type": "text",
           "id": "image_alt",
-          "label": "Image alt text"
+          "label": "Image alt text",
+          "info": "Optional — leave blank to use the collection title."
         },
         {
           "type": "text",
           "id": "name",
           "label": "Name",
-          "default": "Collection name"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "Link"
+          "info": "Optional — leave blank to use the collection title."
         }
       ]
     }

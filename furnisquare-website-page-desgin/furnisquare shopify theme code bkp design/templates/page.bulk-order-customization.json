@@ -186,7 +186,7 @@
             "image": "shopify://shop_images/coffee-table-sets.webp",
             "image_alt": "Wooden coffee table set with stools",
             "name": "Coffee Table Sets",
-            "url": "/collections/coffee-table-sets"
+            "collection": "coffee-table-sets"
           }
         },
         "b02": {
@@ -195,7 +195,7 @@
             "image": "shopify://shop_images/8-seater-dining-sets.webp",
             "image_alt": "Eight seater wooden dining set",
             "name": "8 Seater Dining Sets",
-            "url": "/collections/8-seater-dining-sets"
+            "collection": "8-seater-dining-sets"
           }
         },
         "b03": {
@@ -204,7 +204,7 @@
             "image": "shopify://shop_images/chairs.webp",
             "image_alt": "Wooden arm chairs",
             "name": "Arm Chairs",
-            "url": "/collections/arm-chairs"
+            "collection": "arm-chairs"
           }
         },
         "b04": {
@@ -213,7 +213,7 @@
             "image": "shopify://shop_images/bar-cabinets.webp",
             "image_alt": "Wooden bar cabinet and stools",
             "name": "Bar Furniture",
-            "url": "/collections/bar-furniture"
+            "collection": "bar-furniture"
           }
         },
         "b05": {
@@ -222,7 +222,7 @@
             "image": "shopify://shop_images/king-size-bed.webp",
             "image_alt": "Solid wood king size bed",
             "name": "Bedroom",
-            "url": "/collections/bedroom"
+            "collection": "bedroom"
           }
         }
       },
