@@ -1,0 +1,230 @@
+{%- comment -%}
+  Media & News (page.media-news). Lead story + searchable coverage grid.
+  Each publication is a block (name / domain / article URL / thumbnail URL).
+  Search + “Show more” are vanilla JS scoped to this section — no dependencies.
+  Visual reference: mockup .mm in css/help-media.css (+ js/media.js).
+{%- endcomment -%}
+<section class="sec mm" id="mm-{{ section.id }}" aria-labelledby="mm-title-{{ section.id }}">
+  <div class="wrap">
+    <div class="mm__lead">
+      {%- if section.settings.image_url != blank -%}
+        <img src="{{ section.settings.image_url }}" alt="{{ section.settings.image_alt | escape }}" width="600" height="400" loading="lazy" onerror="this.remove()">
+      {%- endif -%}
+      <div>
+        {%- if section.settings.lead_date != blank -%}<p class="mm__date">{{ section.settings.lead_date }}</p>{%- endif -%}
+        <h2 class="mast__title" id="mm-title-{{ section.id }}">{{ section.settings.lead_heading }}</h2>
+        {%- if section.settings.lead_text != blank -%}<p>{{ section.settings.lead_text }}</p>{%- endif -%}
+        {%- if section.settings.primary_label != blank or section.settings.secondary_label != blank -%}
+          <p class="mm__acts">
+            {%- if section.settings.primary_label != blank -%}<a class="btn btn--ink" href="{{ section.settings.primary_url }}" target="_blank" rel="noopener">{{ section.settings.primary_label }} {% render 'icon', name: 'arrow' %}</a>{%- endif -%}
+            {%- if section.settings.secondary_label != blank -%}<a class="btn btn--line" href="{{ section.settings.secondary_url }}" target="_blank" rel="noopener">{{ section.settings.secondary_label }}</a>{%- endif -%}
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="mm__bar">
+      <h2 class="mm__h">{{ section.settings.coverage_heading }}</h2>
+      <label class="sr-only" for="mm-q-{{ section.id }}">{{ section.settings.search_placeholder | escape }}</label>
+      <input id="mm-q-{{ section.id }}" class="mm__q" type="search" placeholder="{{ section.settings.search_placeholder | escape }}" autocomplete="off" data-mm-q>
+      <p class="mm__count" role="status" aria-live="polite" data-mm-count></p>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="mm__grid" data-mm-grid data-per-page="{{ section.settings.per_page }}">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }} data-mm-item data-search="{{ block.settings.name | escape | downcase }} {{ block.settings.domain | escape | downcase }}">
+            <a class="mm__card" href="{{ block.settings.url }}" target="_blank" rel="noopener" aria-label="{{ block.settings.name | escape }}, opens the article in a new tab">
+              {%- if block.settings.image_url != blank -%}
+                <span class="mm__thumb"><img loading="lazy" width="300" height="200" alt="" src="{{ block.settings.image_url }}" onerror="this.remove()"></span>
+              {%- endif -%}
+              <span class="mm__body"><strong>{{ block.settings.name }}</strong><span>{{ block.settings.domain }} · {{ section.settings.coverage_date }}</span><em>Read article</em></span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <p class="mm__empty" data-mm-empty hidden>{{ section.settings.empty_text }}</p>
+      <p class="mm__more"><button class="btn btn--line" type="button" data-mm-more>{{ section.settings.more_label }}</button></p>
+    {%- endif -%}
+  </div>
+</section>
+<script>
+(function () {
+  var root = document.getElementById('mm-{{ section.id }}');
+  if (!root) return;
+  var q = root.querySelector('[data-mm-q]');
+  var count = root.querySelector('[data-mm-count]');
+  var empty = root.querySelector('[data-mm-empty]');
+  var more = root.querySelector('[data-mm-more]');
+  var grid = root.querySelector('[data-mm-grid]');
+  if (!q || !grid) return;
+  var items = Array.prototype.slice.call(grid.querySelectorAll('[data-mm-item]'));
+  var PAGE = parseInt(grid.getAttribute('data-per-page'), 10) || 12;
+  var shown = PAGE;
+  function render() {
+    var term = (q.value || '').trim().toLowerCase();
+    var list = items.filter(function (li) {
+      return !term || (li.getAttribute('data-search') || '').indexOf(term) > -1;
+    });
+    var vis = term ? list : list.slice(0, shown);
+    items.forEach(function (li) { li.hidden = true; });
+    vis.forEach(function (li) { li.hidden = false; });
+    if (empty) empty.hidden = list.length > 0;
+    if (more) more.parentElement.hidden = !!term || shown >= list.length;
+    if (count) {
+      count.textContent = term
+        ? list.length + ' of ' + items.length + ' publications'
+        : 'Showing ' + vis.length + ' of ' + items.length + ' publications';
+    }
+  }
+  q.addEventListener('input', render);
+  if (more) more.addEventListener('click', function () { shown += PAGE; render(); });
+  render();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Inner Media",
+  "settings": [
+    {
+      "type": "text",
+      "id": "lead_date",
+      "label": "Lead story date",
+      "default": "3 September 2025"
+    },
+    {
+      "type": "text",
+      "id": "lead_heading",
+      "label": "Lead story heading (H2)",
+      "default": "Online furniture store Furnisquare announces free shipping across India"
+    },
+    {
+      "type": "textarea",
+      "id": "lead_text",
+      "label": "Lead story text",
+      "default": "Furnisquare removed shipping charges on every order, so a wooden bed, sofa or dining set costs the same to deliver in Churu as it does in Chennai. The announcement was syndicated by news agencies and regional papers."
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Lead image URL",
+      "info": "Defaults to the store CDN copy. Swap for any image URL.",
+      "default": "https://furnisquare.com/cdn/shop/files/mediaimg74449049-8c49-458d-9160-f60d4f964e54.png?v=1779105075&width=600"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Lead image alt text",
+      "default": "ANI report on Furnisquare's free shipping across India"
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button label",
+      "default": "Read on ANI"
+    },
+    {
+      "type": "text",
+      "id": "primary_url",
+      "label": "Primary button link",
+      "default": "https://www.aninews.in/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113148/"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label (optional)",
+      "default": "Read in Tribune India"
+    },
+    {
+      "type": "text",
+      "id": "secondary_url",
+      "label": "Secondary button link",
+      "default": "https://www.tribuneindia.com/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/"
+    },
+    {
+      "type": "text",
+      "id": "coverage_heading",
+      "label": "Coverage heading",
+      "default": "Coverage"
+    },
+    {
+      "type": "text",
+      "id": "coverage_date",
+      "label": "Coverage date (shown on each card)",
+      "default": "3 Sep 2025"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search placeholder",
+      "default": "Search a publication"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "No-results message",
+      "default": "No publication matches that search. Try a shorter name."
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "Show more button label",
+      "default": "Show more"
+    },
+    {
+      "type": "select",
+      "id": "per_page",
+      "label": "Cards shown before “Show more”",
+      "options": [
+        { "value": "8", "label": "8" },
+        { "value": "12", "label": "12" },
+        { "value": "16", "label": "16" },
+        { "value": "24", "label": "24" }
+      ],
+      "default": "12"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "outlet",
+      "name": "Publication",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Publication name",
+          "default": "ANI"
+        },
+        {
+          "type": "text",
+          "id": "domain",
+          "label": "Domain (shown under the name)",
+          "default": "aninews.in"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "Article URL",
+          "default": "https://www.aninews.in/"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Thumbnail URL (optional)",
+          "info": "Defaults to the store CDN copy. 3:2 thumbnails look best.",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Media",
+      "blocks": [
+        { "type": "outlet", "settings": { "name": "ANI", "domain": "aninews.in", "url": "https://www.aninews.in/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113148/", "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg74449049-8c49-458d-9160-f60d4f964e54.png?v=1779105075&width=300" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

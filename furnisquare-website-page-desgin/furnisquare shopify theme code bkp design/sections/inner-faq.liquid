@@ -7,10 +7,11 @@
 {%- liquid
   assign title_id = 'faq-list-title-' | append: section.id
 -%}
-<section class="sec faq" id="faq-{{ section.id }}" aria-labelledby="{{ title_id }}">
+<section class="sec{% if section.settings.tinted %} sec--tint{% endif %} faq" id="faq-{{ section.id }}" aria-labelledby="{{ title_id }}">
   <div class="wrap faq__grid">
     <aside class="faq__aside">
       <h2 class="faqnav__title" id="{{ title_id }}">{{ section.settings.aside_title }}</h2>
+      {%- if section.settings.aside_lede != blank -%}<p class="hm__lede">{{ section.settings.aside_lede }}</p>{%- endif -%}
       <ol class="faqnav__list" data-faqnav></ol>
       <div class="faqnav__help">
         {%- if section.settings.help_text != blank -%}<p>{{ section.settings.help_text }}</p>{%- endif -%}
@@ -23,6 +24,7 @@
             <a class="btn btn--line" href="https://wa.me/{{ settings.whatsapp }}" target="_blank" rel="noopener">{% render 'icon', name: 'wa' %}WhatsApp us</a>
           {%- endif -%}
         </div>
+        {%- if section.settings.more_label != blank and section.settings.more_url != blank -%}<p class="hm__more"><a href="{{ section.settings.more_url }}">{{ section.settings.more_label }}</a></p>{%- endif -%}
       </div>
     </aside>
     <div class="faq__list">
@@ -100,6 +102,30 @@
       "label": "Help text",
       "info": "HTML allowed — e.g. <strong>…</strong>.",
       "default": "<strong>Still need help?</strong> Our team is a call or a WhatsApp away, 24/7."
+    },
+    {
+      "type": "textarea",
+      "id": "aside_lede",
+      "label": "Aside lede (optional)",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "Below-help link label (optional)",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "more_url",
+      "label": "Below-help link URL",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "tinted",
+      "label": "Cream band background",
+      "default": false
     }
   ],
   "blocks": [

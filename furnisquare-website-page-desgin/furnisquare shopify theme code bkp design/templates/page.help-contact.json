@@ -1,0 +1,331 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "plain",
+        "eyebrow": "Help & Contact",
+        "heading": "Help is a call <em>away</em>",
+        "lede": "Answers on delivery, payment, returns and warranty below. For anything else, reach the Furnisquare team on phone, WhatsApp or email, any time of day.",
+        "facts": "Trade name|Furnisquare\nCustomer care|24/7",
+        "button_1_label": "",
+        "button_2_label": ""
+      }
+    },
+    "cards": {
+      "type": "inner-contact-cards",
+      "blocks": {
+        "c1": {
+          "type": "card",
+          "settings": {
+            "icon": "phone",
+            "label": "Call us · 24/7",
+            "value": "+91-9785322576",
+            "sub": "Buy on phone, or ask about any order",
+            "link": "tel:+919785322576"
+          }
+        },
+        "c2": {
+          "type": "card",
+          "settings": {
+            "icon": "wa",
+            "label": "WhatsApp",
+            "value": "Chat with our team",
+            "sub": "Send photos, sizes or questions",
+            "link": "https://wa.me/919785322576",
+            "new_tab": true
+          }
+        },
+        "c3": {
+          "type": "card",
+          "settings": {
+            "icon": "mail",
+            "label": "Email",
+            "value": "info@furnisquare.com",
+            "sub": "For orders, warranty and feedback",
+            "link": "mailto:info@furnisquare.com"
+          }
+        },
+        "c4": {
+          "type": "card",
+          "settings": {
+            "icon": "pin",
+            "label": "Visit us",
+            "value": "Jangid Handicraft",
+            "sub": "Near Sankat Mochan Balaji Temple, Jaipur Road, Ratangarh, Churu (Rajasthan) 331022",
+            "link": "https://www.google.com/maps/place/Furnisquare+Furniture/@28.1080188,74.6180805,18.75z",
+            "new_tab": true
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "settings": {
+        "aria_label": "Ways to reach us"
+      }
+    },
+    "faq": {
+      "type": "inner-faq",
+      "blocks": {
+        "b01": {
+          "type": "item",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p>It depends on the type of product:</p><ul><li><strong>Ready-to-ship products</strong> are regularly stocked and usually arrive in 7–10 business days.</li><li><strong>Made-to-order products</strong> are crafted after you order, so delivery may take 25–30 days.</li></ul><p>For the timeline of a specific product, call or WhatsApp our team.</p>",
+            "open": true
+          }
+        },
+        "b02": {
+          "type": "item",
+          "settings": {
+            "question": "Do you offer Cash on Delivery (COD)?",
+            "answer": "<p>Yes, on selected products. COD is available only for ready-to-ship products that are in stock and can be dispatched right away.</p><p>Made-to-order and custom products are built after the order is placed, so they need prepaid payment. Not sure if a product qualifies? Ask us before you order.</p>",
+            "open": false
+          }
+        },
+        "b03": {
+          "type": "item",
+          "settings": {
+            "question": "Can I track my order?",
+            "answer": "<p>Yes. Once your order is dispatched, you get a tracking number by email and WhatsApp. Use it on our <a href=\"/apps/track-shipment\">Track Order</a> page or on the courier partner’s website.</p>",
+            "open": false
+          }
+        },
+        "b04": {
+          "type": "item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We accept returns only for products that arrive <strong>damaged</strong> or <strong>defective</strong>. Contact our support team within the return request period and share clear photos of the problem.</p><p>Once approved, repack the product in its original packaging and send us photos of the packed item. We then arrange a pickup and help you with a replacement or other resolution.</p><p>Returns are not accepted for change of mind, wrong selection or personal preference.</p>",
+            "open": false
+          }
+        },
+        "b05": {
+          "type": "item",
+          "settings": {
+            "question": "Do products come with a warranty?",
+            "answer": "<p>Yes, every product is covered.</p><ul><li><strong>3-year manufacturing warranty</strong> for manufacturing defects and workmanship issues.</li><li><strong>Lifetime termite warranty</strong> against termite damage.</li></ul><p>For a claim, contact support with your order details.</p>",
+            "open": false
+          }
+        },
+        "b06": {
+          "type": "item",
+          "settings": {
+            "question": "How can I contact customer support?",
+            "answer": "<ul><li><strong>Phone:</strong> <a href=\"tel:+919785322576\">+91-9785322576</a></li><li><strong>WhatsApp:</strong> <a href=\"https://wa.me/919785322576\">chat with our team</a></li><li><strong>Email:</strong> <a href=\"mailto:info@furnisquare.com\">info@furnisquare.com</a></li></ul><p>Our team is available 24/7 for product questions, order updates, delivery information and warranty claims.</p>",
+            "open": false
+          }
+        },
+        "b07": {
+          "type": "item",
+          "settings": {
+            "question": "Can I cancel my order after placing it?",
+            "answer": "<p>Yes, as long as it has <strong>not been dispatched</strong>. Once an order is in transit it can no longer be cancelled. Contact us with your order details as early as possible, or use the <a href=\"/pages/cancel-order\">cancel order page</a>.</p>",
+            "open": false
+          }
+        },
+        "b08": {
+          "type": "item",
+          "settings": {
+            "question": "Do you provide GST invoices?",
+            "answer": "<p>Yes. A GST-compliant invoice is sent to your registered email and included with your shipment.</p>",
+            "open": false
+          }
+        },
+        "b09": {
+          "type": "item",
+          "settings": {
+            "question": "Can I change my delivery address after ordering?",
+            "answer": "<p>Yes, before the order ships. Contact support right away with your order number and the new address. After shipping, the address can’t be changed.</p>",
+            "open": false
+          }
+        },
+        "b10": {
+          "type": "item",
+          "settings": {
+            "question": "Are installation or assembly services available?",
+            "answer": "<p>Installation and assembly are not included by default. We may be able to arrange it on request, subject to availability in your area, and additional charges apply. Ask our team before or after you order.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "b01",
+        "b02",
+        "b03",
+        "b04",
+        "b05",
+        "b06",
+        "b07",
+        "b08",
+        "b09",
+        "b10"
+      ],
+      "settings": {
+        "aside_title": "Frequently asked questions",
+        "aside_lede": "Quick answers about our furniture and services.",
+        "help_text": "<strong>Didn’t find your answer?</strong> Our team is a call or a WhatsApp away, 24/7.",
+        "more_label": "Read all FAQs",
+        "more_url": "/pages/faq",
+        "tinted": true
+      }
+    },
+    "visit": {
+      "type": "inner-map",
+      "blocks": {
+        "m1": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "pin",
+            "label": "Open in Google Maps",
+            "link": "https://www.google.com/maps/place/Furnisquare+Furniture/@28.1080188,74.6180805,18.75z",
+            "new_tab": true
+          }
+        },
+        "m2": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "phone",
+            "label": "+91-9785322576",
+            "link": "tel:+919785322576",
+            "new_tab": false
+          }
+        },
+        "m3": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "mail",
+            "label": "info@furnisquare.com",
+            "link": "mailto:info@furnisquare.com",
+            "new_tab": false
+          }
+        },
+        "m4": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "arrow",
+            "label": "Send us a message",
+            "link": "/pages/contact",
+            "new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4"
+      ],
+      "settings": {
+        "heading": "Find us in Ratangarh",
+        "address": "Jangid Handicraft\nNear Sankat Mochan Balaji Temple, Jaipur Road,\nRatangarh, Churu (Rajasthan) 331022",
+        "map_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1690.8949657376866!2d74.61738030364388!3d28.108074270281246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3914bf06e69bf6af%3A0x1d3f65485582bf9a!2sFurnisquare%20Furniture!5e1!3m2!1sen!2sin!4v1750843727508!5m2!1sen!2sin",
+        "map_title": "Furnisquare on Google Maps"
+      }
+    },
+    "reviews": {
+      "type": "inner-reviews",
+      "blocks": {
+        "r1": {
+          "type": "quote",
+          "settings": {
+            "quote": "Real good quality finish, clean and solid.",
+            "attribution": "Wooden Half Round Console Table"
+          }
+        },
+        "r2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Good wooden side table and perfect for the price. Happy with the product.",
+            "attribution": "Sakshi Singh · Bedside Table with Drawers"
+          }
+        },
+        "r3": {
+          "type": "quote",
+          "settings": {
+            "quote": "Very nice, it looks the same as shown.",
+            "attribution": "Solid Wood Choki Table"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "tinted": true,
+        "heading": "Let customers speak for us",
+        "lede": "334 reviews, 99% of them 5-star.",
+        "button_label": "Read all reviews",
+        "button_link": "/pages/reviews"
+      }
+    },
+    "trust": {
+      "type": "inner-trust",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free shipping",
+            "subtitle": "All over India"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "card",
+            "title": "No Cost EMI",
+            "subtitle": "On leading bank cards"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "tag",
+            "title": "Extra 10% off",
+            "subtitle": "On prepaid orders"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "36-month warranty",
+            "subtitle": "Incl. termite resistance"
+          }
+        },
+        "t5": {
+          "type": "item",
+          "settings": {
+            "badge": "1989",
+            "title": "30+ years",
+            "subtitle": "Of proven expertise"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "settings": {
+        "aria_label": "Why shop with Furnisquare"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "cards",
+    "faq",
+    "visit",
+    "reviews",
+    "trust"
+  ]
+}

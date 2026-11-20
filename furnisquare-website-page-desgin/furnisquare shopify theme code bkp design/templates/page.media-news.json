@@ -1,0 +1,452 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "plain",
+        "eyebrow": "Media",
+        "heading": "Furnisquare in the <em>news</em>",
+        "lede": "In September 2025 we announced free shipping across India. Newsrooms across the country and abroad carried the story. Every link below opens the original article.",
+        "button_1_label": "",
+        "button_2_label": ""
+      }
+    },
+    "media": {
+      "type": "inner-media",
+      "blocks": {
+        "o01": {
+          "type": "outlet",
+          "settings": {
+            "name": "ANI",
+            "domain": "aninews.in",
+            "url": "https://www.aninews.in/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113148/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg74449049-8c49-458d-9160-f60d4f964e54.png?v=1779105075&width=300"
+          }
+        },
+        "o02": {
+          "type": "outlet",
+          "settings": {
+            "name": "Tribune India",
+            "domain": "tribuneindia.com",
+            "url": "https://www.tribuneindia.com/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgd7c2b7ff-3f9e-4923-ee2b-141cb40afdb7.png?v=1779105133&width=300"
+          }
+        },
+        "o03": {
+          "type": "outlet",
+          "settings": {
+            "name": "Mid-day",
+            "domain": "mid-day.com",
+            "url": "https://www.mid-day.com/buzzfeed/article/furnisquare-free-shipping-india-online-furniture-store-initiative-7261",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgfa7d4726-6583-4d17-8b79-71e287f32bd8.png?v=1779103349&width=300"
+          }
+        },
+        "o04": {
+          "type": "outlet",
+          "settings": {
+            "name": "Lokmat Times",
+            "domain": "lokmattimes.com",
+            "url": "https://www.lokmattimes.com/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg18bdd16d-85f1-4684-ab05-0a8cb53b319b.png?v=1779105272&width=300"
+          }
+        },
+        "o05": {
+          "type": "outlet",
+          "settings": {
+            "name": "LatestLY",
+            "domain": "latestly.com",
+            "url": "https://www.latestly.com/agency-news/business-news-online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers-7091388.html",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg89676120-07eb-45ed-80dd-e2d900d4fcef.png?v=1779105170&width=300"
+          }
+        },
+        "o06": {
+          "type": "outlet",
+          "settings": {
+            "name": "Big News Network",
+            "domain": "bignewsnetwork.com",
+            "url": "https://www.bignewsnetwork.com/news/278549336/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgacc716fb-a0db-4085-ee40-c3ef92943511.png?v=1779105312&width=300"
+          }
+        },
+        "o07": {
+          "type": "outlet",
+          "settings": {
+            "name": "UP18 News",
+            "domain": "up18news.com",
+            "url": "https://up18news.com/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg93ecc566-82e0-41e3-84e0-97e34d47ef87.png?v=1779105227&width=300"
+          }
+        },
+        "o08": {
+          "type": "outlet",
+          "settings": {
+            "name": "WebIndia123",
+            "domain": "news.webindia123.com",
+            "url": "https://news.webindia123.com/news/Articles/Business/20250903/4356889.html",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgf600fd64-2025-47f6-f882-0f8dbfa7a878.png?v=1779253797&width=300"
+          }
+        },
+        "o09": {
+          "type": "outlet",
+          "settings": {
+            "name": "News9 Network",
+            "domain": "news9network.com",
+            "url": "https://news9network.com/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgbb0da195-2d04-4149-fa87-ec5d387c799b.png?v=1779254196&width=300"
+          }
+        },
+        "o10": {
+          "type": "outlet",
+          "settings": {
+            "name": "KBK Times",
+            "domain": "kbktimes.com",
+            "url": "https://kbktimes.com/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg65922247-e2af-415b-8a0e-59319fa73ef5.png?v=1779254259&width=300"
+          }
+        },
+        "o11": {
+          "type": "outlet",
+          "settings": {
+            "name": "News Nation",
+            "domain": "english.newsnationtv.com",
+            "url": "https://english.newsnationtv.com/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113148",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg6a3f34e3-cd76-4658-ba4e-255e04df3f92.jpg?v=1779254294&width=300"
+          }
+        },
+        "o12": {
+          "type": "outlet",
+          "settings": {
+            "name": "Sangri Times",
+            "domain": "en.sangritimes.com",
+            "url": "https://en.sangritimes.com/spotlight/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg0ccd3c15-b1f8-455e-f537-39c7191be44f_51a2bf6c-0334-4d43-8532-bbe8c7e2b5e2.png?v=1780474608&width=300"
+          }
+        },
+        "o13": {
+          "type": "outlet",
+          "settings": {
+            "name": "Daily Prabhat",
+            "domain": "dailyprabhat.com",
+            "url": "https://www.dailyprabhat.com/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgfc4b9959-d312-4ab0-a93d-ce5fa75d2241_5bb68028-f785-4d59-a6a5-c57c4f8d0d1e.png?v=1780474551&width=300"
+          }
+        },
+        "o14": {
+          "type": "outlet",
+          "settings": {
+            "name": "Dailyhunt",
+            "domain": "m.dailyhunt.in",
+            "url": "https://m.dailyhunt.in/news/india/english/ani+english-epaper-anieng/online+furniture+store+furnisquare+announce+new+initiative+free+shipping+across+india+to+customers-newsid-n679459601?sm=",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimga4eba0b5-cbac-4847-bf9f-8c2cd63d23fe_82fd02a4-f126-4962-a31a-8af9ad4606fa.png?v=1780474495&width=300"
+          }
+        },
+        "o15": {
+          "type": "outlet",
+          "settings": {
+            "name": "The News Net",
+            "domain": "thenewsnet.in",
+            "url": "https://thenewsnet.in/furnisquare-redefines-online-furniture-shopping-with-free-nationwide-shipping/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/cropped-thenewsnet.jpg?v=1780512859&width=300"
+          }
+        },
+        "o16": {
+          "type": "outlet",
+          "settings": {
+            "name": "The Daily Glimpse",
+            "domain": "thedailyglimpse.in",
+            "url": "https://thedailyglimpse.in/furnisquare-redefines-online-furniture-shopping-with-free-nationwide-shipping/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/132.png?v=1780512808&width=300"
+          }
+        },
+        "o17": {
+          "type": "outlet",
+          "settings": {
+            "name": "Reach News",
+            "domain": "reachnews.in",
+            "url": "https://reachnews.in/furnisquare-redefines-online-furniture-shopping-with-free-nationwide-shipping/",
+            "image_url": "https://furnisquare.com/cdn/shop/files/131.png?v=1780512717&width=300"
+          }
+        },
+        "o18": {
+          "type": "outlet",
+          "settings": {
+            "name": "Rajasthan Ki Khabar",
+            "domain": "rajasthankikhabar.com",
+            "url": "https://www.rajasthankikhabar.com/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg27feab26-61ec-473f-8fa6-a86ce7867f33.png?v=1779255050&width=300"
+          }
+        },
+        "o19": {
+          "type": "outlet",
+          "settings": {
+            "name": "Rajasthan Journal",
+            "domain": "rajasthanjournal.com",
+            "url": "https://rajasthanjournal.com/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg74b9473e-88ca-4f18-b0fb-254660a363d0.png?v=1779293924&width=300"
+          }
+        },
+        "o20": {
+          "type": "outlet",
+          "settings": {
+            "name": "Pink City Now",
+            "domain": "pinkcitynow.com",
+            "url": "https://pinkcitynow.com/index.php/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgb4581f80-a25f-4ff1-88d1-f1dafb7c0ea2.png?v=1779373166&width=300"
+          }
+        },
+        "o21": {
+          "type": "outlet",
+          "settings": {
+            "name": "Udaipur Dispatch",
+            "domain": "udaipurdispatch.com",
+            "url": "https://udaipurdispatch.com/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg0a47cd80-3449-4ee4-b10d-ae798c20dc94.png?v=1779372919&width=300"
+          }
+        },
+        "o22": {
+          "type": "outlet",
+          "settings": {
+            "name": "Jodhpur Reporter",
+            "domain": "jodhpurreporter.com",
+            "url": "https://jodhpurreporter.com/index.php/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg0feb1218-8c66-44d7-a26d-11adf0acb600.png?v=1779372994&width=300"
+          }
+        },
+        "o23": {
+          "type": "outlet",
+          "settings": {
+            "name": "Delhi Live News",
+            "domain": "delhilivenews.in",
+            "url": "https://www.delhilivenews.in/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg8b8fbd08-bb14-42b8-fcab-f4c5e1bfc384.png?v=1779254846&width=300"
+          }
+        },
+        "o24": {
+          "type": "outlet",
+          "settings": {
+            "name": "Gujarat Samachar",
+            "domain": "gujaratsamachar.news",
+            "url": "https://www.gujaratsamachar.news/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimge6152d58-0d46-4691-f879-167dfbea253d.png?v=1779254934&width=300"
+          }
+        },
+        "o25": {
+          "type": "outlet",
+          "settings": {
+            "name": "Maharashtra Samachar",
+            "domain": "maharashtrasamachar.com",
+            "url": "https://www.maharashtrasamachar.com/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgd6758260-1e22-4c29-9ce2-da7aff70d669.png?v=1779254538&width=300"
+          }
+        },
+        "o26": {
+          "type": "outlet",
+          "settings": {
+            "name": "Haryana Today",
+            "domain": "haryanatoday.in",
+            "url": "https://www.haryanatoday.in/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgc8586ecc-f87c-4dbb-d5ca-5d920423a1df.png?v=1779254444&width=300"
+          }
+        },
+        "o27": {
+          "type": "outlet",
+          "settings": {
+            "name": "Karnataka Live",
+            "domain": "karnatakalive.in",
+            "url": "https://www.karnatakalive.in/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg227580c2-a7f9-487e-fcf8-5525958bd4d4.png?v=1779255003&width=300"
+          }
+        },
+        "o28": {
+          "type": "outlet",
+          "settings": {
+            "name": "Toronto Sun Times",
+            "domain": "torontosuntimes.com",
+            "url": "https://www.torontosuntimes.com/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg5a4d3dcb-de01-4d39-f3e1-d07317f88d17.png?v=1779256114&width=300"
+          }
+        },
+        "o29": {
+          "type": "outlet",
+          "settings": {
+            "name": "London Channel News",
+            "domain": "londonchannelnews.com",
+            "url": "https://www.londonchannelnews.com/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg11667183-d709-4168-83e4-9699daaab47a.png?v=1779293745&width=300"
+          }
+        },
+        "o30": {
+          "type": "outlet",
+          "settings": {
+            "name": "Dubai City Reporter",
+            "domain": "dubaicityreporter.com",
+            "url": "https://www.dubaicityreporter.com/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg4c66d040-d99c-44cd-ec62-426c5da4ee5f.png?v=1779273097&width=300"
+          }
+        },
+        "o31": {
+          "type": "outlet",
+          "settings": {
+            "name": "Miami News Herald",
+            "domain": "miaminewsherald.com",
+            "url": "https://www.miaminewsherald.com/news/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113138",
+            "image_url": "https://furnisquare.com/cdn/shop/files/mediaimgdfebe328-1e9d-4418-83a6-b814a956534c.png?v=1779267784&width=300"
+          }
+        }
+      },
+      "block_order": [
+        "o01",
+        "o02",
+        "o03",
+        "o04",
+        "o05",
+        "o06",
+        "o07",
+        "o08",
+        "o09",
+        "o10",
+        "o11",
+        "o12",
+        "o13",
+        "o14",
+        "o15",
+        "o16",
+        "o17",
+        "o18",
+        "o19",
+        "o20",
+        "o21",
+        "o22",
+        "o23",
+        "o24",
+        "o25",
+        "o26",
+        "o27",
+        "o28",
+        "o29",
+        "o30",
+        "o31"
+      ],
+      "settings": {
+        "lead_date": "3 September 2025",
+        "lead_heading": "Online furniture store Furnisquare announces free shipping across India",
+        "lead_text": "Furnisquare removed shipping charges on every order, so a wooden bed, sofa or dining set costs the same to deliver in Churu as it does in Chennai. The announcement was syndicated by news agencies and regional papers.",
+        "image_url": "https://furnisquare.com/cdn/shop/files/mediaimg74449049-8c49-458d-9160-f60d4f964e54.png?v=1779105075&width=600",
+        "image_alt": "ANI report on Furnisquare's free shipping across India",
+        "primary_label": "Read on ANI",
+        "primary_url": "https://www.aninews.in/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers20250903113148/",
+        "secondary_label": "Read in Tribune India",
+        "secondary_url": "https://www.tribuneindia.com/news/business/online-furniture-store-furnisquare-announce-new-initiative-free-shipping-across-india-to-customers/",
+        "coverage_heading": "Coverage",
+        "coverage_date": "3 Sep 2025",
+        "search_placeholder": "Search a publication",
+        "empty_text": "No publication matches that search. Try a shorter name.",
+        "more_label": "Show more",
+        "per_page": "12"
+      }
+    },
+    "press": {
+      "type": "inner-press",
+      "blocks": {
+        "p1": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "mail",
+            "label": "info@furnisquare.com",
+            "link": "mailto:info@furnisquare.com",
+            "new_tab": false
+          }
+        },
+        "p2": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "phone",
+            "label": "+91-9785322576",
+            "link": "tel:+919785322576",
+            "new_tab": false
+          }
+        },
+        "p3": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "arrow",
+            "label": "About Furnisquare",
+            "link": "/pages/about-us",
+            "new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "tinted": true,
+        "heading": "Press and media enquiries",
+        "lede": "Writing about Furnisquare? We can share product images, brand details and quotes."
+      }
+    },
+    "trust": {
+      "type": "inner-trust",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free shipping",
+            "subtitle": "All over India"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "card",
+            "title": "No Cost EMI",
+            "subtitle": "On leading bank cards"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "tag",
+            "title": "Extra 10% off",
+            "subtitle": "On prepaid orders"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "36-month warranty",
+            "subtitle": "Incl. termite resistance"
+          }
+        },
+        "t5": {
+          "type": "item",
+          "settings": {
+            "badge": "1989",
+            "title": "30+ years",
+            "subtitle": "Of proven expertise"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "settings": {
+        "aria_label": "Why shop with Furnisquare"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "media",
+    "press",
+    "trust"
+  ]
+}
