@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "hero": {
+      "type": "inner-hero",
+      "settings": {
+        "layout": "plain",
+        "eyebrow": "Navigation",
+        "heading": "Find your way <em>around</em>",
+        "lede": "Every Furnisquare category and page in one place.",
+        "facts": "Trade name|Furnisquare\nPhone|+91-9785322576\nEmail|info@furnisquare.com",
+        "button_1_label": "",
+        "button_2_label": ""
+      }
+    },
+    "sitemap": {
+      "type": "inner-sitemap",
+      "blocks": {
+        "main": {
+          "type": "menu_nested",
+          "settings": {
+            "menu": "main-menu",
+            "show_shop_all": true
+          }
+        },
+        "info": {
+          "type": "menu_flat",
+          "settings": {
+            "heading": "Help & information",
+            "menu": "footer-information"
+          }
+        },
+        "useful": {
+          "type": "menu_flat",
+          "settings": {
+            "heading": "Orders & policies",
+            "menu": "footer-useful-links"
+          }
+        }
+      },
+      "block_order": [
+        "main",
+        "info",
+        "useful"
+      ],
+      "settings": {
+        "aria_label": "Site map"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "sitemap"
+  ]
+}

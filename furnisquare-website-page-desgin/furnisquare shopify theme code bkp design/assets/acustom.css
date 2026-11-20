@@ -224,3 +224,21 @@ a.ccard:hover { border-color: var(--saffron); box-shadow: var(--shadow); }
 .fact span { display: block; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .fact strong { display: block; margin-top: 6px; font: 600 clamp(22px, 1.8vw, 30px)/1.15 var(--f-display); }
 @media (max-width: 900px) { .facts { grid-template-columns: 1fr; } }
+
+/* ---------- site map (navigation page) ---------- */
+.smap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px var(--gap); }
+.smap__group { display: contents; }
+.smap h2 { margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); font: 500 20px/1.3 var(--f-display); }
+.smap h2 a { color: var(--ink); text-decoration: none; }
+.smap h2 a:hover { color: var(--saffron-deep); }
+.smap h3 { margin: 16px 0 4px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.smap h3 a { color: inherit; text-decoration: none; }
+.smap h3 a:hover { color: var(--saffron-deep); }
+.smap ul { display: grid; gap: 2px; list-style: none; padding: 0; margin: 0; }
+.smap li a { display: inline-block; padding: 4px 0; font-size: 15px; color: var(--ink-2); text-decoration: none; transition: color .2s, padding .3s var(--ease); }
+.smap li a:hover { color: var(--saffron-deep); padding-left: 4px; }
+.smap__all { display: inline-block; margin-top: 12px; padding-bottom: 1px; font-size: 13px; font-weight: 600; color: var(--saffron-deep); border-bottom: 1px solid currentColor; text-decoration: none; }
+.smap__hint { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
+@media (max-width: 1100px) { .smap { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .smap { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px var(--gap); } }
+@media (max-width: 600px) { .smap { grid-template-columns: 1fr 1fr; gap: 28px 16px; } .smap li a { font-size: 14px; } .smap h2 { font-size: 18px; } }

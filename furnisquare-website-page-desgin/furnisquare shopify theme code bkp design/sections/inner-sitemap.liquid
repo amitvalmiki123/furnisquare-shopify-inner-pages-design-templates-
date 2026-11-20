@@ -1,0 +1,133 @@
+{%- comment -%}
+  Site map ("smap"). Menu-driven so the page always mirrors the live navigation —
+  assign the same menus that power the header and footer and the sitemap never goes stale.
+
+  Blocks:
+    • Menu columns (3-level) — renders each top-level menu item as a column:
+      top item (linked heading) → each group heading (linked) → its links.
+      Groups assigned with no links still render as a clickable heading.
+      Optional “Shop all …” link per column (same as the mega menu footer).
+    • Link column — renders a flat menu as a simple column (default: footer menus).
+
+  Pair with inner-hero (plain layout) + inner-crumbs for the phead, same as the
+  other inner pages. Visual reference: mockup .smap in css/pages.css.
+{%- endcomment -%}
+<section class="sec" aria-label="{{ section.settings.aria_label | default: 'Site map' | escape }}">
+  <div class="wrap smap">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'menu_nested' -%}
+        {%- assign nested_menu = linklists[block.settings.menu] -%}
+        <div class="smap__group" {{ block.shopify_attributes }}>
+          {%- if nested_menu == blank or nested_menu.links.size == 0 -%}
+            {%- if request.design_mode -%}
+              <p class="smap__hint">Pick a 3-level menu (top item → group heading → links), e.g. main-menu.</p>
+            {%- endif -%}
+          {%- else -%}
+            {%- for top in nested_menu.links -%}
+              <div class="smap__col">
+                <h2><a href="{{ top.url }}">{{ top.title }}</a></h2>
+                {%- for child in top.links -%}
+                  <h3><a href="{{ child.url }}">{{ child.title }}</a></h3>
+                  {%- if child.links.size > 0 -%}
+                    <ul>
+                      {%- for grandchild in child.links -%}
+                        <li><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- if block.settings.show_shop_all and top.links.size > 0 -%}
+                  <a class="smap__all" href="{{ top.url }}">Shop all {{ top.title | downcase }}</a>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      {%- when 'menu_flat' -%}
+        {%- assign flat_menu = linklists[block.settings.menu] -%}
+        <div class="smap__col" {{ block.shopify_attributes }}>
+          {%- if block.settings.heading != blank -%}
+            <h2>{{ block.settings.heading | escape }}</h2>
+          {%- endif -%}
+          {%- if flat_menu == blank or flat_menu.links.size == 0 -%}
+            {%- if request.design_mode -%}
+              <p class="smap__hint">Pick a menu to list here.</p>
+            {%- endif -%}
+          {%- else -%}
+            <ul>
+              {%- for link in flat_menu.links -%}
+                <li><a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inner Sitemap",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Section aria-label",
+      "default": "Site map"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_nested",
+      "name": "Menu columns (3-level)",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "main-menu",
+          "info": "3-level menu (top item → group heading → links). Each top item becomes a column; the page stays in sync with the header."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_shop_all",
+          "label": "Show 'Shop all' link per column",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "menu_flat",
+      "name": "Link column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Information"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer-information",
+          "info": "Flat menu, one link per row."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inner Sitemap",
+      "blocks": [
+        { "type": "menu_nested", "settings": { "menu": "main-menu", "show_shop_all": true } },
+        { "type": "menu_flat", "settings": { "heading": "Help & information", "menu": "footer-information" } },
+        { "type": "menu_flat", "settings": { "heading": "Orders & policies", "menu": "footer-useful-links" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
