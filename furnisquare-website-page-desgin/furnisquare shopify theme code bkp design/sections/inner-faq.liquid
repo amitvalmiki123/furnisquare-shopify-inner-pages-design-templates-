@@ -12,7 +12,7 @@
     <aside class="faq__aside">
       <h2 class="faqnav__title" id="{{ title_id }}">{{ section.settings.aside_title }}</h2>
       {%- if section.settings.aside_lede != blank -%}<p class="hm__lede">{{ section.settings.aside_lede }}</p>{%- endif -%}
-      <ol class="faqnav__list" data-faqnav></ol>
+      {%- unless section.settings.show_index == false -%}<ol class="faqnav__list" data-faqnav></ol>{%- endunless -%}
       <div class="faqnav__help">
         {%- if section.settings.help_text != blank -%}<p>{{ section.settings.help_text }}</p>{%- endif -%}
         <div class="faq__help">
@@ -117,6 +117,13 @@
       "type": "text",
       "id": "more_url",
       "label": "Below-help link URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_index",
+      "label": "Sidebar question index",
+      "info": "Lists every question in the aside as jump links (like the FAQs page). Turn off for the Help & Contact page.",
+      "default": true
     },
     {
       "type": "checkbox",

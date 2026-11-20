@@ -170,7 +170,8 @@
         "help_text": "<strong>Didn’t find your answer?</strong> Our team is a call or a WhatsApp away, 24/7.",
         "more_label": "Read all FAQs",
         "more_url": "/pages/faq",
-        "tinted": true
+        "tinted": true,
+        "show_index": false
       }
     },
     "visit": {
