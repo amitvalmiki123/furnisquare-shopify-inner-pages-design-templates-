@@ -237,7 +237,6 @@ a.ccard:hover { border-color: var(--saffron); box-shadow: var(--shadow); }
 .smap ul { display: grid; gap: 2px; list-style: none; padding: 0; margin: 0; }
 .smap li a { display: inline-block; padding: 4px 0; font-size: 15px; color: var(--ink-2); text-decoration: none; transition: color .2s, padding .3s var(--ease); }
 .smap li a:hover { color: var(--saffron-deep); padding-left: 4px; }
-.smap__all { display: inline-block; margin-top: 12px; padding-bottom: 1px; font-size: 13px; font-weight: 600; color: var(--saffron-deep); border-bottom: 1px solid currentColor; text-decoration: none; }
 .smap__hint { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
 @media (max-width: 1100px) { .smap { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 900px) { .smap { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px var(--gap); } }

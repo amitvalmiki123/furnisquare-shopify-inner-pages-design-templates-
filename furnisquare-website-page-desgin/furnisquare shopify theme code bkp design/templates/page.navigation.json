@@ -18,22 +18,21 @@
         "main": {
           "type": "menu_nested",
           "settings": {
-            "menu": "main-menu",
-            "show_shop_all": true
+            "menu": "main-menu"
           }
         },
         "info": {
           "type": "menu_flat",
           "settings": {
             "heading": "Help & information",
-            "menu": "footer-information"
+            "menu": "information"
           }
         },
         "useful": {
           "type": "menu_flat",
           "settings": {
             "heading": "Orders & policies",
-            "menu": "footer-useful-links"
+            "menu": "useful-links"
           }
         }
       },

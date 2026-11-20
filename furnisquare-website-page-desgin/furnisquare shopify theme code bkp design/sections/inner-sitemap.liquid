@@ -37,9 +37,6 @@
                     </ul>
                   {%- endif -%}
                 {%- endfor -%}
-                {%- if block.settings.show_shop_all and top.links.size > 0 -%}
-                  <a class="smap__all" href="{{ top.url }}">Shop all {{ top.title | downcase }}</a>
-                {%- endif -%}
               </div>
             {%- endfor -%}
           {%- endif -%}
@@ -89,12 +86,6 @@
           "id": "menu",
           "label": "Menu",
           "info": "3-level menu (top item → group heading → links). Each top item becomes a column; the page stays in sync with the header."
-        },
-        {
-          "type": "checkbox",
-          "id": "show_shop_all",
-          "label": "Show 'Shop all' link per column",
-          "default": true
         }
       ]
     },
@@ -121,9 +112,9 @@
     {
       "name": "Inner Sitemap",
       "blocks": [
-        { "type": "menu_nested", "settings": { "menu": "main-menu", "show_shop_all": true } },
-        { "type": "menu_flat", "settings": { "heading": "Help & information", "menu": "footer-information" } },
-        { "type": "menu_flat", "settings": { "heading": "Orders & policies", "menu": "footer-useful-links" } }
+        { "type": "menu_nested", "settings": { "menu": "main-menu" } },
+        { "type": "menu_flat", "settings": { "heading": "Help & information", "menu": "information" } },
+        { "type": "menu_flat", "settings": { "heading": "Orders & policies", "menu": "useful-links" } }
       ]
     }
   ]
